@@ -61,7 +61,7 @@ export default function Footer() {
         <div className="font-serif">
           <h4 className="text-lg  mb-4 font-serif">Contact</h4>
           <address className="not-italic space-y-2 text-sm font-serif leading-relaxed">
-            <p>2107, Al Manara Tower, Business Bay</p>
+            <p>..</p>
             <p>Dubai, UAE</p>
             <p>
               <span className="font-serif">P</span>{" "}

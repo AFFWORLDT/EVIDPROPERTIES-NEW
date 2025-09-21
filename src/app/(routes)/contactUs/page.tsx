@@ -41,7 +41,7 @@ function ContactUs() {
                 </div>
                 <div>
                   <p className="text-gray-800 font-medium font-serif">Address</p>
-                  <p className="text-gray-600 font-serif">2107, Al Manara Tower, Business Bay</p>
+                  <p className="text-gray-600 font-serif">..</p>
                   <p className="text-gray-600 font-serif">Dubai – UAE</p>
                 </div>
               </div>
