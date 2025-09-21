@@ -62,8 +62,8 @@ export default function Header() {
     { href: "/offPlans", label: "Projects" },
     { href: "/team", label: "Teams" },
     { href: "/communities", label: "Areas" },
-    { href: "/service", label: "Services" },
-    { href: "/blog", label: "Blogs" },
+    // { href: "/service", label: "Services" },
+    // { href: "/blog", label: "Blogs" },
     { href: "/contactUs", label: "More" },
   ];
   const services = [
@@ -104,8 +104,8 @@ export default function Header() {
     { href: "/offPlans", label: "Projects" },
     { href: "/team", label: "Teams" },
     { href: "/communities", label: "Areas" },
-    { href: "/service", label: "Services", hasDropdown: true },
-    { href: "/blog", label: "Blogs" },
+    // { href: "/service", label: "Services", hasDropdown: true },
+    // { href: "/blog", label: "Blogs" },
     { href: "/contactUs", label: "More" },
   ];
   useEffect(() => {
@@ -293,7 +293,7 @@ export default function Header() {
           </div>
 
           {/* Login Button */}
-          <Link href="/login">
+          {/* <Link href="/login">
             <Button
               variant="outline"
               className={cn(
@@ -306,10 +306,10 @@ export default function Header() {
               <User className="h-4 w-4" />
               <span className="text-sm">Login</span>
             </Button>
-          </Link>
+          </Link> */}
 
           {/* List Your Property Button */}
-          <Link href="/list-your-property">
+          {/* <Link href="/list-your-property">
             <Button
               className={cn(
                 "border h-9 px-4 text-sm transition-all duration-200",
@@ -320,7 +320,7 @@ export default function Header() {
             >
               List Your Property
             </Button>
-          </Link>
+          </Link> */}
 
           {/* Mobile Menu Button */}
           <div
@@ -436,7 +436,7 @@ export default function Header() {
           </div>
 
           {/* Mobile Buttons */}
-          <div className="space-y-3">
+          {/* <div className="space-y-3">
             <Link href="/login" onClick={() => setIsOverlayOpen(false)}>
               <Button
                 variant="outline"
@@ -451,7 +451,7 @@ export default function Header() {
                 List Your Property
               </Button>
             </Link>
-          </div>
+          </div> */}
 
         </div>
       </div>
