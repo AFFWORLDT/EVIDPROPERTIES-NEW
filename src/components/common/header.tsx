@@ -143,7 +143,7 @@ export default function Header() {
           <Link href={"/"}>
             <Image
               src="/images/logo.png"
-              alt="EVIDPROPERTIES Logo"
+              alt="Apricity Realestate Logo"
               width={120}
               height={40}
               className="object-contain"
