@@ -8,76 +8,14 @@ import {
 } from "@/src/components/ui/select";
 import { Input } from "@/src/components/ui/input";
 import { Button } from "@/src/components/ui/button";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { getAllProperties } from "@/src/api/offPlans";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { useState } from "react";
 
 export default function HeroSection() {
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
   const [isPriceOpen, setIsPriceOpen] = useState(false);
-  const [offPlanProjects, setOffPlanProjects] = useState<any[]>([]);
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isLoading, setIsLoading] = useState(true);
 
   const handlePriceChange = (field: "min" | "max", value: string) => {
     setPriceRange((prev) => ({ ...prev, [field]: value }));
-  };
-
-  // Fetch off-plan projects
-  useEffect(() => {
-    const fetchOffPlanProjects = async () => {
-      try {
-        setIsLoading(true);
-        const data = await getAllProperties();
-        if (data?.projects && data.projects.length > 0) {
-          setOffPlanProjects(data.projects);
-        }
-      } catch (error) {
-        console.error("Error fetching off-plan projects:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchOffPlanProjects();
-  }, []);
-
-  // Auto-slide through projects
-  useEffect(() => {
-    if (offPlanProjects.length <= 1) return;
-
-    const interval = setInterval(() => {
-      setCurrentProjectIndex((prevIndex) => 
-        (prevIndex + 1) % offPlanProjects.length
-      );
-    }, 5000); // Change every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [offPlanProjects]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    setMousePosition({ x, y });
-  };
-
-  const goToProject = (index: number) => {
-    setCurrentProjectIndex(index);
-  };
-
-  const nextProject = () => {
-    setCurrentProjectIndex((prev) => 
-      prev === offPlanProjects.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevProject = () => {
-    setCurrentProjectIndex((prev) => 
-      prev === 0 ? offPlanProjects.length - 1 : prev - 1
-    );
   };
 
   const getPriceDisplayValue = () => {
@@ -119,153 +57,39 @@ export default function HeroSection() {
     { value: "100000000", label: "100,000,000" },
   ];
 
-  const currentProject = offPlanProjects[currentProjectIndex];
-
   return (
-    <section 
-      className="relative h-screen md:h-[115vh] w-full flex items-center justify-center text-center bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] overflow-hidden"
-      onMouseMove={handleMouseMove}
-    >
-      {/* Luxury Loading Overlay */}
-      {isLoading && (
-        <motion.div
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 0 }}
-          transition={{ duration: 1, delay: 2 }}
-          className="absolute inset-0 z-50 bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] flex items-center justify-center"
-        >
-          <div className="text-center">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="w-16 h-16 border-4 border-[#dbbb90]/30 border-t-[#dbbb90] rounded-full mx-auto mb-4"
-            />
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-[#dbbb90] font-light text-lg tracking-wider"
-            >
-              APRICITY REALESTATE
-            </motion.p>
-          </div>
-        </motion.div>
-      )}
-
-      {/* Ultra-Rich Cinematic Background */}
+    <section className="relative h-screen w-full flex items-center justify-center text-center bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8]">
+      {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        {isLoading ? (
-          <Image
-            src="/images/bgImage.webp"
-            alt="Luxury Living in Dubai"
-            fill
-            className="object-cover z-0 animate-zoomInOut"
-            style={{
-              filter: 'brightness(1.2) contrast(1.1) saturate(1.1)'
-            }}
-            quality={80}
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-          />
-        ) : (
-          <div className="relative w-full h-full">
-            {offPlanProjects.map((project, index) => (
-              <div key={project.id || index} className="absolute inset-0">
-                {project.photos && project.photos.length > 0 ? (
-                  <Image
-                    src={project.photos[0]}
-                    alt={project.name || "Luxury Project"}
-                    fill
-                    className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
-                      index === currentProjectIndex
-                        ? "opacity-100 z-10"
-                        : "opacity-0 z-0"
-                    }`}
-                    style={{
-                      transform: index === currentProjectIndex 
-                        ? `scale(1.1) translate(${(mousePosition.x - 50) * 0.005}%, ${(mousePosition.y - 50) * 0.005}%)`
-                        : 'scale(1)',
-                      transformOrigin: 'center center',
-                      filter: 'brightness(1.2) contrast(1.1) saturate(1.1)'
-                    }}
-                    quality={85}
-                    priority={index === 0}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                  />
-                ) : (
-                  <Image
-                    src="/images/bgImage.webp"
-                    alt="Luxury Living in Dubai"
-                    fill
-                    className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
-                      index === currentProjectIndex
-                        ? "opacity-100 z-10"
-                        : "opacity-0 z-0"
-                    }`}
-                    style={{
-                      filter: 'brightness(1.2) contrast(1.1) saturate(1.1)'
-                    }}
-                    quality={80}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-        )}
+        <Image
+          src="/images/bgImage.webp"
+          alt="Luxury Living in Dubai"
+          fill
+          className="object-cover z-0"
+          style={{
+            filter: 'brightness(1.2) contrast(1.1) saturate(1.1)'
+          }}
+          quality={80}
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+        />
       </div>
 
-      {/* Enhanced Gradient Overlay */}
+      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 z-10" />
-      
-      {/* Cinematic Overlay Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 z-15" />
 
-      {/* Project Information Overlay - Center */}
-      {!isLoading && currentProject && (
-        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white max-w-xs sm:max-w-sm w-full px-4">
-          <motion.div
-            key={currentProjectIndex}
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: -50 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-white/5 backdrop-blur-[2px] p-6 sm:p-8 rounded-2xl border border-white/10 text-center shadow-sm"
-          >
-            <h2 className="text-lg sm:text-2xl font-light mb-2 leading-tight font-serif text-gray-900">
-              {currentProject.name || "Luxury Project"}
-            </h2>
-            <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 font-serif">
-              {currentProject.location?.community}, {currentProject.location?.city}
-            </p>
-            
-            {/* Hero Title Below Project */}
-            <motion.div
-              key={`hero-title-${currentProjectIndex}`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-            >
-              <h1 className="text-lg sm:text-2xl lg:text-3xl font-light mb-2 sm:mb-3 text-[#dbbb90] font-serif">
-                Luxury Living Reimagined
-              </h1>
-              <p className="text-xs sm:text-sm uppercase max-w-2xl mx-auto text-gray-800 leading-tight tracking-wider font-serif">
-                EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      )}
+      {/* Hero Content */}
+      <div className="relative z-30 text-white max-w-4xl mx-auto px-4">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 text-[#dbbb90] font-serif">
+          Luxury Living Reimagined
+        </h1>
+        <p className="text-lg sm:text-xl uppercase max-w-2xl mx-auto text-gray-200 leading-tight tracking-wider font-serif mb-12">
+          EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
+        </p>
+      </div>
 
       {/* Search Form - Bottom */}
       <div className="absolute bottom-8 sm:bottom-12 left-1/2 transform -translate-x-1/2 z-20 text-white px-2 sm:px-6 lg:px-8 container w-full">
-        <motion.div
-          key={`search-${currentProjectIndex}`}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-        >
-
         <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 p-4 sm:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/20 shadow-2xl">
             {/* Location */}
@@ -421,23 +245,7 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        </motion.div>
       </div>
-
-
-      {/* Loading Overlay */}
-      {isLoading && (
-        <div className="absolute inset-0 bg-black/50 z-40 flex items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-white text-center"
-          >
-            <div className="w-16 h-16 border-4 border-white/20 border-t-[#dbbb90] rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-lg font-light">Loading Luxury Projects...</p>
-          </motion.div>
-        </div>
-      )}
     </section>
   );
 }
