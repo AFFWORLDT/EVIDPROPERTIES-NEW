@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
                 <li><strong>Withdrawal of Consent:</strong> Withdraw consent for data processing</li>
               </ul>
               <p className="text-gray-700 mb-4">
-                To exercise these rights, please contact us at <a href="mailto:privacy@apricityrealestate.com" className="text-blue-600 hover:underline">privacy@apricityrealestate.com</a>.
+                To exercise these rights, please contact us at <a href="mailto:athomson@apricityrealestate.ae" className="text-blue-600 hover:underline">athomson@apricityrealestate.ae</a>.
               </p>
             </section>
 
@@ -160,9 +160,9 @@ export default function PrivacyPolicyPage() {
                 <p className="text-gray-700 mb-2"><strong>Apricity Realestate</strong></p>
                 <p className="text-gray-700 mb-2">2107, Al Manara Tower, Business Bay</p>
                 <p className="text-gray-700 mb-2">Dubai, UAE</p>
-                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 54 252 4242</a></p>
-                <p className="text-gray-700 mb-2">Email: <a href="mailto:privacy@apricityrealestate.com" className="text-blue-600 hover:underline">privacy@apricityrealestate.com</a></p>
-                <p className="text-gray-700">General Email: <a href="mailto:info@apricityrealestate.com" className="text-blue-600 hover:underline">info@apricityrealestate.com</a></p>
+                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971558777152" className="text-blue-600 hover:underline">+971-55-877-7152</a></p>
+                <p className="text-gray-700 mb-2">Email: <a href="mailto:athomson@apricityrealestate.ae" className="text-blue-600 hover:underline">athomson@apricityrealestate.ae</a></p>
+                <p className="text-gray-700">General Email: <a href="mailto:athomson@apricityrealestate.ae" className="text-blue-600 hover:underline">athomson@apricityrealestate.ae</a></p>
               </div>
             </section>
 

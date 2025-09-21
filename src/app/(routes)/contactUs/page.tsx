@@ -55,10 +55,10 @@ function ContactUs() {
                 <div>
                   <p className="text-gray-800 font-medium font-serif">Phone</p>
                   <a
-                    href="tel:+971542524242"
+                    href="tel:+971558777152"
                     className="text-[#dbbb90] hover:text-[#C2A17B] transition-colors font-serif"
                   >
-                    +971 54 252 4242
+                    +971-55-877-7152
                   </a>
                 </div>
               </div>
@@ -72,10 +72,10 @@ function ContactUs() {
                 <div>
                   <p className="text-gray-800 font-medium font-serif">Email</p>
                   <a
-                    href="mailto:info@apricityrealestate.com"
+                    href="mailto:athomson@apricityrealestate.ae"
                     className="text-[#dbbb90] hover:text-[#C2A17B] transition-colors font-serif"
                   >
-                    info@apricityrealestate.com
+                    athomson@apricityrealestate.ae
                   </a>
                 </div>
               </div>
@@ -88,7 +88,9 @@ function ContactUs() {
                 </div>
                 <div>
                   <p className="text-gray-800 font-medium font-serif">Business Hours</p>
-                  <p className="text-gray-600 font-serif">Mon – Fri: 9AM to 7PM</p>
+                  <p className="text-gray-600 font-serif">Monday to Friday: 9:00 am to 6:00 pm</p>
+                  <p className="text-gray-600 font-serif">Saturday: by appointment only</p>
+                  <p className="text-gray-600 font-serif">Sunday: by appointment only</p>
                 </div>
               </div>
             </div>

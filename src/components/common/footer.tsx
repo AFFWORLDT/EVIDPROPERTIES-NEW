@@ -65,26 +65,26 @@ export default function Footer() {
             <p>Dubai, UAE</p>
             <p>
               <span className="font-serif">P</span>{" "}
-              <a
-                href="tel:+971542524242"
+                <a
+                href="tel:+971558777152"
                 className="relative inline-block hover:text-gray-300 transition-colors
                            after:content-[''] after:absolute after:left-0 after:bottom-0
                            after:h-[2px] after:w-0 after:bg-[#dbbb90]
                            after:transition-all after:duration-300 hover:after:w-full font-serif"
               >
-                +971 54 252 4242
+                +971-55-877-7152
               </a>
             </p>
             <p>
               <span className="font-sans">E</span>{" "}
               <a
-                href="mailto:info@apricityrealestate.com"
+                href="mailto:athomson@apricityrealestate.ae"
                 className="relative inline-block hover:text-gray-300 transition-colors
                            after:content-[''] after:absolute after:left-0 after:bottom-0
                            after:h-[2px] after:w-0 after:bg-[#dbbb90]
                            after:transition-all after:duration-300 hover:after:w-full font-serif"
               >
-                info@apricityrealestate.com
+                athomson@apricityrealestate.ae
               </a>
             </p>
           </address>
