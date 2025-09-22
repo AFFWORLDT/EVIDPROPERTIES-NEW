@@ -142,7 +142,7 @@ export default function Header() {
         <div className="flex items-center">
           <Link href={"/"}>
             <Image
-              src="/logo_Apricity.jpeg"
+              src="/logo.png"
               alt="Apricity Realestate Logo"
               width={120}
               height={40}
