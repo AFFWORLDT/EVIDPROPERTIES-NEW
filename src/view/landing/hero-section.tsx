@@ -58,40 +58,40 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center text-center bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8]">
-      {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full">
-        <Image
-          src="/images/bgImage.webp"
-          alt="Luxury Living in Dubai"
-          fill
-          className="object-cover z-0"
-          style={{
-            filter: 'brightness(1.2) contrast(1.1) saturate(1.1)'
-          }}
-          quality={80}
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-        />
-      </div>
+<section className="relative min-h-screen w-full flex flex-col justify-between text-center bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8]">
+  {/* Background Image */}
+  <div className="absolute inset-0 w-full h-full">
+    <Image
+      src="/images/bgImage.webp"
+      alt="Luxury Living in Dubai"
+      fill
+      className="object-cover z-0"
+      style={{ filter: "brightness(1.2) contrast(1.1) saturate(1.1)" }}
+      quality={80}
+      priority
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+    />
+  </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 z-10" />
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 z-10" />
 
-      {/* Hero Content */}
-      <div className="relative z-30 text-white max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 text-[#dbbb90] font-serif">
-          Luxury Living Reimagined
-        </h1>
-        <p className="text-lg sm:text-xl uppercase max-w-2xl mx-auto text-gray-200 leading-tight tracking-wider font-serif mb-12">
-          EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
-        </p>
-      </div>
+  {/* Hero Content */}
+  <div className="relative z-20 text-white max-w-4xl mx-auto px-4 pt-24 sm:pt-32 pb-6">
+    <h1 className="text-4xl sm:text-6xl lg:text-6xl font-light mb-6 lg:pt-20 text-[#dbbb90] font-serif">
+      Luxury Living Reimagined
+    </h1>
+    
+    <p className="text-base sm:text-xl uppercase max-w-2xl mx-auto text-gray-200 leading-tight tracking-wider font-serif mb-8 sm:mb-12">
+      EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
+    </p>
+  </div>
 
-      {/* Search Form - Bottom */}
-      <div className="absolute bottom-8 sm:bottom-12 left-1/2 transform -translate-x-1/2 z-20 text-white px-2 sm:px-6 lg:px-8 container w-full">
-        <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 p-4 sm:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/20 shadow-2xl">
+  {/* Search Form */}
+  <div className="relative z-20 text-white px-2 sm:px-6 lg:px-8 container w-full mb-6 sm:mb-12">
+    <div className="w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 p-4 sm:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/20 shadow-2xl">
+        
             {/* Location */}
             <div className="lg:col-span-1 relative">
               <div className="absolute top-2 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
