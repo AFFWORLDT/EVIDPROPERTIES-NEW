@@ -109,21 +109,21 @@ export default function DetailPage({ id }: any) {
             ))}
           </div>
         </div>
-        <div className="relative z-30 text-white px-4 mt-[60vh]">
-          <span>#{id}</span>
-          <h1 className="text-3xl md:text-4xl font-light mb-4 leading-tight tracking-wide">
+        <div className="relative z-30 text-white px-4 sm:px-6 md:px-8 mt-[50vh] sm:mt-[55vh] md:mt-[60vh]">
+          <span className="text-sm sm:text-base">#{id}</span>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-2 sm:mb-4 leading-tight tracking-wide">
             {property?.name}
           </h1>
-          <p className="text-lg font-light mb-12 tracking-wider uppercase text-primary">
+          <p className="text-sm sm:text-base md:text-lg font-light mb-8 sm:mb-12 tracking-wider uppercase text-primary">
             {property?.location?.community}, {property?.location?.sub_community}
             , {property?.location?.city}
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-16 px-4 md:px-6 lg:px-8">
+      <section className="bg-white py-8 sm:py-12 md:py-16 px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="flex justify-center gap-8 text-lg font-light uppercase text-primary mb-12">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base md:text-lg font-light uppercase text-primary mb-8 sm:mb-12">
             <a
               className="hover:underline cursor-pointer"
               onClick={() => setIsOpen(true)}
@@ -140,8 +140,8 @@ export default function DetailPage({ id }: any) {
             </a>
             {property?.agent && (
               <>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-4 bg-gradient-to-r from-[#F8F6F0] to-[#F2EEE8] px-4 py-3 rounded-xl border border-[#E5E1D8] shadow-lg">
+                <span className="text-gray-300 hidden sm:inline">|</span>
+                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-gradient-to-r from-[#F8F6F0] to-[#F2EEE8] px-3 sm:px-4 py-3 rounded-xl border border-[#E5E1D8] shadow-lg w-full sm:w-auto">
                   <div className="relative">
                     <div className="w-12 h-12 rounded-full overflow-hidden border-3 border-[#dbbb90] shadow-md">
                       {property.agent.avatar ? (
@@ -164,15 +164,15 @@ export default function DetailPage({ id }: any) {
                       <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
                     </div>
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-semibold text-gray-800 uppercase tracking-wide">
+                  <div className="flex flex-col text-center sm:text-left">
+                    <span className="text-xs sm:text-sm font-semibold text-gray-800 uppercase tracking-wide">
                       {property.agent.name}
                     </span>
                     <span className="text-xs text-[#dbbb90] font-medium uppercase tracking-wider">
                       Property Specialist
                     </span>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 justify-center sm:justify-start">
                     <a
                       href={`https://wa.me/${property.agent.phone?.replace(/[^0-9]/g, '')}?text=Hi ${property.agent.name}, I'm interested in ${property.name}`}
                       target="_blank"
@@ -201,9 +201,9 @@ export default function DetailPage({ id }: any) {
 
           <hr className="border-t border-gray-200 mb-12" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
-            <div>
-              <h3 className="text-sm font-light uppercase text-primary mb-2 border-b border-primary inline-block pb-1">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center mb-8 sm:mb-12">
+            <div className="border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 md:pr-4">
+              <h3 className="text-sm font-light uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 From
               </h3>
               <p className="text-sm font-light text-gray-700">
@@ -216,8 +216,8 @@ export default function DetailPage({ id }: any) {
                   : "Price on request"}
               </p>
             </div>
-            <div>
-              <h3 className="text-sm font-light uppercase text-primary mb-2 border-b border-primary inline-block pb-1">
+            <div className="border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 px-0 md:px-4">
+              <h3 className="text-sm font-light uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 Completion Date
               </h3>
               <p className="text-sm font-light text-gray-700">
@@ -230,8 +230,8 @@ export default function DetailPage({ id }: any) {
                   : "TBA"}
               </p>
             </div>
-            <div>
-              <h3 className="text-sm font-light uppercase text-primary mb-2 border-b border-primary inline-block pb-1">
+            <div className="pt-6 md:pt-0">
+              <h3 className="text-sm font-light uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 Construction Stage
               </h3>
               <p className="text-sm font-light text-gray-700">
@@ -243,10 +243,10 @@ export default function DetailPage({ id }: any) {
           <hr className="border-t border-gray-200 mb-12" />
 
           <div className="text-center">
-            <h2 className="text-4xl font-serif text-gray-800 mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-800 mb-6 sm:mb-8">
               Description
             </h2>
-            <p className="text-sm font-light text-gray-600 leading-relaxed mb-6 line-clamp-4">
+            <p className="text-sm sm:text-base font-light text-gray-600 leading-relaxed mb-6 line-clamp-4 px-4 sm:px-0">
               {property?.description}
             </p>
           </div>
@@ -254,14 +254,14 @@ export default function DetailPage({ id }: any) {
       </section>
 
       {/* Image Carousel Section */}
-      <section className="bg-white py-16 px-4 md:px-6 lg:px-8">
+      <section className="bg-white py-8 sm:py-12 md:py-16 px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {property?.photos && property.photos.length > 0 && (
-            <div className="mb-16">
+            <div className="mb-8 sm:mb-12 md:mb-16">
               {/* Main Carousel Container */}
               <div className="relative group">
                 {/* Main Image Display */}
-                <div className="relative h-[400px] md:h-[500px] lg:h-[600px] mb-6 overflow-hidden rounded-lg">
+                <div className="relative h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px] mb-4 sm:mb-6 overflow-hidden rounded-lg">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={selectedImageIndex}
@@ -288,15 +288,17 @@ export default function DetailPage({ id }: any) {
                     <>
                       <button
                         onClick={prevImage}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 text-white rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+                        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-200 opacity-70 sm:opacity-0 group-hover:opacity-100 z-10 bg-black/20 sm:bg-transparent"
                       >
-                        <Icon icon="teenyicons:left-outline" fontSize={30} />
+                        <Icon icon="teenyicons:left-outline" fontSize={20} className="sm:hidden" />
+                        <Icon icon="teenyicons:left-outline" fontSize={30} className="hidden sm:block" />
                       </button>
                       <button
                         onClick={nextImage}
-                        className="absolute right-4 top-1/2 -translate-y-1/2  text-white rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+                        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-200 opacity-70 sm:opacity-0 group-hover:opacity-100 z-10 bg-black/20 sm:bg-transparent"
                       >
-                        <Icon icon="teenyicons:right-outline" fontSize={30} />
+                        <Icon icon="teenyicons:right-outline" fontSize={20} className="sm:hidden" />
+                        <Icon icon="teenyicons:right-outline" fontSize={30} className="hidden sm:block" />
                       </button>
                     </>
                   )}
@@ -304,13 +306,13 @@ export default function DetailPage({ id }: any) {
 
                 {/* Thumbnail Carousel */}
                 <div className="relative">
-                  <div className="flex gap-2 md:gap-4 overflow-x-auto scrollbar-hide pb-2">
-                    <div className="flex gap-2 md:gap-4 min-w-max">
+                  <div className="flex gap-2 sm:gap-3 md:gap-4 overflow-x-auto scrollbar-hide pb-2">
+                    <div className="flex gap-2 sm:gap-3 md:gap-4 min-w-max">
                       {property.photos.map((photo: string, index: number) => (
                         <button
                           key={index}
                           onClick={() => goToImage(index)}
-                          className={`relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 overflow-hidden rounded transition-all duration-200 ${
+                          className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 overflow-hidden rounded transition-all duration-200 ${
                             selectedImageIndex === index
                               ? "ring-2 ring-primary opacity-100 scale-105"
                               : "opacity-70 hover:opacity-90 hover:scale-102"
@@ -376,12 +378,12 @@ export default function DetailPage({ id }: any) {
         )}
 
 
-        <div className="my-5">
+        <div className="my-4 sm:my-5">
           <LocationSection property={property} />
         </div>
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <AnimatePresence>
-            <DialogContent className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-[#F2EEE8] rounded-none px-8 py-4">
+            <DialogContent className="w-[95vw] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-[#F2EEE8] rounded-none px-4 sm:px-6 md:px-8 py-4 mx-auto my-4">
               <motion.div
                 key="dialog"
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -389,12 +391,12 @@ export default function DetailPage({ id }: any) {
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                <DialogTitle className="mb-6 flex justify-between">
-                  <div>
-                    <h2 className="text-2xl  font-mono font-thin text-black text-center">
+                <DialogTitle className="mb-4 sm:mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                  <div className="flex-1">
+                    <h2 className="text-xl sm:text-2xl font-mono font-thin text-black text-center sm:text-left">
                       Take the First Step
                     </h2>
-                    <p className="font-mono font-thin text-center text-[15px] text-neutral-400">
+                    <p className="font-mono font-thin text-center sm:text-left text-sm sm:text-[15px] text-neutral-400 mt-2">
                       Get a free consultation, personalized investment strategy,
                       and exclusive access to Dubai best properties.
                     </p>
@@ -402,7 +404,7 @@ export default function DetailPage({ id }: any) {
                   <Icon
                     icon={"material-symbols-light:cancel-outline"}
                     fontSize={25}
-                    className="text-neutral-400 cursor-pointer"
+                    className="text-neutral-400 cursor-pointer flex-shrink-0"
                     onClick={() => setIsOpen(false)}
                   />
                 </DialogTitle>
