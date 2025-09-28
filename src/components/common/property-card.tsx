@@ -27,34 +27,34 @@ interface PropertyData {
 export default function PropertyCard({ data }: { data?: PropertyData }) {
     const router = useRouter();
   return (
-    <Card className="overflow-hidden border-none p-0 shadow-sm border-2 rounded-none" onClick={() => router.push(`/offPlans/details/${data?.id}`)}>
-      <div className="relative w-full h-96 overflow-hidden group">
+    <Card className="overflow-hidden border-none p-0 shadow-2xl hover:shadow-3xl border-2 rounded-2xl bg-white/90 backdrop-blur-sm border-white/20 transition-all duration-500 group cursor-pointer" onClick={() => router.push(`/offPlans/details/${data?.id}`)}>
+      <div className="relative w-full h-96 overflow-hidden">
         <Image
           src={data?.photos?.[0] ?? "/placeholder.jpg"}
           alt={`Image of ${data?.name}`}
           fill
-          className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 cursor-pointer"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
         />
+        {/* Luxury overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
         {data?.newParam?.totalUnits ? (
-          <div className="absolute bottom-4 left-4 bg-white text-xs font-light tracking-wider px-3 py-1 rounded-full shadow-md uppercase">
+          <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-xs font-serif font-medium tracking-wider px-4 py-2 rounded-full shadow-lg uppercase border border-white/20">
             {data.newParam.totalUnits} UNITS
           </div>
         ) : null}
-        <div className="absolute bottom-4 right-4 bg-white text-sm font-light px-3 py-1 rounded-full shadow-md text-[#1A202C]">
+        <div className="absolute bottom-4 right-4 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] text-white text-sm font-serif font-medium px-4 py-2 rounded-full shadow-lg">
           FROM {data?.newParam?.price?.toLocaleString() ?? "N/A"}
-          <span className="font-light text-gray-500 ml-1">د.إ</span>
+          <span className="font-light ml-1">د.إ</span>
         </div>
       </div>
-      <CardContent className="p-6">
-        <CardDescription className="text-sm text-gray-500 mb-1 font-light">
-          #{data?.area_id ?? "-"}
-        </CardDescription>
-        <CardTitle className="text-2xl font-mono font-light text-[#1A202C] mb-2 tracking-wide">
+      <CardContent className="p-8">
+        <CardTitle className="text-2xl font-serif font-light text-[#1A202C] mb-3 tracking-wide group-hover:text-[#dbbb90] transition-colors duration-300">
           {data?.name ?? "Unnamed Property"}
         </CardTitle>
-        <p className="text-sm uppercase tracking-wider text-primary font-light">
+        <p className="text-sm uppercase tracking-wider text-gray-600 font-serif font-light">
           {`${data?.location?.community ?? ""}${
             data?.location?.community && data?.location?.city ? ", " : ""
           }${data?.location?.city ?? ""}`}

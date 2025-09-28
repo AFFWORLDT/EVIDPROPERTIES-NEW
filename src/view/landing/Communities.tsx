@@ -88,11 +88,14 @@ export default function Component() {
   useEffect(() => {
     const fetchCommunities = async () => {
       try {
-        const res = await getAllCommunities(1, 20);
-
-        setCommunities(res.communities);
+        const res = await getAllCommunities(1, 12);
+        if (res?.communities?.length) {
+          setCommunities(res.communities);
+        }
       } catch (error) {
-        console.log(error);
+        console.log("Error fetching communities:", error);
+        // Fallback to static data if API fails
+        setCommunities(communities);
       }
     };
     fetchCommunities();
@@ -145,16 +148,31 @@ export default function Component() {
                       <h3 className="text-2xl font-light mb-2 tracking-wide">
                         {community.name}
                       </h3>
+                      
+                      {/* Property counts */}
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {community?.total_count > 0 && (
+                          <span className="bg-[#dbbb90]/20 text-[#dbbb90] px-2 py-1 rounded-full text-xs font-medium">
+                            {community.total_count} Properties
+                          </span>
+                        )}
+                        {community?.projects_count > 0 && (
+                          <span className="bg-white/20 text-white px-2 py-1 rounded-full text-xs font-medium">
+                            {community.projects_count} Projects
+                          </span>
+                        )}
+                      </div>
+
                       <p className="text-sm mb-4 font-light leading-relaxed">
-                        {community.order_description}
+                        {community.order_description || `${community.city} - Luxury living at its finest`}
                       </p>
                       <div className="w-full border-[0.5px] border-white/30 mb-4" />
                       <Link
-                        href={"/communities"}
+                        href={`/communities/details/${encodeURIComponent(community.name)}`}
                         className={cn(
-                          "relative pb-1 transition-all duration-300 text-primary uppercase text-base",
+                          "relative pb-1 transition-all duration-300 text-[#dbbb90] uppercase text-base font-serif",
                           "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
-                          "after:bg-primary after:transition-all after:duration-300 hover:after:w-20"
+                          "after:bg-[#dbbb90] after:transition-all after:duration-300 hover:after:w-20"
                         )}
                       >
                         EXPLORE

@@ -17,6 +17,7 @@ export default function DetailPage({ id }: any) {
   const [heroImageIndex, setHeroImageIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   const fetchPropertyDetails = async () => {
     setLoading(true);
@@ -118,7 +119,6 @@ export default function DetailPage({ id }: any) {
           </div>
         </div>
         <div className="relative z-30 text-white px-4 mt-[60vh]">
-          <span>#{id}</span>
           <h1 className="text-3xl md:text-4xl font-light mb-4 leading-tight tracking-wide">
             {property?.title}
           </h1>
@@ -135,10 +135,6 @@ export default function DetailPage({ id }: any) {
               onClick={() => setIsOpen(true)}
             >
               Enquire Now
-            </a>
-            <span className="text-gray-300">|</span>
-            <a href="#" className="hover:underline">
-              Brochure
             </a>
             <span className="text-gray-300">|</span>
             <a href="#" className="hover:underline">
@@ -264,9 +260,21 @@ export default function DetailPage({ id }: any) {
             <h2 className="text-4xl font-serif text-gray-800 mb-8">
               Description
             </h2>
-            <p className="text-sm font-light text-gray-600 leading-relaxed mb-6 line-clamp-4">
-              {property?.description}
-            </p>
+            <div>
+              <p className={`text-sm font-light text-gray-600 leading-relaxed mb-4 ${
+                isDescriptionExpanded ? '' : 'line-clamp-4'
+              }`}>
+                {property?.description}
+              </p>
+              {property?.description && property.description.length > 200 && (
+                <button
+                  onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                  className="text-[#dbbb90] hover:text-[#C2A17B] font-medium text-sm transition-colors duration-300 font-serif"
+                >
+                  {isDescriptionExpanded ? 'Read Less' : 'Read More'}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </section>

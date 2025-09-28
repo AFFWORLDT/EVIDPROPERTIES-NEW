@@ -48,19 +48,36 @@ export default function Property() {
         </section>
 
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {property?.map((obj:any,i) => (
-            <PropertyCard
-              photos={obj?.photos[0]}
-              title={obj?.title}
-              location="UNITED ARAB EMIRATES, DUBAI INTERNATIONAL MARINE CLUB, DUBAI"
-              price="4,400,000د"
-              bedrooms={2}
-              bathrooms={2}
-              area="1,277ft²"
-              propertyId="1059"
-              key={i}
-            />
-          ))}
+          {loading ? (
+            // Loading skeleton
+            Array.from({ length: 3 }).map((_, i) => (
+              <div key={i} className="bg-white rounded-lg shadow-md p-6 animate-pulse">
+                <div className="h-48 bg-gray-200 rounded-lg mb-4"></div>
+                <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+              </div>
+            ))
+          ) : property?.length > 0 ? (
+            property.map((obj: any, i) => (
+              <PropertyCard
+                photos={obj?.photos?.[0] || "/images/placeholder.jpg"}
+                title={obj?.title || "Property Title"}
+                location={`${obj?.location?.city || ""} ${obj?.location?.community || ""} ${obj?.location?.sub_community || ""}`.trim() || "Dubai, UAE"}
+                price={obj?.price ? `${obj.price.toLocaleString()}د` : "Price on Request"}
+                bedrooms={obj?.beds || 0}
+                bathrooms={obj?.baths || 0}
+                area={obj?.sqft ? `${obj.sqft.toLocaleString()} sqft` : "Area not specified"}
+                propertyId={obj?.id || obj?.ownPortal_agent_Id || "N/A"}
+                key={i}
+              />
+            ))
+          ) : (
+            // No properties found
+            <div className="col-span-full text-center py-12">
+              <p className="text-gray-500 text-lg">No featured properties available at the moment.</p>
+            </div>
+          )}
         </section>
 
         <div className="text-center">

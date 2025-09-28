@@ -16,6 +16,7 @@ export default function DetailPage({ id }: any) {
   const [heroImageIndex, setHeroImageIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   useEffect(() => {
     async function fetchProperty() {
@@ -110,7 +111,6 @@ export default function DetailPage({ id }: any) {
           </div>
         </div>
         <div className="relative z-30 text-white px-4 sm:px-6 md:px-8 mt-[50vh] sm:mt-[55vh] md:mt-[60vh]">
-          <span className="text-sm sm:text-base">#{id}</span>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-2 sm:mb-4 leading-tight tracking-wide">
             {property?.name}
           </h1>
@@ -129,10 +129,6 @@ export default function DetailPage({ id }: any) {
               onClick={() => setIsOpen(true)}
             >
               Enquire Now
-            </a>
-            <span className="text-gray-300">|</span>
-            <a href="#" className="hover:underline">
-              Brochure
             </a>
             <span className="text-gray-300">|</span>
             <a href="#" className="hover:underline">
@@ -246,9 +242,21 @@ export default function DetailPage({ id }: any) {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-800 mb-6 sm:mb-8">
               Description
             </h2>
-            <p className="text-sm sm:text-base font-light text-gray-600 leading-relaxed mb-6 line-clamp-4 px-4 sm:px-0">
-              {property?.description}
-            </p>
+            <div className="px-4 sm:px-0">
+              <p className={`text-sm sm:text-base font-light text-gray-600 leading-relaxed mb-4 ${
+                isDescriptionExpanded ? '' : 'line-clamp-4'
+              }`}>
+                {property?.description}
+              </p>
+              {property?.description && property.description.length > 200 && (
+                <button
+                  onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                  className="text-[#dbbb90] hover:text-[#C2A17B] font-medium text-sm transition-colors duration-300 font-serif"
+                >
+                  {isDescriptionExpanded ? 'Read Less' : 'Read More'}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </section>

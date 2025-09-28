@@ -60,8 +60,8 @@ function Communities() {
     } else {
       const filtered = communities.filter((community) =>
         community.name?.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-        community.location?.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-        community.description?.toLowerCase().includes(searchKeyword.toLowerCase())
+        community.city?.toLowerCase().includes(searchKeyword.toLowerCase()) ||
+        community.order_description?.toLowerCase().includes(searchKeyword.toLowerCase())
       );
       setFilteredCommunities(filtered);
     }
@@ -102,7 +102,7 @@ function Communities() {
             <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-[#dbbb90]/20 shadow-xl p-2">
               <input
                 type="text"
-                placeholder="Search communities by name, location, or description..."
+                placeholder="Search communities by name, city, or description..."
                 value={searchKeyword}
                 onChange={(e) => setSearchKeyword(e.target.value)}
                 className="w-full px-6 py-4 pl-14 text-gray-800 bg-transparent border-0 rounded-xl focus:outline-none placeholder:text-gray-500 font-serif text-lg"

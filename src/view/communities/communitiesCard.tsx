@@ -10,11 +10,17 @@ interface CommunityData {
   latitude: number;
   longitude: number;
   name: string;
-  assigned_order: number | null;
-  order_photo: string | null;
-  order_description: string | null;
-  order_created_at: string | null;
-  order_updated_at: string | null;
+  sell_properties_count: number;
+  rent_properties_count: number;
+  projects_count: number;
+  pool_projects_count: number;
+  total_count: number;
+  assigned_agents: any[];
+  assigned_order?: number | null;
+  order_photo?: string | null;
+  order_description?: string | null;
+  order_created_at?: string | null;
+  order_updated_at?: string | null;
 }
 
 export default function CommunitiesCard({ data }: { data: CommunityData }) {
@@ -43,12 +49,27 @@ export default function CommunitiesCard({ data }: { data: CommunityData }) {
           <h3 className="text-2xl sm:text-3xl font-serif mb-2 tracking-wide">
             {data?.name}
           </h3>
+          
+          {/* Property counts */}
+          <div className="flex flex-wrap gap-2 mb-3">
+            {data?.total_count > 0 && (
+              <span className="bg-[#dbbb90]/20 text-[#dbbb90] px-2 py-1 rounded-full text-xs font-medium">
+                {data.total_count} Properties
+              </span>
+            )}
+            {data?.projects_count > 0 && (
+              <span className="bg-white/20 text-white px-2 py-1 rounded-full text-xs font-medium">
+                {data.projects_count} Projects
+              </span>
+            )}
+          </div>
+
           {data?.order_description && (
             <p className="text-xs mb-4 font-light leading-relaxed opacity-90 font-serif">
               {data.order_description}
             </p>
           )}
-          <div className="w-full  border-[0.5px] border-white/30 mb-4" />
+          <div className="w-full border-[0.5px] border-white/30 mb-4" />
 
           <Link
             href={`/communities/details/${encodeURIComponent(data?.name)}`}

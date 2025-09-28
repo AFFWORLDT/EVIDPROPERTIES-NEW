@@ -9,7 +9,7 @@ export default function Feature() {
   const [loading, setLoading] = useState(false);
   const fetchproperty = async () => {
     setLoading(true);
-    const query = "sort_by=total_count&sort_order=desc&page=1&size=4";
+    const query = "sort_by=total_count&sort_order=desc&page=1&size=6";
     try {
       const res = await getAllProperties(query);
       setProperty(res?.projects);
@@ -24,32 +24,69 @@ export default function Feature() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center py-16 px-4 md:px-6 lg:px-8  container mx-auto">
-      <div className="text-center mb-12">
-        <p className="text-sm  uppercase tracking-wider  mb-2 text-primary">
-          FEATURED PROJECTS
-        </p>
-        <h1 className="text-4xl  font-mono font-thin text-[#1A202C] leading-tight mb-4">
-          Luxury Unveiled, Comfort and Sophistication
-        </h1>
-        <p className="text-[15px] text-gray-600  mx-auto">
-          Discover a curated selection of Dubai's most exquisite properties,
-          epitomizing luxury, elegance, and unparalleled design.
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] text-[#1A202C] relative overflow-hidden">
+      {/* Luxury Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#dbbb90]/3 via-transparent to-[#C2A17B]/3"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#dbbb90]/20 to-transparent"></div>
+      
+      <main className="container mx-auto py-20 px-4 md:px-6 lg:px-8 relative z-10">
+        <section className="text-center mb-20">
+          <div className="inline-block mb-6">
+            <span className="text-[#dbbb90] text-xs font-serif font-medium tracking-[0.3em] uppercase">
+              FEATURED PROJECTS
+            </span>
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8 text-[#1A202C] leading-tight tracking-wide">
+            <span className="text-[#dbbb90] font-normal">Luxury</span> Unveiled
+            <br />
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-600 mt-2 block">
+              Comfort & Sophistication
+            </span>
+          </h1>
+          <p className="max-w-3xl mx-auto text-base font-light text-gray-600 leading-relaxed font-serif">
+            Discover a curated selection of Dubai's most exquisite off-plan projects,
+            epitomizing luxury, elegance, and unparalleled design. Each development
+            represents the pinnacle of architectural excellence and refined living.
+          </p>
+        </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8  w-full">
-        {property?.map((property: any, i) => (
-          <PropertyCard data={property} key={i} />
-        ))}
-      </div>
-      <div className="w-full flex justify-center items-center my-11">
-        <Link href={"/offPlans"}>
-         <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-semibold py-2 px-4 rounded-none transition-colors uppercase">
-          View All Project
-        </Button>
-        </Link>
-      </div>
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+          {loading ? (
+            // Luxury loading skeleton
+            Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6 animate-pulse">
+                <div className="h-64 bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl mb-6"></div>
+                <div className="h-5 bg-gray-200 rounded mb-3"></div>
+                <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+              </div>
+            ))
+          ) : property?.length > 0 ? (
+            property.map((project: any, i) => (
+              <div key={i} className="group transform transition-all duration-500 hover:scale-105 hover:-translate-y-2">
+                <PropertyCard data={project} />
+              </div>
+            ))
+          ) : (
+            // No projects found
+            <div className="col-span-full text-center py-20">
+              <div className="inline-block p-8 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/20">
+                <p className="text-gray-500 text-lg font-serif">No featured projects available at the moment.</p>
+              </div>
+            </div>
+          )}
+        </section>
+
+        <div className="text-center">
+          <Link href={"/offPlans"}>
+            <Button className="group relative bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#dbbb90] text-white px-12 py-6 text-lg font-serif font-medium tracking-wider rounded-none shadow-2xl hover:shadow-3xl uppercase transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-[#dbbb90]/20">
+              <span className="relative z-10">VIEW ALL PROJECTS</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </Button>
+          </Link>
+        </div>
+      </main>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getAllCommunities = async (page: number = 1, size: number = 100) => {
    try {
-     const res = await api.get(`/locations/communities/ordered?page=${page}&size=${size}&include_unordered=false`)
+     const res = await api.get(`/locations/communities?sort_by=total_count&sort_order=desc&page=${page}&size=${size}`)
      return res.data
    } catch (error) {
     throw handleApiError(error)
