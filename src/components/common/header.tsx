@@ -140,13 +140,14 @@ export default function Header() {
       >
         {/* Logo */}
         <div className="flex items-center">
-          <Link href={"/"}>
+          <Link href={"/"} className="group">
             <Image
               src="/logo.png"
               alt="Apricity Realestate Logo"
-              width={120}
-              height={40}
-              className="object-contain"
+              width={200}
+              height={70}
+              className="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 h-12 w-auto sm:h-14 md:h-16 lg:h-18"
+              priority
             />
           </Link>
         </div>

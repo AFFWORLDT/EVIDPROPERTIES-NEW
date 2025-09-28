@@ -59,37 +59,40 @@ export default function HeroSection() {
 
   return (
 <section className="relative min-h-screen w-full flex flex-col justify-between text-center bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8]">
-  {/* Background Image */}
+  {/* Background Video */}
   <div className="absolute inset-0 w-full h-full">
-    <Image
-      src="/images/bgImage.webp"
-      alt="Luxury Living in Dubai"
-      fill
-      className="object-cover z-0"
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="w-full h-full object-cover z-0"
       style={{ filter: "brightness(1.2) contrast(1.1) saturate(1.1)" }}
-      quality={80}
-      priority
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-    />
+    >
+      <source src="/hero.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
 
   {/* Gradient Overlay */}
   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 z-10" />
 
   {/* Hero Content */}
-  <div className="relative z-20 text-white max-w-4xl mx-auto px-4 pt-24 sm:pt-32 pb-6">
-    <h1 className="text-4xl sm:text-6xl lg:text-6xl font-light mb-6 lg:pt-20 text-[#dbbb90] font-serif">
-      Luxury Living Reimagined
-    </h1>
-    
-    <p className="text-base sm:text-xl uppercase max-w-2xl mx-auto text-gray-200 leading-tight tracking-wider font-serif mb-8 sm:mb-12">
-      EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
-    </p>
+  <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-96">
+    <div className="text-center">
+      <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-4 text-white font-serif leading-tight tracking-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(219,187,144,0.5)' }}>
+        Luxury Living Reimagined
+      </h1>
+      
+      <p className="text-sm sm:text-lg lg:text-xl uppercase text-[#dbbb90] leading-tight tracking-widest font-serif font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+        EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
+      </p>
+    </div>
   </div>
 
   {/* Search Form */}
-  <div className="relative z-20 text-white px-2 sm:px-6 lg:px-8 container w-full mb-6 sm:mb-12">
-    <div className="w-full">
+  <div className="relative z-20 text-white w-full mb-6 sm:mb-12 flex justify-center items-center px-4">
+    <div className="w-full max-w-5xl mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 p-4 sm:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/20 shadow-2xl">
         
             {/* Location */}
