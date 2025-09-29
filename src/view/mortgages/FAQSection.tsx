@@ -8,48 +8,52 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "How to calculate mortgage affordability?",
-      answer: "Need a mortgage to buy property in Dubai? Your mortgage loan eligibility primarily depends on the bank's policies and your monthly and annual income. Some banks impose a cap on mortgages in Dubai, allowing you to borrow no more than 7 times your annual income (equivalent to 84 months), with total liability repayments not exceeding 50% of your monthly salary. Other factors influencing mortgage affordability include age, nationality, employment type, and credit history. It is best to seek guidance from mortgage brokers in Dubai, as they can offer personalized advice tailored to your circumstances."
+      question: "How does Apricity Real Estate help with mortgage affordability calculations?",
+      answer: "At Apricity Real Estate, our expert mortgage advisors provide personalized affordability calculations based on your unique financial situation. We work with over 20 major banks in Dubai to ensure you get the best possible terms. Your mortgage eligibility depends on factors like income (typically 7x annual income cap), employment type, nationality, and credit history. Our team provides comprehensive guidance tailored to your circumstances, helping you understand exactly how much you can borrow and what your monthly payments will be."
     },
     {
-      question: "What is the difference between a flat rate and a reducing rate of interest?",
-      answer: "A Flat Rate is the interest rate that remains the same throughout the mortgage repayment duration as it is calculated against the total principal amount. Meanwhile, a Reduced Interest Rate, also called a diminishing interest rate, is calculated monthly on the outstanding balance rather than the original amount. It is best to confirm with your mortgage advisor which rate structure works best for your financial situation."
+      question: "What makes Apricity Real Estate's mortgage services different?",
+      answer: "Apricity Real Estate stands out with our premium mortgage advisory services. We offer exclusive partnerships with leading UAE banks, competitive interest rates starting from 2.5%, and 24-hour pre-approval processing. Our experienced team provides end-to-end support, from initial consultation to loan approval, ensuring a seamless experience. We've successfully financed over 500+ luxury properties in Dubai, making us the trusted choice for discerning clients seeking premium real estate financing solutions."
     },
     {
-      question: "Why do banks require a security check when getting a mortgage?",
-      answer: "Banks require security checks to assess the borrower's creditworthiness and financial stability. This helps them determine the risk level and appropriate interest rates for the mortgage loan."
+      question: "What is the difference between flat rate and reducing rate mortgages?",
+      answer: "A flat rate mortgage calculates interest on the total principal amount throughout the loan term, keeping your monthly payments consistent. A reducing rate (diminishing rate) calculates interest only on the outstanding balance, meaning your interest payments decrease over time as you pay down the principal. At Apricity Real Estate, we help you understand both options and recommend the best structure for your financial goals. Most UAE banks offer reducing rate mortgages, which are generally more cost-effective for long-term borrowers."
     },
     {
-      question: "What is a security check?",
-      answer: "A security check is a comprehensive review of your financial background, including credit history, employment verification, and income assessment to evaluate your ability to repay the mortgage loan."
+      question: "Why do banks require security checks for mortgages in Dubai?",
+      answer: "Security checks are essential for banks to assess your creditworthiness and financial stability. These checks include credit history review, employment verification, income assessment, and background checks. At Apricity Real Estate, we guide you through this process, ensuring all documentation is properly prepared to maximize your approval chances. Our relationships with major banks help streamline this process, often resulting in faster approvals and better terms."
     },
     {
-      question: "Can my housing allowance be taken into account for my mortgage?",
-      answer: "Yes, in many cases, housing allowances can be considered as part of your income when calculating mortgage affordability. However, this depends on the specific bank's policies and the stability of your housing allowance."
+      question: "Can housing allowances and bonuses be included in mortgage calculations?",
+      answer: "Yes, many banks in Dubai consider housing allowances and regular bonuses as part of your income for mortgage calculations. Typically, 50-100% of housing allowances and 30-50% of documented bonuses can be included. At Apricity Real Estate, we work with banks that offer the most favorable terms for including these income sources, helping you maximize your borrowing capacity. We ensure all income sources are properly documented to meet bank requirements."
     },
     {
-      question: "Can my bonus be taken into account for my mortgage?",
-      answer: "Some banks may consider bonuses as part of your income, but typically only if they are regular and documented. The percentage of bonus income that can be considered varies by bank."
+      question: "What is an NOC and when is it required?",
+      answer: "NOC (No Objection Certificate) is a document confirming no legal objections to a property transaction. It's typically required for certain property types, developments, or when dealing with specific authorities. At Apricity Real Estate, our legal team handles all NOC requirements, ensuring smooth property transactions. We work closely with developers, authorities, and banks to obtain necessary certificates, saving you time and potential complications."
     },
     {
-      question: "What is an NOC?",
-      answer: "NOC stands for No Objection Certificate. It's a document that may be required by some banks or authorities to confirm that there are no legal objections to the property transaction."
+      question: "Is mortgage protection insurance available in Dubai?",
+      answer: "Yes, comprehensive mortgage protection insurance is available in the UAE, covering mortgage payments in case of accident, sickness, or unemployment. At Apricity Real Estate, we partner with leading insurance providers to offer competitive protection plans. This insurance provides peace of mind and is often required by banks for certain loan amounts. Our advisors help you choose the right coverage level based on your specific needs and budget."
     },
     {
-      question: "Is it possible to get insurance to cover my mortgage payments in the event of an accident, sickness or unemployment?",
-      answer: "Yes, mortgage protection insurance is available in the UAE. This type of insurance can help cover your mortgage payments if you become unable to work due to accident, sickness, or unemployment."
+      question: "Can non-resident investors get mortgages for Dubai properties?",
+      answer: "Absolutely! Non-resident investors can obtain mortgages in Dubai, though terms may differ from resident loans. Typically, non-residents need higher down payments (25-50%) and may face different interest rates. At Apricity Real Estate, we specialize in helping international investors secure financing for Dubai properties. Our extensive network of international banks and our expertise in cross-border transactions make us the ideal partner for non-resident property investments."
     },
     {
-      question: "Can non-resident investors get mortgage loans on properties in Dubai?",
-      answer: "Yes, non-resident investors can obtain mortgage loans in Dubai, but the terms and conditions may differ from those available to residents. Typically, higher down payments and different interest rates may apply."
+      question: "How does Apricity Real Estate handle off-plan property financing?",
+      answer: "Apricity Real Estate has extensive experience with off-plan property financing in Dubai. We work with banks that offer construction-linked payment plans, where you only pay interest during construction and principal payments begin upon completion. Our team ensures proper documentation, handles developer agreements, and manages the entire financing process. We've successfully financed numerous off-plan projects across Dubai's most prestigious developments."
     },
     {
-      question: "Can I get a loan for an off-plan property in Dubai?",
-      answer: "Yes, many banks offer financing for off-plan properties in Dubai. However, the terms and conditions may be different from completed properties, and you may need to meet specific criteria."
+      question: "What insurance requirements exist for UAE mortgages?",
+      answer: "Most UAE banks require property insurance (building insurance) and may require life insurance for the mortgage amount. At Apricity Real Estate, we coordinate with insurance providers to ensure you meet all bank requirements while getting competitive rates. Our insurance partners offer comprehensive coverage options, and we handle all documentation to ensure smooth loan processing. We also help you understand optional coverage that might benefit your specific situation."
     },
     {
-      question: "Are there insurance requirements for mortgages in the UAE?",
-      answer: "Yes, most banks require property insurance and may also require life insurance as part of the mortgage agreement. The specific requirements vary by bank and loan amount."
+      question: "How long does the mortgage approval process take with Apricity Real Estate?",
+      answer: "With Apricity Real Estate's streamlined process and bank partnerships, we typically achieve pre-approval within 24 hours and full approval within 5-7 business days. Our experienced team ensures all documentation is complete and accurate from the start, avoiding delays. We maintain direct relationships with bank decision-makers, allowing for faster processing and better communication throughout the approval process."
+    },
+    {
+      question: "What are the current mortgage interest rates in Dubai?",
+      answer: "Current mortgage rates in Dubai start from 2.5% for residents and vary based on loan-to-value ratio, property type, and borrower profile. At Apricity Real Estate, we negotiate competitive rates with our partner banks, often securing rates below market average for our clients. Rates are typically lower for completed properties compared to off-plan, and residents generally receive better rates than non-residents. Our advisors provide real-time rate information and help you secure the best possible terms."
     }
   ];
 
@@ -58,34 +62,57 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto">
-          <h2 className="text-4xl font-bold text-blue-900 mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
+    <section className="py-20 bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] relative overflow-hidden">
+      {/* Luxury Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#dbbb90]/3 via-transparent to-[#C2A17B]/3"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#dbbb90]/20 to-transparent"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6">
+              <span className="text-[#dbbb90] text-xs font-serif font-medium tracking-[0.3em] uppercase">
+                APRICITY MORTGAGE FAQS
+              </span>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8 text-[#1A202C] leading-tight tracking-wide">
+              <span className="text-[#dbbb90] font-normal">Expert</span> Answers to
+              <br />
+              <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-600 mt-2 block">
+                Your Mortgage Questions
+              </span>
+            </h2>
+            <p className="max-w-3xl mx-auto text-base font-light text-gray-600 leading-relaxed font-serif">
+              Get comprehensive answers to all your mortgage questions from <span className="text-[#dbbb90] font-medium">Apricity Real Estate's</span> 
+              expert team. We're here to guide you through every step of your mortgage journey.
+            </p>
+          </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+              <div key={index} className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gradient-to-r hover:from-[#dbbb90]/5 hover:to-transparent transition-all duration-300"
                 >
-                  <span className="font-medium text-gray-900 pr-4">
+                  <span className="font-serif font-medium text-[#1A202C] pr-6 text-lg leading-relaxed">
                     {faq.question}
                   </span>
-                  {expandedIndex === index ? (
-                    <Minus className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                  ) : (
-                    <Plus className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                  )}
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#dbbb90]/10 flex items-center justify-center group-hover:bg-[#dbbb90]/20 transition-colors duration-300">
+                    {expandedIndex === index ? (
+                      <Minus className="w-5 h-5 text-[#dbbb90]" />
+                    ) : (
+                      <Plus className="w-5 h-5 text-[#dbbb90]" />
+                    )}
+                  </div>
                 </button>
                 
                 {expandedIndex === index && (
-                  <div className="px-6 pb-4">
-                    <div className="border-t border-gray-200 pt-4">
-                      <p className="text-gray-600 leading-relaxed">
+                  <div className="px-8 pb-6">
+                    <div className="border-t border-[#dbbb90]/20 pt-6">
+                      <p className="text-gray-700 leading-relaxed font-serif text-base">
                         {faq.answer}
                       </p>
                     </div>
@@ -93,6 +120,27 @@ export default function FAQSection() {
                 )}
               </div>
             ))}
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center mt-16">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl">
+              <h3 className="text-2xl font-serif font-light text-[#1A202C] mb-4">
+                Still Have Questions?
+              </h3>
+              <p className="text-gray-600 font-serif mb-6">
+                Our <span className="text-[#dbbb90] font-medium">Apricity Real Estate</span> mortgage experts are here to help.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="group relative bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#dbbb90] text-white px-8 py-4 text-lg font-serif font-medium tracking-wider rounded-xl shadow-xl hover:shadow-2xl uppercase transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-[#dbbb90]/20">
+                  <span className="relative z-10">Get Expert Consultation</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </button>
+                <button className="bg-white/50 hover:bg-white/70 text-[#1A202C] border border-[#dbbb90]/30 hover:border-[#dbbb90] px-8 py-4 text-lg font-serif font-medium tracking-wider rounded-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 backdrop-blur-sm">
+                  <span>Call +971-55-877-7152</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

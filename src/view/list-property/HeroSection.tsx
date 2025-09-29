@@ -28,7 +28,7 @@ function HeroSection() {
                   <span className="text-white font-bold text-lg">S</span>
                 </div>
                 <div className="text-center">
-                  <p className="text-white text-xs font-bold">PROVIDENT</p>
+                  <p className="text-white text-xs font-bold">APRICITY</p>
                   <p className="text-white text-xs">BROKER</p>
                 </div>
               </div>

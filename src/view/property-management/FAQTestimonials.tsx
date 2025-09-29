@@ -25,7 +25,7 @@ const testimonials = [
     time: "1 year ago",
     rating: 5,
     title: "Finding Reliable Tenants Quickly",
-    review: "I was having a hard time finding reliable tenants for my rental property. Provident stepped in and took over the tenant screening process. Within just...",
+    review: "I was having a hard time finding reliable tenants for my rental property. Apricity stepped in and took over the tenant screening process. Within just...",
     avatar: "/placeholder-user.jpg"
   },
   {
@@ -33,7 +33,7 @@ const testimonials = [
     time: "1 year ago",
     rating: 5,
     title: "Overseas Property Management Made Easy",
-    review: "Being an overseas property owner, managing maintenance issues was quite challenging. Provident's team managed everything, from",
+    review: "Being an overseas property owner, managing maintenance issues was quite challenging. Apricity's team managed everything, from",
     avatar: "/placeholder-user.jpg"
   },
   {
@@ -41,7 +41,7 @@ const testimonials = [
     time: "1 year ago",
     rating: 5,
     title: "Stress-Free Tenant Eviction and New Tenants",
-    review: "I had a difficult situation with a tenant that needed to be evicted. Provident's team expertly navigated the legal process and",
+    review: "I had a difficult situation with a tenant that needed to be evicted. Apricity's team expertly navigated the legal process and",
     avatar: "/placeholder-user.jpg"
   }
 ];
@@ -59,7 +59,7 @@ export default function FAQTestimonials() {
         {/* FAQ Section */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-blue-900 text-center mb-12">
-            FAQs About Provident Property Management Service Dubai
+            FAQs About Apricity Property Management Service Dubai
           </h2>
           
           <div className="max-w-4xl mx-auto space-y-4">

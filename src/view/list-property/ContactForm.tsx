@@ -49,9 +49,9 @@ function ContactForm() {
             </div>
 
             <p className="text-gray-600 text-lg leading-relaxed">
-              For over 16 years, Provident has been the go-to choice for landlords and homeowners. 
+              For over 16 years, Apricity has been the go-to choice for landlords and homeowners. 
               With a dedicated team of over 200 area specialists, we specialize in maximizing your returns. 
-              Don't miss out on our expertise. Contact Provident today!
+              Don't miss out on our expertise. Contact Apricity today!
             </p>
           </div>
 

@@ -2,7 +2,7 @@ import { Input } from "@/src/components/ui/input";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Phone, Mail, MapPin } from "lucide-react";
 
 const sitemapLinks = [
   { href: "/buy", label: "Buy" },
@@ -141,11 +141,15 @@ export default function Footer() {
               </h4>
               <address className="not-italic space-y-4 text-sm">
                 <div className="flex items-start space-x-3">
-                  <div className="w-1 h-1 bg-[#dbbb90] rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-5 h-5 bg-[#dbbb90]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                    <MapPin className="w-3 h-3 text-[#dbbb90]" />
+                  </div>
                   <p className="text-gray-700 font-serif">Dubai, UAE</p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-1 h-1 bg-[#dbbb90] rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-5 h-5 bg-[#dbbb90]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                    <Phone className="w-3 h-3 text-[#dbbb90]" />
+                  </div>
                   <a
                     href="tel:+971558777152"
                     className="text-gray-700 hover:text-[#dbbb90] transition-colors duration-300 font-serif"
@@ -154,7 +158,9 @@ export default function Footer() {
                   </a>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-1 h-1 bg-[#dbbb90] rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-5 h-5 bg-[#dbbb90]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                    <Mail className="w-3 h-3 text-[#dbbb90]" />
+                  </div>
                   <a
                     href="mailto:athomson@apricityrealestate.ae"
                     className="text-gray-700 hover:text-[#dbbb90] transition-colors duration-300 font-serif break-all"

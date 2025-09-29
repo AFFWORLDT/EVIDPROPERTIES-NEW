@@ -10,19 +10,19 @@ export default function ClientTestimonials() {
       name: "David E",
       time: "1 year ago",
       title: "Amazing Rental Experience",
-      review: "Renting my property on a short-term basis with Provident has been a fantastic experience. They handled everything, ensuring high occupancy and satisfied guests."
+      review: "Renting my property on a short-term basis with Apricity has been a fantastic experience. They handled everything, ensuring high occupancy and satisfied guests."
     },
     {
       name: "Fatima A.",
       time: "1 year ago", 
       title: "Best Short-Term Rental Services",
-      review: "Provident's short-term rental service has been amazing. They handled everything, from marketing my property to managing guest stays. I'm thrilled with the results."
+      review: "Apricity's short-term rental service has been amazing. They handled everything, from marketing my property to managing guest stays. I'm thrilled with the results."
     },
     {
       name: "Omar F.",
       time: "1 year ago",
       title: "The Team has it all Handled", 
-      review: "I couldn't be happier with Provident's short-term rental service. They maximise the rental income, take care of maintenance, and ensure a smooth guest experience.",
+      review: "I couldn't be happier with Apricity's short-term rental service. They maximise the rental income, take care of maintenance, and ensure a smooth guest experience.",
       rating: 4
     }
   ];

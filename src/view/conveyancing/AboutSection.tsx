@@ -12,7 +12,7 @@ export default function AboutSection() {
           {/* Content */}
           <div className="order-2 lg:order-1">
             <h2 className="text-4xl font-bold text-blue-900 mb-6">
-              About Conveyance with Provident
+              About Conveyance with Apricity
             </h2>
             
             <h3 className="text-xl font-bold text-gray-800 mb-6">

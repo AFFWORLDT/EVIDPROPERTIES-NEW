@@ -23,7 +23,7 @@ export default function WhyUsSection() {
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl">
               <Image
                 src="/images/team-awards.jpg"
-                alt="Provident Team with Awards"
+                alt="Apricity Team with Awards"
                 fill
                 className="object-cover"
               />
@@ -37,7 +37,7 @@ export default function WhyUsSection() {
             </h2>
             
             <p className="text-lg text-gray-700 leading-relaxed">
-              Provident Estate is one of Dubai's best property management companies with a proven track record. We provide tailor-made services that ensure the best returns on investment.
+              Apricity Real Estate is one of Dubai's best property management companies with a proven track record. We provide tailor-made services that ensure the best returns on investment.
             </p>
 
             <div className="space-y-4">

@@ -23,7 +23,7 @@ export default function MainContent() {
           {/* Content */}
           <div className="order-1 lg:order-2">
             <h2 className="text-4xl font-bold text-blue-900 mb-6">
-              Why Mortgages With Provident?
+              Why Mortgages With Apricity?
             </h2>
             
             <div className="space-y-6 text-gray-700 leading-relaxed">

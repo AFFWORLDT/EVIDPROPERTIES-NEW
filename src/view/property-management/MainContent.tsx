@@ -17,7 +17,7 @@ export default function MainContent() {
             
             <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
               <p>
-                Owning a lucrative rental property requires significant time, expertise, and know-how. Let Provident alleviate the burden and hassle associated with property management.
+                Owning a lucrative rental property requires significant time, expertise, and know-how. Let Apricity Real Estate alleviate the burden and hassle associated with property management.
               </p>
               
               <p>

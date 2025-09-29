@@ -282,7 +282,7 @@ export default function Header() {
                 )}
               >
                 <Globe className="h-4 w-4" />
-                <span className="text-sm font-medium underline">USD</span>
+                <span className="text-sm font-medium underline">AED</span>
                 <ChevronDown className="h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
