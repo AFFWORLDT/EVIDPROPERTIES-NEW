@@ -32,22 +32,22 @@ export default function Property() {
 
   return (
     <div className="min-h-screen bg-[#F2EEE8] text-[#1A202C]">
-      <main className="container mx-auto py-12 px-4 md:px-6 lg:px-8">
-        <section className="text-center mb-12">
+      <main className="container mx-auto py-8 sm:py-12 px-3 sm:px-4 md:px-6 lg:px-8">
+        <section className="text-center mb-8 sm:mb-12">
           <h2 className="text-black text-sm font-light tracking-widest mb-2 uppercase">
             FEATURED PROPERTIES
           </h2>
-          <h1 className="text-3xl sm:text-4xl font-mono mb-4 text-[#1A202C] tracking-wide">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-mono mb-3 sm:mb-4 text-[#1A202C] tracking-wide px-2">
             Handpicked Luxury Listings in Dubai
           </h1>
-          <p className="max-w-2xl mx-auto text-sm font-light text-gray-700 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-xs sm:text-sm font-light text-gray-700 leading-relaxed px-4">
             Step into a realm of unparalleled sophistication with our featured
             properties. Explore these exclusive gems and envision your next
             luxurious retreat with Apricity Realestate.
           </p>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 items-stretch">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 items-stretch">
           {loading ? (
             // Loading skeleton
             Array.from({ length: 3 }).map((_, i) => (
