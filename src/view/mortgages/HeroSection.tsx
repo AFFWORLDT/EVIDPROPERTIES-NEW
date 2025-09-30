@@ -92,7 +92,7 @@ export default function HeroSection() {
               <div className="text-white/80 font-serif text-sm uppercase tracking-wider">Properties Financed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-serif font-light text-[#dbbb90] mb-2">2.5%</div>
+              <div className="text-3xl font-serif font-light text-[#dbbb90] mb-2">3.75%</div>
               <div className="text-white/80 font-serif text-sm uppercase tracking-wider">Starting Interest Rate</div>
             </div>
             <div className="text-center">

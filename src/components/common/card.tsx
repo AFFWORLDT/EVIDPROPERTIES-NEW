@@ -27,8 +27,8 @@ export function PropertyCard({
   propertyId,
 }: PropertyCardProps) {
   return (
-    <Card className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border">
-      <div className="relative w-full h-80">
+    <Card className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border h-full flex flex-col">
+      <div className="relative w-full h-80 flex-shrink-0">
         <Image
           src={photos}
           alt={title}
@@ -52,7 +52,7 @@ export function PropertyCard({
           <span className="sr-only">Add to favorites</span>
         </Button>
       </div>
-      <CardContent className="grid gap-2 px-4 py-3">
+      <CardContent className="flex flex-col flex-grow px-4 py-3">
         <div className="flex items-center justify-between">
           <h3
             className="text-lg font-light text-[#1A202C] tracking-wide line-clamp-1"
@@ -69,7 +69,7 @@ export function PropertyCard({
         <p className="text-xl font-light text-[#1A202C] tracking-wide">
           {price}
         </p>
-        <div className="flex items-end gap-11 text-gray-600 text-sm mt-2 font-light">
+        <div className="flex items-end gap-11 text-gray-600 text-sm mt-2 font-light mt-auto">
           <div className="flex items-center gap-1">
             <Bed className="w-4 h-4" />
             <span>{bedrooms}</span>

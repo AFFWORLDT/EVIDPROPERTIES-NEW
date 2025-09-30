@@ -111,7 +111,7 @@ export default function HeroSection() {
                   <SelectItem value="palm-jumeirah">Palm Jumeirah</SelectItem>
                   <SelectItem value="business-bay">Business Bay</SelectItem>
                   <SelectItem value="jlt">JLT</SelectItem>
-                  <SelectItem value="deira">Deira</SelectItem>
+                  {/* <SelectItem value="deira">Deira</SelectItem> */}
                 </SelectContent>
               </Select>
             </div>

@@ -645,7 +645,7 @@ function Rent() {
             ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 container my-4 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 container my-4 mx-auto items-stretch">
           {property?.map((item: any, index: number) => (
             <RentCard
               key={item.id ?? index}

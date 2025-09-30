@@ -40,14 +40,14 @@ export default function Property() {
           <h1 className="text-3xl sm:text-4xl font-mono mb-4 text-[#1A202C] tracking-wide">
             Handpicked Luxury Listings in Dubai
           </h1>
-          <p className="max-w-4xl mx-auto text-sm font-light text-gray-700 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-sm font-light text-gray-700 leading-relaxed">
             Step into a realm of unparalleled sophistication with our featured
             properties. Explore these exclusive gems and envision your next
             luxurious retreat with Apricity Realestate.
           </p>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 items-stretch">
           {loading ? (
             // Loading skeleton
             Array.from({ length: 3 }).map((_, i) => (
@@ -67,7 +67,7 @@ export default function Property() {
                 price={obj?.price ? `${obj.price.toLocaleString()}د` : "Price on Request"}
                 bedrooms={obj?.bedRooms || 0}
                 bathrooms={obj?.bathrooms || 0}
-                area={obj?.sqft ? `${obj.sqft.toLocaleString()} sqft` : "Area not specified"}
+                area={obj?.size ? `${obj.size.toLocaleString()} sqft` : "Area not specified"}
                 propertyId={obj?.id || obj?.ownPortal_agent_Id || "N/A"}
                 key={i}
               />

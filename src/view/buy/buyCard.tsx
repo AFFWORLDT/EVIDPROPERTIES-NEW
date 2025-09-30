@@ -63,8 +63,8 @@ export function BuyCard({ data, onFavorite }: BuyCardProps) {
     : "Price on request"
 
   return (
-    <Card className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border cursor-pointer" onClick={() => router.push(`/buy/details/${data.id}`)}>
-      <div className="relative w-full h-80">
+    <Card className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border cursor-pointer h-full flex flex-col" onClick={() => router.push(`/buy/details/${data.id}`)}>
+      <div className="relative w-full h-80 flex-shrink-0">
         <Image
           src={imageUrl}
           alt={data?.title || "Property image"}
@@ -90,7 +90,7 @@ export function BuyCard({ data, onFavorite }: BuyCardProps) {
         </Button>
       </div>
 
-      <CardContent className="grid gap-2 px-4 py-3">
+      <CardContent className="flex flex-col flex-grow px-4 py-3">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-mono text-[#1A202C] tracking-wide">
             {data?.title}
@@ -104,7 +104,7 @@ export function BuyCard({ data, onFavorite }: BuyCardProps) {
           {formattedPrice}
         </p>
 
-        <div className="flex items-end justify-between text-gray-600 text-sm mt-2 font-light">
+        <div className="flex items-end justify-between text-gray-600 text-sm mt-2 font-light mt-auto">
           <div className="flex items-end gap-8">
             <div className="flex items-center gap-1">
               <Bed className="w-4 h-4" />

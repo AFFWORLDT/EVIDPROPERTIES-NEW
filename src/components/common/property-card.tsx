@@ -27,8 +27,8 @@ interface PropertyData {
 export default function PropertyCard({ data }: { data?: PropertyData }) {
     const router = useRouter();
   return (
-    <Card className="overflow-hidden border-none p-0 shadow-2xl hover:shadow-3xl border-2 rounded-2xl bg-white/90 backdrop-blur-sm border-white/20 transition-all duration-500 group cursor-pointer" onClick={() => router.push(`/offPlans/details/${data?.id}`)}>
-      <div className="relative w-full h-96 overflow-hidden">
+    <Card className="overflow-hidden border-none p-0 shadow-2xl hover:shadow-3xl border-2 rounded-2xl bg-white/90 backdrop-blur-sm border-white/20 transition-all duration-500 group cursor-pointer h-full flex flex-col" onClick={() => router.push(`/offPlans/details/${data?.id}`)}>
+      <div className="relative w-full h-96 overflow-hidden flex-shrink-0">
         <Image
           src={data?.photos?.[0] ?? "/placeholder.jpg"}
           alt={`Image of ${data?.name}`}
@@ -50,11 +50,11 @@ export default function PropertyCard({ data }: { data?: PropertyData }) {
           <span className="font-light ml-1">د.إ</span>
         </div>
       </div>
-      <CardContent className="p-8">
+      <CardContent className="p-8 flex flex-col flex-grow">
         <CardTitle className="text-2xl font-serif font-light text-[#1A202C] mb-3 tracking-wide group-hover:text-[#dbbb90] transition-colors duration-300">
           {data?.name ?? "Unnamed Property"}
         </CardTitle>
-        <p className="text-sm uppercase tracking-wider text-gray-600 font-serif font-light">
+        <p className="text-sm uppercase tracking-wider text-gray-600 font-serif font-light mt-auto">
           {`${data?.location?.community ?? ""}${
             data?.location?.community && data?.location?.city ? ", " : ""
           }${data?.location?.city ?? ""}`}
