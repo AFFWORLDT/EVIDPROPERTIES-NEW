@@ -144,9 +144,9 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="Apricity Realestate Logo"
-              width={200}
-              height={70}
-              className="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 h-12 w-auto sm:h-14 md:h-16 lg:h-18"
+              width={150}
+              height={50}
+              className="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 h-8 w-auto sm:h-10 md:h-12 lg:h-14"
               priority
             />
           </Link>
