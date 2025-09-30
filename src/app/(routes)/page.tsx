@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <div className="bg-[#fff]">
       <HeroSection />
-      <Communities />
-      <Property />
       <Feature />
+      <Property />
+      <Communities />
       <CallToAction />
     </div>
   );

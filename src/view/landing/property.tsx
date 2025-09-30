@@ -65,8 +65,8 @@ export default function Property() {
                 title={obj?.title || "Property Title"}
                 location={`${obj?.location?.city || ""} ${obj?.location?.community || ""} ${obj?.location?.sub_community || ""}`.trim() || "Dubai, UAE"}
                 price={obj?.price ? `${obj.price.toLocaleString()}د` : "Price on Request"}
-                bedrooms={obj?.beds || 0}
-                bathrooms={obj?.baths || 0}
+                bedrooms={obj?.bedRooms || 0}
+                bathrooms={obj?.bathrooms || 0}
                 area={obj?.sqft ? `${obj.sqft.toLocaleString()} sqft` : "Area not specified"}
                 propertyId={obj?.id || obj?.ownPortal_agent_Id || "N/A"}
                 key={i}
