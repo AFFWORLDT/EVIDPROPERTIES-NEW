@@ -37,13 +37,8 @@ export default function Feature() {
             </span>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>
           </div>
-<<<<<<< HEAD
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8 text-[#1A202C] leading-tight tracking-wide">
             <span className="text-[#1A202C] font-normal">Luxury</span> Unveiled
-=======
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-light mb-4 sm:mb-6 md:mb-8 text-[#1A202C] leading-tight tracking-wide px-2">
-            <span className="text-[#dbbb90] font-normal">Luxury</span> Unveiled
->>>>>>> c10c545b6889a07a130a0f12a70e76e6c1f6012c
             <br />
             <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-gray-600 mt-1 sm:mt-2 block">
               Comfort & Sophistication

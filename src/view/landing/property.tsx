@@ -37,21 +37,11 @@ export default function Property() {
           <h2 className="text-black text-sm font-light tracking-widest mb-2 uppercase">
             FEATURED PROPERTIES
           </h2>
-<<<<<<< HEAD
           <h1 className="text-3xl sm:text-4xl font-mono mb-4 text-[#1A202C] tracking-wide">
             Properties for Sale in UAE
           </h1>
           <p className="max-w-2xl mx-auto text-sm font-light text-gray-700 leading-relaxed">
             Explore our selection of ready made properties in the UAE with guidance from one of our experienced experts
-=======
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-mono mb-3 sm:mb-4 text-[#1A202C] tracking-wide px-2">
-            Handpicked Luxury Listings in Dubai
-          </h1>
-          <p className="max-w-2xl mx-auto text-xs sm:text-sm font-light text-gray-700 leading-relaxed px-4">
-            Step into a realm of unparalleled sophistication with our featured
-            properties. Explore these exclusive gems and envision your next
-            luxurious retreat with Apricity Realestate.
->>>>>>> c10c545b6889a07a130a0f12a70e76e6c1f6012c
           </p>
         </section>
 

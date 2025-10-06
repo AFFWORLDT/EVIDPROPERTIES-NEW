@@ -79,26 +79,14 @@ export default function HeroSection() {
   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 z-10" />
 
   {/* Hero Content */}
-<<<<<<< HEAD
   <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-96">
     <div className="text-center">
       <h1 className="text-4xl sm:text-6xl lg:text-7xl font-normal mb-4 text-[#1A202C] font-serif leading-tight tracking-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(219,187,144,0.5)' }}>
         Real Estate – Refined for you
-        
       </h1>
       
       <p className="text-sm sm:text-lg lg:text-xl uppercase text-[#dbbb90] leading-tight tracking-widest font-serif font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
         A boutique real estate company curating properties with care and integrity
-=======
-  <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-32 sm:pt-48 md:pt-64 lg:pt-80 xl:pt-96">
-    <div className="text-center max-w-4xl mx-auto">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 sm:mb-4 md:mb-6 text-white font-serif leading-tight tracking-tight px-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(219,187,144,0.5)' }}>
-        Luxury Living Reimagined
-      </h1>
-      
-      <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl uppercase text-[#dbbb90] leading-tight tracking-widest font-serif font-bold px-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-        EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
->>>>>>> c10c545b6889a07a130a0f12a70e76e6c1f6012c
       </p>
     </div>
   </div>
