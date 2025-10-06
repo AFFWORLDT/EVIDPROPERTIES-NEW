@@ -80,12 +80,13 @@ export default function HeroSection() {
   {/* Hero Content */}
   <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-96">
     <div className="text-center">
-      <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-4 text-white font-serif leading-tight tracking-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(219,187,144,0.5)' }}>
-        Luxury Living Reimagined
+      <h1 className="text-4xl sm:text-6xl lg:text-7xl font-normal mb-4 text-[#1A202C] font-serif leading-tight tracking-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(219,187,144,0.5)' }}>
+        Real Estate – Refined for you
+        
       </h1>
       
       <p className="text-sm sm:text-lg lg:text-xl uppercase text-[#dbbb90] leading-tight tracking-widest font-serif font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-        EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
+        A boutique real estate company curating properties with care and integrity
       </p>
     </div>
   </div>

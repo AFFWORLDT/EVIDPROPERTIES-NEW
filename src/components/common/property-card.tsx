@@ -46,7 +46,7 @@ export default function PropertyCard({ data }: { data?: PropertyData }) {
           </div>
         ) : null}
         <div className="absolute bottom-4 right-4 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] text-white text-sm font-serif font-medium px-4 py-2 rounded-full shadow-lg">
-          FROM {data?.newParam?.price?.toLocaleString() ?? "N/A"}
+          FROM {data?.newParam?.price && data.newParam.price > 0 ? data.newParam.price.toLocaleString() : "TBA"}
           <span className="font-light ml-1">د.إ</span>
         </div>
       </div>

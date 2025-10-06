@@ -59,7 +59,7 @@ export function RentCard({ data, onFavorite }: RentCardProps) {
     .join(", ");
 
   const formattedPrice = data.price
-    ? `AED ${data.price.toLocaleString()}`
+    ? `${data.price.toLocaleString()} د.إ`
     : "Price on request";
 
   return (

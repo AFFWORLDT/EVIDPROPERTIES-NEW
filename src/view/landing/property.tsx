@@ -38,12 +38,10 @@ export default function Property() {
             FEATURED PROPERTIES
           </h2>
           <h1 className="text-3xl sm:text-4xl font-mono mb-4 text-[#1A202C] tracking-wide">
-            Handpicked Luxury Listings in Dubai
+            Properties for Sale in UAE
           </h1>
           <p className="max-w-2xl mx-auto text-sm font-light text-gray-700 leading-relaxed">
-            Step into a realm of unparalleled sophistication with our featured
-            properties. Explore these exclusive gems and envision your next
-            luxurious retreat with Apricity Realestate.
+            Explore our selection of ready made properties in the UAE with guidance from one of our experienced experts
           </p>
         </section>
 
@@ -62,9 +60,9 @@ export default function Property() {
             property.map((obj: any, i) => (
               <PropertyCard
                 photos={obj?.photos?.[0] || "/images/placeholder.jpg"}
-                title={obj?.title || "Property Title"}
+                title={`${obj?.location?.community || ""}${obj?.location?.community && obj?.location?.city ? ", " : ""}${obj?.location?.city || ""}`.trim() || "Dubai, UAE"}
                 location={`${obj?.location?.city || ""} ${obj?.location?.community || ""} ${obj?.location?.sub_community || ""}`.trim() || "Dubai, UAE"}
-                price={obj?.price ? `${obj.price.toLocaleString()}د` : "Price on Request"}
+                price={obj?.price ? `${obj.price.toLocaleString()} د.إ` : "Price on Request"}
                 bedrooms={obj?.bedRooms || 0}
                 bathrooms={obj?.bathrooms || 0}
                 area={obj?.size ? `${obj.size.toLocaleString()} sqft` : "Area not specified"}

@@ -96,17 +96,9 @@ export default function TeamPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-gray-800 mb-6 md:mb-8 leading-[0.9] tracking-tight font-serif"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-[#1A202C] mb-6 md:mb-8 leading-[0.9] tracking-tight font-serif"
             >
-              Our <span className="text-[#dbbb90] font-normal relative">
-                Luxury
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 1, delay: 0.8 }}
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] rounded-full"
-                />
-              </span> Team
+              Meet the Team
             </motion.h1>
             
             {/* Subtitle */}
@@ -114,9 +106,9 @@ export default function TeamPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 font-light max-w-5xl mx-auto leading-relaxed px-4 font-serif"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#1A202C] font-light max-w-5xl mx-auto leading-relaxed px-4 font-serif"
             >
-              Meet the exceptional professionals who make luxury real estate dreams come true in Dubai
+              Our experienced advisors to help guide you on your real estate journey in the UAE
             </motion.p>
             
             {/* Decorative Line */}
@@ -168,9 +160,9 @@ export default function TeamPage() {
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-7 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-white/60 hover:border-[#dbbb90]/30 group">
                     {/* Agent Avatar */}
                     <div className="relative mb-4 md:mb-6">
-                      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 mx-auto rounded-full overflow-hidden border-3 md:border-4 border-[#dbbb90] shadow-lg group-hover:shadow-xl group-hover:border-[#C2A17B] transition-all duration-300 relative">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 mx-auto rounded-full overflow-hidden border-3 md:border-4 border-[#1A202C] shadow-lg group-hover:shadow-xl group-hover:border-[#1A202C] transition-all duration-300 relative">
                         {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#dbbb90]/20 to-[#C2A17B]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#1A202C]/20 to-[#1A202C]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
                         {agent.avatar ? (
                           <Image
                             src={agent.avatar}
@@ -180,15 +172,12 @@ export default function TeamPage() {
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 relative z-0"
                           />
                         ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-[#dbbb90] to-[#C2A17B] flex items-center justify-center relative z-0">
+                          <div className="w-full h-full bg-gradient-to-br from-[#1A202C] to-[#1A202C] flex items-center justify-center relative z-0">
                             <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                               {agent.name?.charAt(0) || 'A'}
                             </span>
                           </div>
                         )}
-                      </div>
-                      <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 w-6 h-6 md:w-8 md:h-8 bg-green-500 rounded-full border-2 md:border-4 border-white flex items-center justify-center">
-                        <div className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-full"></div>
                       </div>
                     </div>
 
@@ -198,8 +187,11 @@ export default function TeamPage() {
                         {agent.name}
                       </h3>
                       {agent.team_name && agent.team_name !== 'No team assigned' && (
-                        <p className="text-[#dbbb90] font-medium text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">
-                          {agent.team_name}
+                        <p className="text-[#1A202C] font-medium text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">
+                          {agent.name === 'Aaron Thomson' ? 'Founder/CEO' : 
+                           agent.name === 'Lewis Anderson' ? 'Senior Client Manager' : 
+                           agent.name === 'Admin' ? 'Head of Administration' : 
+                           agent.team_name}
                         </p>
                       )}
                       {agent.experience_years && (
@@ -319,7 +311,7 @@ export default function TeamPage() {
             >
               <div className="flex justify-between items-start mb-4 md:mb-6">
                 <div className="flex items-center gap-3 md:gap-4">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-3 md:border-4 border-[#dbbb90]">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-3 md:border-4 border-[#1A202C]">
                     {selectedAgent.avatar ? (
                       <Image
                         src={selectedAgent.avatar}
@@ -329,7 +321,7 @@ export default function TeamPage() {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-[#dbbb90] to-[#C2A17B] flex items-center justify-center">
+                      <div className="w-full h-full bg-gradient-to-br from-[#1A202C] to-[#1A202C] flex items-center justify-center">
                         <span className="text-xl md:text-2xl font-bold text-white">
                           {selectedAgent.name?.charAt(0) || 'A'}
                         </span>
@@ -341,8 +333,11 @@ export default function TeamPage() {
                       {selectedAgent.name}
                     </h2>
                     {selectedAgent.team_name && selectedAgent.team_name !== 'No team assigned' && (
-                      <p className="text-[#dbbb90] font-medium text-sm md:text-base uppercase tracking-wider">
-                        {selectedAgent.team_name}
+                      <p className="text-[#1A202C] font-medium text-sm md:text-base uppercase tracking-wider">
+                        {selectedAgent.name === 'Aaron Thomson' ? 'Founder/CEO' : 
+                         selectedAgent.name === 'Lewis Anderson' ? 'Senior Client Manager' : 
+                         selectedAgent.name === 'Admin' ? 'Head of Administration' : 
+                         selectedAgent.team_name}
                       </p>
                     )}
                   </div>
@@ -387,16 +382,20 @@ export default function TeamPage() {
 
               {selectedAgent.languages && selectedAgent.languages.length > 0 && (
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Languages</h4>
+                  <h4 className="font-semibold text-[#1A202C] mb-2">Languages</h4>
                   <div className="flex flex-wrap gap-2">
-                    {selectedAgent.languages.map((lang, index) => (
+                    {selectedAgent.languages.map((lang, index) => {
+                      // Remove language code prefixes like "ar:sa/" and clean up the language name
+                      const cleanLang = lang.replace(/^[a-z]{2}:[a-z]{2}\//, '').replace(/^[a-z]{2}\//, '');
+                      return (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-[#dbbb90]/10 text-[#dbbb90] rounded-full text-sm"
+                          className="px-3 py-1 bg-[#1A202C]/10 text-[#1A202C] rounded-full text-sm"
                       >
-                        {lang}
+                          {cleanLang}
                       </span>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}

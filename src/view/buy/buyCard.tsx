@@ -59,7 +59,7 @@ export function BuyCard({ data, onFavorite }: BuyCardProps) {
   ].filter(Boolean).join(", ")
 
   const formattedPrice = data.price
-    ? `AED ${data.price.toLocaleString()}`
+    ? `${data.price.toLocaleString()} د.إ`
     : "Price on request"
 
   return (

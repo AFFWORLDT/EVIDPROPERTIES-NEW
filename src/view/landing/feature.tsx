@@ -33,12 +33,12 @@ export default function Feature() {
         <section className="text-center mb-20">
           <div className="inline-block mb-6">
             <span className="text-[#dbbb90] text-xs font-serif font-medium tracking-[0.3em] uppercase">
-              FEATURED PROJECTS
+              FEATURED NEW PROJECTS
             </span>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8 text-[#1A202C] leading-tight tracking-wide">
-            <span className="text-[#dbbb90] font-normal">Luxury</span> Unveiled
+            <span className="text-[#1A202C] font-normal">Luxury</span> Unveiled
             <br />
             <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-600 mt-2 block">
               Comfort & Sophistication

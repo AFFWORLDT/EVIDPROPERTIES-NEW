@@ -8,8 +8,8 @@ function ContactUs() {
     <div className="luxury-bg">
       <section className="pt-32 pb-16 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-light mb-8 text-gray-800 font-serif leading-tight">
-            <span className="text-[#dbbb90] font-normal">Contact</span> Us
+          <h1 className="text-6xl md:text-7xl font-light mb-8 text-[#1A202C] font-serif leading-tight">
+            <span className="text-[#1A202C] font-normal">Contact</span> Us
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] mx-auto mb-8"></div>
         </div>
@@ -17,16 +17,16 @@ function ContactUs() {
       <div className="flex flex-col lg:flex-row py-20 items-center justify-center container mx-auto max-w-7xl">
         <div className="w-full lg:w-1/2 p-6 md:p-8 lg:pr-16 space-y-8 text-center lg:text-left">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20">
-            <p className="text-[#dbbb90] text-sm font-medium uppercase tracking-widest font-serif mb-4">
-              CONNECT WITH LUXURY
+            <p className="text-[#1A202C] text-sm font-medium uppercase tracking-widest font-serif mb-4">
+              CONNECT WITH OUR EXPERTS
             </p>
-            <h2 className="text-4xl md:text-5xl text-gray-800 leading-tight font-serif mb-6">
-              Get in Touch with <span className="text-[#dbbb90] font-normal">Apricity Realestate</span>
+            <h2 className="text-4xl md:text-5xl text-[#1A202C] leading-tight font-serif mb-6">
+              Get in Touch with <span className="text-[#1A202C] font-normal">apricity real estate</span>
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed font-serif">
+            <p className="text-[#1A202C] text-lg leading-relaxed font-serif">
               Have a question or ready to embark on your real estate journey? Our team is here to assist you every step of
               the way. Reach out to us via phone, email, or simply fill out the contact form below. We look forward to
-              hearing from you!
+              hearing from you
             </p>
           </div>
           <div className="bg-gradient-to-br from-[#dbbb90]/10 to-[#C2A17B]/10 rounded-2xl p-6 border border-[#dbbb90]/20">
@@ -40,9 +40,9 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-gray-800 font-medium font-serif">Address</p>
-                  <p className="text-gray-600 font-serif">..</p>
-                  <p className="text-gray-600 font-serif">Dubai – UAE</p>
+                  <p className="text-[#1A202C] font-medium font-serif">Address</p>
+                  <p className="text-[#1A202C] font-serif">Office 15C, Residence 1072, Al Muteena, Dubai</p>
+                  <p className="text-[#1A202C] font-serif">Dubai – UAE</p>
                 </div>
               </div>
               

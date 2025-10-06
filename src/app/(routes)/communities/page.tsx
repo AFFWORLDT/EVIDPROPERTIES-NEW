@@ -76,16 +76,16 @@ function Communities() {
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#C2A17B]/10 rounded-full blur-3xl"></div>
         
         <div className="relative z-10 mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-light mb-8 text-gray-800 font-serif leading-tight">
-            <span className="text-[#dbbb90] font-normal">Luxury</span> Communities
+          <h1 className="text-6xl md:text-7xl font-light mb-8 text-[#1A202C] font-serif leading-tight">
+            <span className="text-[#1A202C] font-normal">UAE</span> Communities
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] mx-auto mb-8"></div>
         </div>
       </section>
       <div className="mx-auto px-4 py-16 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6 font-serif">
-            Unveiling Dubai&rsquo;s <span className="text-[#dbbb90] font-normal">Vibrant</span> Communities
+          <h2 className="text-4xl md:text-5xl font-light text-[#1A202C] mb-6 font-serif">
+            <span className="text-[#1A202C] font-normal">Neighbourhoods</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-serif">
             Dubai is a city of diverse neighborhoods, each offering a unique
