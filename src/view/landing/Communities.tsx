@@ -103,14 +103,14 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 text-center px-4">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 text-center px-3 sm:px-4">
         <p className="text-[#D4B88C] text-sm uppercase tracking-widest mb-2 font-light">
           COMMUNITIES
         </p>
-        <h1 className="text-3xl sm:text-4xl font-mono text-gray-800 mb-6 tracking-wide">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-mono text-gray-800 mb-4 sm:mb-6 tracking-wide px-2">
           Discover Dubai&apos;s Finest
         </h1>
-        <p className="max-w-4xl mx-auto text-gray-600 text-sm tracking-tight font-light">
+        <p className="max-w-4xl mx-auto text-gray-600 text-xs sm:text-sm tracking-tight font-light px-4">
           Explore the diverse tapestry of Dubai&apos;s most sought-after areas
           and communities. From serene waterfront retreats to bustling urban
           hubs, our curated selection showcases the essence of luxury living in
@@ -119,7 +119,7 @@ export default function Component() {
       </section>
 
       {/* Communities Section - Carousel */}
-      <section className="relative pb-16 px-4 md:px-12">
+      <section className="relative pb-12 sm:pb-16 px-3 sm:px-4 md:px-8 lg:px-12">
         <Carousel
           setApi={setApi}
           opts={{
@@ -133,9 +133,9 @@ export default function Component() {
             {communities?.map((community: any, idx: number) => (
               <CarouselItem
                 key={`${community.id ?? idx}-${idx}`}
-                className="pl-6 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                className="pl-3 sm:pl-6 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
               >
-                <Card className="relative w-full h-[650px] rounded-none overflow-hidden shadow-lg group border-none">
+                <Card className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] rounded-none overflow-hidden shadow-lg group border-none">
                   <CardContent className="p-0 h-full">
                     <Image
                       src={community.photos[0]}
@@ -144,8 +144,8 @@ export default function Component() {
                       style={{ objectFit: "cover" }}
                       className="transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end text-white">
-                      <h3 className="text-2xl font-light mb-2 tracking-wide">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4 md:p-6 flex flex-col justify-end text-white">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-light mb-1 sm:mb-2 tracking-wide">
                         {community.name}
                       </h3>
                       
@@ -163,10 +163,10 @@ export default function Component() {
                         )}
                       </div>
 
-                      <p className="text-sm mb-4 font-light leading-relaxed">
+                      <p className="text-xs sm:text-sm mb-2 sm:mb-3 md:mb-4 font-light leading-relaxed">
                         {community.order_description || `${community.city} - Luxury living at its finest`}
                       </p>
-                      <div className="w-full border-[0.5px] border-white/30 mb-4" />
+                      <div className="w-full border-[0.5px] border-white/30 mb-2 sm:mb-3 md:mb-4" />
                       <Link
                         href={`/communities/details/${encodeURIComponent(community.name)}`}
                         className={cn(

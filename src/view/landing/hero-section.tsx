@@ -66,10 +66,11 @@ export default function HeroSection() {
       muted
       loop
       playsInline
+      preload="metadata"
       className="w-full h-full object-cover z-0"
       style={{ filter: "brightness(1.2) contrast(1.1) saturate(1.1)" }}
     >
-      <source src="/hero_video.mp4" type="video/mp4" />
+      <source src="/HERO2.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
@@ -78,6 +79,7 @@ export default function HeroSection() {
   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 z-10" />
 
   {/* Hero Content */}
+<<<<<<< HEAD
   <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-96">
     <div className="text-center">
       <h1 className="text-4xl sm:text-6xl lg:text-7xl font-normal mb-4 text-[#1A202C] font-serif leading-tight tracking-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(219,187,144,0.5)' }}>
@@ -87,14 +89,24 @@ export default function HeroSection() {
       
       <p className="text-sm sm:text-lg lg:text-xl uppercase text-[#dbbb90] leading-tight tracking-widest font-serif font-bold" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
         A boutique real estate company curating properties with care and integrity
+=======
+  <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-32 sm:pt-48 md:pt-64 lg:pt-80 xl:pt-96">
+    <div className="text-center max-w-4xl mx-auto">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 sm:mb-4 md:mb-6 text-white font-serif leading-tight tracking-tight px-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(219,187,144,0.5)' }}>
+        Luxury Living Reimagined
+      </h1>
+      
+      <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl uppercase text-[#dbbb90] leading-tight tracking-widest font-serif font-bold px-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+        EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
+>>>>>>> c10c545b6889a07a130a0f12a70e76e6c1f6012c
       </p>
     </div>
   </div>
 
   {/* Search Form */}
-  <div className="relative z-20 text-white w-full mb-6 sm:mb-12 flex justify-center items-center px-4">
+  <div className="relative z-20 text-white w-full mb-4 sm:mb-6 md:mb-8 lg:mb-12 flex justify-center items-center px-2 sm:px-4">
     <div className="w-full max-w-5xl mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 p-4 sm:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/20 shadow-2xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4 p-3 sm:p-4 md:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-white/20 shadow-2xl">
         
             {/* Location */}
             <div className="lg:col-span-1 relative">
@@ -102,7 +114,7 @@ export default function HeroSection() {
                 Location
               </div>
               <Select>
-                <SelectTrigger className="w-full h-12 sm:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors">
+                <SelectTrigger className="w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-4 sm:pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors text-sm sm:text-base">
                   <SelectValue placeholder="Any" className="max-sm:hidden pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -123,7 +135,7 @@ export default function HeroSection() {
                 Type
               </div>
               <Select>
-                <SelectTrigger className="w-full h-12 sm:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-5 pb-2">
+                <SelectTrigger className="w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base">
                   <SelectValue placeholder="Any" className="max-sm:hidden pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -145,7 +157,7 @@ export default function HeroSection() {
                 Price
               </div>
               <div
-                className="relative w-full h-12 sm:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent cursor-pointer flex items-center px-3 pt-5 pb-2"
+                className="relative w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent cursor-pointer flex items-center px-3 pt-4 sm:pt-5 pb-2 text-sm sm:text-base"
                 onClick={() => setIsPriceOpen(!isPriceOpen)}
               >
                 <span className="text-white max-sm:text-black max-sm:hidden pt-2">
@@ -213,7 +225,7 @@ export default function HeroSection() {
                 Bedrooms
               </div>
               <Select>
-                <SelectTrigger className="w-full h-12 sm:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-5 pb-2">
+                <SelectTrigger className="w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base">
                   <SelectValue placeholder="Any" className="max-sm:hidden pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -237,13 +249,13 @@ export default function HeroSection() {
               <Input
                 type="text"
                 placeholder=""
-                className="w-full h-12 sm:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-5 pb-2"
+                className="w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base"
               />
             </div>
 
             {/* Search Button */}
             <div className="lg:col-span-1 sm:col-span-2">
-              <Button className="w-full bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 h-12 sm:h-14 uppercase tracking-wider text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              <Button className="w-full bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 h-10 sm:h-12 md:h-14 uppercase tracking-wider text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                 Search
               </Button>
             </div>

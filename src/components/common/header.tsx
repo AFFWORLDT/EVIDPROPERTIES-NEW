@@ -134,8 +134,8 @@ export default function Header() {
     >
       <nav
         className={cn(
-          "container mx-auto flex items-center justify-between px-4 md:px-6",
-          isScrolled ? "h-24" : "h-28"
+          "container mx-auto flex items-center justify-between px-3 sm:px-4 md:px-6",
+          isScrolled ? "h-16 sm:h-20 md:h-24" : "h-20 sm:h-24 md:h-28"
         )}
       >
         {/* Logo */}
@@ -144,9 +144,9 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="Apricity Realestate Logo"
-              width={200}
-              height={70}
-              className="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 h-12 w-auto sm:h-14 md:h-16 lg:h-18"
+              width={150}
+              height={50}
+              className="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 h-8 w-auto sm:h-10 md:h-12 lg:h-14"
               priority
             />
           </Link>
@@ -339,7 +339,7 @@ export default function Header() {
       {/* Mobile Overlay */}
       <div
         data-mobile-overlay
-        className={`fixed top-0 bottom-0 right-0 w-full md:w-1/3 bg-white text-gray-900 z-[100] transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 bottom-0 right-0 w-full sm:w-4/5 md:w-1/2 lg:w-1/3 bg-white text-gray-900 z-[100] transform transition-transform duration-300 ease-in-out ${
           isOverlayOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

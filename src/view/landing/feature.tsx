@@ -29,29 +29,34 @@ export default function Feature() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#dbbb90]/3 via-transparent to-[#C2A17B]/3"></div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#dbbb90]/20 to-transparent"></div>
       
-      <main className="container mx-auto py-20 px-4 md:px-6 lg:px-8 relative z-10">
-        <section className="text-center mb-20">
+      <main className="container mx-auto py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
+        <section className="text-center mb-12 sm:mb-16 md:mb-20">
           <div className="inline-block mb-6">
             <span className="text-[#dbbb90] text-xs font-serif font-medium tracking-[0.3em] uppercase">
               FEATURED NEW PROJECTS
             </span>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>
           </div>
+<<<<<<< HEAD
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8 text-[#1A202C] leading-tight tracking-wide">
             <span className="text-[#1A202C] font-normal">Luxury</span> Unveiled
+=======
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-light mb-4 sm:mb-6 md:mb-8 text-[#1A202C] leading-tight tracking-wide px-2">
+            <span className="text-[#dbbb90] font-normal">Luxury</span> Unveiled
+>>>>>>> c10c545b6889a07a130a0f12a70e76e6c1f6012c
             <br />
-            <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-600 mt-2 block">
+            <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-gray-600 mt-1 sm:mt-2 block">
               Comfort & Sophistication
             </span>
           </h1>
-          <p className="max-w-3xl mx-auto text-base font-light text-gray-600 leading-relaxed font-serif">
+          <p className="max-w-3xl mx-auto text-sm sm:text-base font-light text-gray-600 leading-relaxed font-serif px-4">
             Discover a curated selection of Dubai's most exquisite off-plan projects,
             epitomizing luxury, elegance, and unparalleled design. Each development
             represents the pinnacle of architectural excellence and refined living.
           </p>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 items-stretch">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 mb-12 sm:mb-16 items-stretch">
           {loading ? (
             // Luxury loading skeleton
             Array.from({ length: 6 }).map((_, i) => (
