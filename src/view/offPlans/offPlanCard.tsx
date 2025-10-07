@@ -6,6 +6,7 @@ import {
 } from "@/src/components/ui/card";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { DirhamSymbol } from "@/src/components/common/dirham-symbol";
 
 interface PropertyData {
   id?: string | number;
@@ -48,9 +49,8 @@ export default function OffPlanCard({ data }: { data?: PropertyData }) {
             {data.newParam.totalUnits} UNITS
           </div>
         ) : null}
-        <div className="absolute bottom-4 right-4 bg-white text-sm font-light px-3 py-1 rounded-full shadow-md text-[#1A202C]">
-          FROM {data?.newParam?.price?.toLocaleString() ?? "N/A"}
-          <span className="font-light text-gray-500 ml-1">د.إ</span>
+        <div className="absolute bottom-4 right-4 bg-white text-sm font-light px-3 py-1 rounded-full shadow-md text-[#1A202C] flex items-center gap-1">
+          FROM <DirhamSymbol size={14} /> {data?.newParam?.price?.toLocaleString() ?? "N/A"}
         </div>
       </div>
       <CardContent className="p-6">

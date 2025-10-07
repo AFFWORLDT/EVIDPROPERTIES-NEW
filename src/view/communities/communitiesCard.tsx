@@ -28,9 +28,7 @@ export default function CommunitiesCard({ data }: { data: CommunityData }) {
   return (
     <Card
       className="relative w-[95%] h-[380px] rounded-2xl overflow-hidden shadow-xl group border border-white/20 cursor-pointer luxury-hover"
-      onClick={() =>
-        router.push(`/communities/details/${encodeURIComponent(data?.name)}`)
-      }
+      onClick={() => router.push("/buy")}
     >
       <CardContent className="p-0 h-full">
         <Image
@@ -72,7 +70,7 @@ export default function CommunitiesCard({ data }: { data: CommunityData }) {
           <div className="w-full border-[0.5px] border-white/30 mb-4" />
 
           <Link
-            href={`/communities/details/${encodeURIComponent(data?.name)}`}
+            href="/buy"
             className={cn(
               "relative pb-1 transition-all duration-300 text-[#dbbb90] uppercase text-base font-serif",
               "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",

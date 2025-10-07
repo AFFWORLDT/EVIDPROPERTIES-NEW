@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
 import { Calculator, TrendingUp, Shield, Clock, DollarSign, Percent, Calendar, Home } from 'lucide-react';
+import { DirhamSymbol } from '../../components/common/dirham-symbol';
 
 export default function MortgageCalculator() {
   const [totalPrice, setTotalPrice] = useState(2000000);
@@ -115,7 +116,7 @@ export default function MortgageCalculator() {
                   <div>
                     <label className="flex items-center text-sm font-serif font-medium text-gray-700 mb-3">
                       <DollarSign className="w-4 h-4 text-[#dbbb90] mr-2" />
-                      Property Value (AED)
+                      Property Value (<DirhamSymbol size={14} />)
                     </label>
                     <Input
                       type="number"
@@ -178,8 +179,9 @@ export default function MortgageCalculator() {
                     Your Monthly Payment
                   </h4>
                   <div className="text-center">
-                    <div className="text-4xl font-serif font-light text-[#dbbb90] mb-2">
-                      AED {monthlyPayment.toLocaleString('en-US', { maximumFractionDigits: 0 })}
+                    <div className="text-4xl font-serif font-light text-[#dbbb90] mb-2 flex items-center justify-center gap-2">
+                      <DirhamSymbol size={24} />
+                      {monthlyPayment.toLocaleString('en-US', { maximumFractionDigits: 0 })}
                     </div>
                     <div className="text-gray-600 font-serif">per month</div>
                   </div>
@@ -188,22 +190,25 @@ export default function MortgageCalculator() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                     <div className="text-sm text-gray-600 font-serif mb-2">Loan Amount</div>
-                    <div className="text-xl font-serif font-medium text-[#1A202C]">
-                      AED {loanAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}
+                    <div className="text-xl font-serif font-medium text-[#1A202C] flex items-center gap-1">
+                      <DirhamSymbol size={16} />
+                      {loanAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}
                     </div>
                   </div>
                   <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                     <div className="text-sm text-gray-600 font-serif mb-2">Total Interest</div>
-                    <div className="text-xl font-serif font-medium text-[#1A202C]">
-                      AED {totalInterest.toLocaleString('en-US', { maximumFractionDigits: 0 })}
+                    <div className="text-xl font-serif font-medium text-[#1A202C] flex items-center gap-1">
+                      <DirhamSymbol size={16} />
+                      {totalInterest.toLocaleString('en-US', { maximumFractionDigits: 0 })}
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                   <div className="text-sm text-gray-600 font-serif mb-2">Total Payment</div>
-                  <div className="text-xl font-serif font-medium text-[#1A202C]">
-                    AED {(loanAmount + totalInterest).toLocaleString('en-US', { maximumFractionDigits: 0 })}
+                  <div className="text-xl font-serif font-medium text-[#1A202C] flex items-center gap-1">
+                    <DirhamSymbol size={16} />
+                    {(loanAmount + totalInterest).toLocaleString('en-US', { maximumFractionDigits: 0 })}
                   </div>
                 </div>
 

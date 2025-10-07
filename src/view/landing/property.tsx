@@ -1,6 +1,7 @@
 import { getAllBuyProperties } from "@/src/api/buy";
 import { PropertyCard } from "@/src/components/common/card";
 import { Button } from "@/src/components/ui/button";
+import { DirhamSymbol } from "@/src/components/common/dirham-symbol";
 import Link from "next/link";
 import React from "react";
 
@@ -62,7 +63,12 @@ export default function Property() {
                 photos={obj?.photos?.[0] || "/images/placeholder.jpg"}
                 title={`${obj?.location?.community || ""}${obj?.location?.community && obj?.location?.city ? ", " : ""}${obj?.location?.city || ""}`.trim() || "Dubai, UAE"}
                 location={`${obj?.location?.city || ""} ${obj?.location?.community || ""} ${obj?.location?.sub_community || ""}`.trim() || "Dubai, UAE"}
-                price={obj?.price ? `${obj.price.toLocaleString()} د.إ` : "Price on Request"}
+                price={obj?.price ? (
+                  <span className="flex items-center gap-1">
+                    <DirhamSymbol size={16} />
+                    {obj.price.toLocaleString()}
+                  </span>
+                ) : "Price on Request"}
                 bedrooms={obj?.bedRooms || 0}
                 bathrooms={obj?.bathrooms || 0}
                 area={obj?.size ? `${obj.size.toLocaleString()} sqft` : "Area not specified"}

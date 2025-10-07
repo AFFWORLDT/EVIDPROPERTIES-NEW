@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/src/components/ui/card";
 import { Button } from "@/src/components/ui/button";
 import { Heart, Bed, Bath, SquareGanttChart, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 interface PropertyCardProps {
   photos: string;
@@ -26,8 +27,17 @@ export function PropertyCard({
   area,
   propertyId,
 }: PropertyCardProps) {
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    router.push(`/buy/details/${propertyId}`);
+  };
+
   return (
-    <Card className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border h-full flex flex-col">
+    <Card 
+      className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border h-full flex flex-col cursor-pointer hover:shadow-lg transition-shadow duration-300" 
+      onClick={handleCardClick}
+    >
       <div className="relative w-full h-80 flex-shrink-0">
         <Image
           src={photos}
@@ -47,6 +57,7 @@ export function PropertyCard({
           variant="ghost"
           size="icon"
           className="absolute top-4 right-4 text-white rounded-full"
+          onClick={(e) => e.stopPropagation()}
         >
           <Heart className="w-7 h-7 " />
           <span className="sr-only">Add to favorites</span>
