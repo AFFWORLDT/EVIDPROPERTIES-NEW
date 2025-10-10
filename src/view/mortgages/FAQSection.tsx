@@ -15,10 +15,7 @@ export default function FAQSection() {
       question: "What makes Apricity Real Estate's mortgage services different?",
       answer: "Apricity Real Estate stands out with our premium mortgage advisory services. We offer exclusive partnerships with leading UAE banks, competitive interest rates starting from 2.5%, and 24-hour pre-approval processing. Our experienced team provides end-to-end support, from initial consultation to loan approval, ensuring a seamless experience. We've successfully financed over 500+ luxury properties in Dubai, making us the trusted choice for discerning clients seeking premium real estate financing solutions."
     },
-    {
-      question: "What is the difference between flat rate and reducing rate mortgages?",
-      answer: "A flat rate mortgage calculates interest on the total principal amount throughout the loan term, keeping your monthly payments consistent. A reducing rate (diminishing rate) calculates interest only on the outstanding balance, meaning your interest payments decrease over time as you pay down the principal. At Apricity Real Estate, we help you understand both options and recommend the best structure for your financial goals. Most UAE banks offer reducing rate mortgages, which are generally more cost-effective for long-term borrowers."
-    },
+
     {
       question: "Why do banks require security checks for mortgages in Dubai?",
       answer: "Security checks are essential for banks to assess your creditworthiness and financial stability. These checks include credit history review, employment verification, income assessment, and background checks. At Apricity Real Estate, we guide you through this process, ensuring all documentation is properly prepared to maximize your approval chances. Our relationships with major banks help streamline this process, often resulting in faster approvals and better terms."

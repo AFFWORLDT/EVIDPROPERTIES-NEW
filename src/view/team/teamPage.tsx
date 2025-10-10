@@ -134,7 +134,7 @@ export default function TeamPage() {
             className="text-center mb-12 md:mb-16"
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-700 mb-4">
-              Meet Our <span className="text-[#dbbb90] font-normal">Experts</span>
+              Meet Our <span className="text-navy font-normal">Experts</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
               Dedicated professionals committed to delivering exceptional real estate experiences
@@ -385,8 +385,16 @@ export default function TeamPage() {
                   <h4 className="font-semibold text-[#1A202C] mb-2">Languages</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedAgent.languages.map((lang, index) => {
-                      // Remove language code prefixes like "ar:sa/" and clean up the language name
-                      const cleanLang = lang.replace(/^[a-z]{2}:[a-z]{2}\//, '').replace(/^[a-z]{2}\//, '');
+                      // Remove language code prefixes like "GB ", "en:GB ", "ar:sa/", "en/", "de/" etc.
+                      const cleanLang = lang
+                        .replace(/^[A-Z]{2}\s/, '') // Remove "GB " format (country code with space)
+                        .replace(/^[a-z]{2}:[A-Z]{2}\s/, '') // Remove "en:GB " format (language:country with space)
+                        .replace(/^[a-z]{2}:[a-z]{2}\s/, '') // Remove "en:gb " format (language:country with space)
+                        .replace(/^[a-z]{2}:[a-z]{2}\//, '') // Remove "ar:sa/" format (with slash)
+                        .replace(/^[a-z]{2}\//, '') // Remove "en/" format
+                        .replace(/^[a-z]{2}_[a-z]{2}\//, '') // Remove "en_us/" format
+                        .replace(/^[a-z]{2}:/, '') // Remove "en:" format (colon only)
+                        .trim(); // Remove any extra whitespace
                       return (
                       <span
                         key={index}

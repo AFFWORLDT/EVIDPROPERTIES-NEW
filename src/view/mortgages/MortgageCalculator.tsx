@@ -9,7 +9,7 @@ import { DirhamSymbol } from '../../components/common/dirham-symbol';
 export default function MortgageCalculator() {
   const [totalPrice, setTotalPrice] = useState(2000000);
   const [downPayment, setDownPayment] = useState(20);
-  const [interestRate, setInterestRate] = useState(2.5);
+  const [interestRate, setInterestRate] = useState(3.75);
   const [loanPeriod, setLoanPeriod] = useState(25);
 
   const calculateMonthlyPayment = () => {
@@ -53,15 +53,14 @@ export default function MortgageCalculator() {
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8 text-[#1A202C] leading-tight tracking-wide">
-            <span className="text-[#dbbb90] font-normal">Calculate</span> Your Dream
+            <span className="text-[#1A202C] font-normal">Calculate</span> Your Dream
             <br />
-            <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-600 mt-2 block">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#1A202C] mt-2 block">
               Mortgage Payments Instantly
             </span>
           </h2>
           <p className="max-w-3xl mx-auto text-base font-light text-gray-600 leading-relaxed font-serif">
-            Get instant calculations for your mortgage payments with <span className="text-[#dbbb90] font-medium">Apricity Real Estate's</span> 
-            premium calculator. Plan your investment with confidence and precision.
+            Get instant calculations for your mortgage payments with our mortgage calculator. Plan your investment with confidence and precision.
           </p>
         </div>
 
@@ -74,23 +73,27 @@ export default function MortgageCalculator() {
           {/* Bank Logos */}
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
             <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg border border-white/20">
-              <div className="text-red-600 font-bold text-lg">ADCB</div>
+              <div className="text-[#1A202C] font-bold text-lg">ADCB</div>
               <div className="text-xs text-gray-500">بنك أبوظبي التجاري</div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg border border-white/20">
-              <div className="text-blue-600 font-bold text-lg">Emirates NBD</div>
+              <div className="text-[#1A202C] font-bold text-lg">Emirates NBD</div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg border border-white/20">
-              <div className="text-blue-600 font-bold text-lg">ADIB</div>
+              <div className="text-[#1A202C] font-bold text-lg">ADIB</div>
               <div className="text-xs text-gray-500">مصرف أبوظبي الإسلامي</div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg border border-white/20">
-              <div className="text-blue-600 font-bold text-lg">Mashreq</div>
+              <div className="text-[#1A202C] font-bold text-lg">Mashreq</div>
               <div className="text-xs text-gray-500">المشرق</div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg border border-white/20">
-              <div className="text-red-600 font-bold text-lg">FAB</div>
+              <div className="text-[#1A202C] font-bold text-lg">FAB</div>
               <div className="text-xs text-gray-500">بنك أبوظبي الأول</div>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg border border-white/20">
+              <div className="text-[#1A202C] font-bold text-lg">CBD</div>
+              <div className="text-xs text-gray-500">Commercial Bank of Dubai</div>
             </div>
           </div>
         </div>
@@ -108,8 +111,7 @@ export default function MortgageCalculator() {
                   </h3>
                 </div>
                 <p className="text-gray-600 mb-8 font-serif leading-relaxed">
-                  Calculate your monthly payments with <span className="text-[#dbbb90] font-medium">Apricity Real Estate's</span> 
-                  advanced mortgage calculator. Get instant results and plan your investment.
+                Calculate your monthly payments with our mortgage calculator. Get instant results & plan your investment.
                 </p>
 
                 <div className="space-y-6">
@@ -187,28 +189,11 @@ export default function MortgageCalculator() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="text-sm text-gray-600 font-serif mb-2">Loan Amount</div>
-                    <div className="text-xl font-serif font-medium text-[#1A202C] flex items-center gap-1">
-                      <DirhamSymbol size={16} />
-                      {loanAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}
-                    </div>
-                  </div>
-                  <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="text-sm text-gray-600 font-serif mb-2">Total Interest</div>
-                    <div className="text-xl font-serif font-medium text-[#1A202C] flex items-center gap-1">
-                      <DirhamSymbol size={16} />
-                      {totalInterest.toLocaleString('en-US', { maximumFractionDigits: 0 })}
-                    </div>
-                  </div>
-                </div>
-
                 <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-sm text-gray-600 font-serif mb-2">Total Payment</div>
+                  <div className="text-sm text-gray-600 font-serif mb-2">Loan Amount</div>
                   <div className="text-xl font-serif font-medium text-[#1A202C] flex items-center gap-1">
                     <DirhamSymbol size={16} />
-                    {(loanAmount + totalInterest).toLocaleString('en-US', { maximumFractionDigits: 0 })}
+                    {loanAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}
                   </div>
                 </div>
 

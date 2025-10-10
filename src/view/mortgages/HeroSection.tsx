@@ -36,32 +36,32 @@ export default function HeroSection() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-light text-[#1A202C] mb-8 leading-tight text-left">
-            <span className="text-[#1A202C] font-normal">Premium</span> Mortgage Solutions
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-light text-white mb-8 leading-tight text-left">
+            <span className="text-[#1A202C] font-normal">Premium</span> <span className="text-[#1A202C]">Mortgage Solutions</span>
             <br />
-            <span className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1A202C]/90 mt-2 block">
+            <span className="text-3xl md:text-4xl lg:text-5xl font-light text-white/90 mt-2 block">
               Your Gateway to Dubai's Luxury Real Estate
             </span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-[#1A202C]/90 mb-10 max-w-4xl leading-relaxed text-left font-serif">
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl leading-relaxed text-left font-serif">
             Experience the difference with our exclusive mortgage services. 
             Get the best rates, personalized guidance, and seamless approval process for your dream property in Dubai.
           </p>
 
           {/* Trust Indicators */}
           <div className="flex flex-wrap gap-8 mb-10">
-            <div className="flex items-center space-x-3 text-[#1A202C]/90">
-              <Shield className="w-6 h-6 text-[#1A202C]" />
+            <div className="flex items-center space-x-3 text-white/90">
+              <Shield className="w-6 h-6 text-white" />
               <span className="font-serif">Bank Partnerships</span>
             </div>
-            <div className="flex items-center space-x-3 text-[#1A202C]/90">
-              <TrendingUp className="w-6 h-6 text-[#1A202C]" />
+            <div className="flex items-center space-x-3 text-white/90">
+              <TrendingUp className="w-6 h-6 text-white" />
               <span className="font-serif">Best Rates</span>
             </div>
-            <div className="flex items-center space-x-3 text-[#1A202C]/90">
-              <Award className="w-6 h-6 text-[#1A202C]" />
+            <div className="flex items-center space-x-3 text-white/90">
+              <Award className="w-6 h-6 text-white" />
               <span className="font-serif">Expert Guidance</span>
             </div>
           </div>
@@ -79,18 +79,18 @@ export default function HeroSection() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-8 border-t border-[#1A202C]/20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
             <div className="text-center">
-              <div className="text-3xl font-serif font-light text-[#1A202C] mb-2">500+</div>
-              <div className="text-[#1A202C]/80 font-serif text-sm uppercase tracking-wider">Properties Financed</div>
+              <div className="text-3xl font-serif font-light text-white mb-2">500+</div>
+              <div className="text-white/80 font-serif text-sm uppercase tracking-wider">Properties Financed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-serif font-light text-[#1A202C] mb-2">3.75%</div>
-              <div className="text-[#1A202C]/80 font-serif text-sm uppercase tracking-wider">Starting Interest Rate</div>
+              <div className="text-3xl font-serif font-light text-white mb-2">3.75%</div>
+              <div className="text-white/80 font-serif text-sm uppercase tracking-wider">Starting Interest Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-serif font-light text-[#1A202C] mb-2">24hrs</div>
-              <div className="text-[#1A202C]/80 font-serif text-sm uppercase tracking-wider">Pre-Approval Time</div>
+              <div className="text-3xl font-serif font-light text-white mb-2">24hrs</div>
+              <div className="text-white/80 font-serif text-sm uppercase tracking-wider">Pre-Approval Time</div>
             </div>
           </div>
         </div>

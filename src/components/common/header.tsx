@@ -59,7 +59,7 @@ export default function Header() {
   const navLinks = [
     { href: "/buy", label: "Buy" },
     { href: "/rent", label: "Rent" },
-    { href: "/offPlans", label: "Projects" },
+    { href: "/offPlans", label: "New Projects" },
     { href: "/team", label: "Teams" },
     { href: "/communities", label: "Areas" },
     // { href: "/service", label: "Services" },
@@ -101,7 +101,7 @@ export default function Header() {
   const headerLink = [
     { href: "/buy", label: "Buy" },
     { href: "/rent", label: "Rent" },
-    { href: "/offPlans", label: "Projects" },
+    { href: "/offPlans", label: "New Projects" },
     { href: "/team", label: "Teams" },
     { href: "/communities", label: "Areas" },
     // { href: "/service", label: "Services", hasDropdown: true },
