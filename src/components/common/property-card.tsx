@@ -47,7 +47,7 @@ export default function PropertyCard({ data }: { data?: PropertyData }) {
           </div>
         ) : null}
         <div className="absolute bottom-4 right-4 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] text-white text-sm font-serif font-medium px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
-          FROM <DirhamSymbol size={14} /> {data?.newParam?.price && data.newParam.price > 0 ? data.newParam.price.toLocaleString() : "TBA"}
+          FROM <DirhamSymbol size={14} variant="white" /> {data?.newParam?.price && data.newParam.price > 0 ? data.newParam.price.toLocaleString() : "TBA"}
         </div>
       </div>
       <CardContent className="p-8 flex flex-col flex-grow">

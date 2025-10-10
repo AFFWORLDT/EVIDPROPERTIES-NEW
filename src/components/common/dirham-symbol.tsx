@@ -3,12 +3,15 @@ import Image from "next/image";
 interface DirhamSymbolProps {
   className?: string;
   size?: number;
+  variant?: "default" | "white";
 }
 
-export function DirhamSymbol({ className = "", size = 16 }: DirhamSymbolProps) {
+export function DirhamSymbol({ className = "", size = 16, variant = "default" }: DirhamSymbolProps) {
+  const imageSrc = variant === "white" ? "/white_dhiram.webp" : "/dhiram.png";
+  
   return (
     <Image
-      src="/dhiram.png"
+      src={imageSrc}
       alt="AED"
       width={size}
       height={size}
