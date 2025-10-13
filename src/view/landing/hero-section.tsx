@@ -8,14 +8,47 @@ import {
 } from "@/src/components/ui/select";
 import { Input } from "@/src/components/ui/input";
 import { Button } from "@/src/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
+  const router = useRouter();
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
   const [isPriceOpen, setIsPriceOpen] = useState(false);
+  const [propertyType, setPropertyType] = useState("buy");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handlePriceChange = (field: "min" | "max", value: string) => {
     setPriceRange((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handlePropertyTypeChange = (value: string) => {
+    setPropertyType(value);
+  };
+
+  const handleSearch = () => {
+    // Navigate to the appropriate page based on property type
+    if (propertyType === "buy") {
+      router.push("/buy");
+    } else if (propertyType === "rent") {
+      router.push("/rent");
+    } else if (propertyType === "offplan") {
+      router.push("/offPlans");
+    } else {
+      // Default to buy page if no selection
+      router.push("/buy");
+    }
   };
 
   const getPriceDisplayValue = () => {
@@ -58,7 +91,27 @@ export default function HeroSection() {
   ];
 
   return (
-<section className="relative min-h-screen w-full flex flex-col justify-between text-center bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8]">
+<section className="relative min-h-[120vh] w-full flex flex-col justify-between text-center bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8]">
+  <style jsx>{`
+    @media (max-width: 640px) {
+      [data-radix-select-trigger] [data-radix-select-value],
+      [data-radix-select-trigger] [data-radix-select-placeholder],
+      [data-radix-select-trigger] span {
+        color: transparent !important;
+        opacity: 0 !important;
+        font-size: 0 !important;
+      }
+      [data-radix-select-trigger] [data-radix-select-value="buy"] {
+        display: none !important;
+      }
+      [data-radix-select-trigger] [data-radix-select-value="rent"] {
+        display: none !important;
+      }
+      [data-radix-select-trigger] [data-radix-select-value="offplan"] {
+        display: none !important;
+      }
+    }
+  `}</style>
   {/* Background Video */}
   <div className="absolute inset-0 w-full h-full">
     <video
@@ -79,7 +132,7 @@ export default function HeroSection() {
   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 z-10" />
 
   {/* Hero Content */}
-  <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-96">
+  <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-48 sm:pt-56 md:pt-72 lg:pt-96">
     <div className="text-center">
       <h1 className="text-4xl sm:text-6xl lg:text-5xl font-normal mb-4 text-[#1A202C] font-serif leading-tight tracking-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(219,187,144,0.5)' }}>
         Real Estate – Refined for you
@@ -92,21 +145,38 @@ export default function HeroSection() {
   </div>
 
   {/* Search Form */}
-  <div className="relative z-20 text-white w-full mb-4 sm:mb-6 md:mb-8 lg:mb-12 flex justify-center items-center px-2 sm:px-4">
+  <div className="relative z-20 text-white w-full mb-8 sm:mb-10 md:mb-12 lg:mb-16 flex justify-center items-center px-2 sm:px-4">
     <div className="w-full max-w-5xl mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4 p-3 sm:p-4 md:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-white/20 shadow-2xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4 p-3 sm:p-4 md:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-white/20 shadow-2xl">
         
+            {/* Property Type */}
+            <div className="lg:col-span-1 relative">
+              <div className="absolute top-2 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
+                Property Type
+              </div>
+              <Select value={propertyType} onValueChange={handlePropertyTypeChange}>
+                <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-4 sm:pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors text-sm sm:text-base">
+                  <SelectValue placeholder={isMobile ? "" : "Buy"} className="pt-2" />
+                </SelectTrigger>
+                <SelectContent className="bg-white text-gray-900">
+                  <SelectItem value="buy">Buy</SelectItem>
+                  <SelectItem value="rent">Rent</SelectItem>
+                  <SelectItem value="offplan">Off-plan</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
             {/* Location */}
             <div className="lg:col-span-1 relative">
               <div className="absolute top-2 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
                 Location
               </div>
               <Select>
-                <SelectTrigger className="w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-4 sm:pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors text-sm sm:text-base">
-                  <SelectValue placeholder="Any" className="max-sm:hidden pt-2" />
+                <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-4 sm:pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors text-sm sm:text-base">
+                  <SelectValue placeholder={isMobile ? "" : "Any"} className="pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
-                  <SelectItem value="any">Any</SelectItem>
+                  <SelectItem value="any" className="max-sm:hidden">Any</SelectItem>
                   <SelectItem value="dubai-marina">Dubai Marina</SelectItem>
                   <SelectItem value="downtown-dubai">Downtown Dubai</SelectItem>
                   <SelectItem value="palm-jumeirah">Palm Jumeirah</SelectItem>
@@ -123,11 +193,11 @@ export default function HeroSection() {
                 Type
               </div>
               <Select>
-                <SelectTrigger className="w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base">
-                  <SelectValue placeholder="Any" className="max-sm:hidden pt-2" />
+                <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base">
+                  <SelectValue placeholder={isMobile ? "" : "Any"} className="pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
-                  <SelectItem value="any">Any</SelectItem>
+                  <SelectItem value="any" className="max-sm:hidden">Any</SelectItem>
                   <SelectItem value="apartment">Apartment</SelectItem>
                   <SelectItem value="villa">Villa</SelectItem>
                   <SelectItem value="penthouse">Penthouse</SelectItem>
@@ -145,7 +215,7 @@ export default function HeroSection() {
                 Price
               </div>
               <div
-                className="relative w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent cursor-pointer flex items-center px-3 pt-4 sm:pt-5 pb-2 text-sm sm:text-base"
+                className="relative w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent cursor-pointer flex items-center px-3 pt-4 sm:pt-5 pb-2 text-sm sm:text-base"
                 onClick={() => setIsPriceOpen(!isPriceOpen)}
               >
                 <span className="text-white max-sm:text-black max-sm:hidden pt-2">
@@ -213,11 +283,11 @@ export default function HeroSection() {
                 Bedrooms
               </div>
               <Select>
-                <SelectTrigger className="w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base">
-                  <SelectValue placeholder="Any" className="max-sm:hidden pt-2" />
+                <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base">
+                  <SelectValue placeholder={isMobile ? "" : "Any"} className="pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
-                  <SelectItem value="any">Any</SelectItem>
+                  <SelectItem value="any" className="max-sm:hidden">Any</SelectItem>
                   <SelectItem value="studio">Studio</SelectItem>
                   <SelectItem value="1">1</SelectItem>
                   <SelectItem value="2">2</SelectItem>
@@ -237,13 +307,16 @@ export default function HeroSection() {
               <Input
                 type="text"
                 placeholder=""
-                className="w-full h-10 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base"
+                className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base"
               />
             </div>
 
             {/* Search Button */}
             <div className="lg:col-span-1 sm:col-span-2">
-              <Button className="w-full bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 h-10 sm:h-12 md:h-14 uppercase tracking-wider text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              <Button 
+                onClick={handleSearch}
+                className="w-full bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 h-12 sm:h-12 md:h-14 uppercase tracking-wider text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer"
+              >
                 Search
               </Button>
             </div>
