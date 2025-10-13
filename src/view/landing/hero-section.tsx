@@ -70,7 +70,7 @@ export default function HeroSection() {
       className="w-full h-full object-cover z-0"
       style={{ filter: "brightness(1.2) contrast(1.1) saturate(1.1)" }}
     >
-      <source src="/HERO2.mp4" type="video/mp4" />
+      <source src="/heroo.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
