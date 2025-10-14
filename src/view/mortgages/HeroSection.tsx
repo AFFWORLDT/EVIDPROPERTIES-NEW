@@ -40,7 +40,7 @@ export default function HeroSection() {
             <span className="text-white font-normal">Premium</span> <span className="text-white">Mortgage Solutions</span>
             <br />
             <span className="text-3xl md:text-4xl lg:text-5xl font-normal text-white/90 mt-2 block" style={{ letterSpacing: '0.05em' }}>
-              Your Gateway to Dubai's Real Estate
+              Your Gateway to Dubai Real Estate
             </span>
           </h1>
 
