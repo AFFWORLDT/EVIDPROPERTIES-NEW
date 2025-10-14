@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
                 <li><strong>Withdrawal of Consent:</strong> Withdraw consent for data processing</li>
               </ul>
               <p className="text-gray-700 mb-4">
-                To exercise these rights, please contact us at <a href="mailto:athomson@apricityrealestate.ae" className="text-blue-600 hover:underline">athomson@apricityrealestate.ae</a>.
+                To exercise these rights, please contact us at <a href="mailto:info@apricityrealestate.ae" className="text-blue-600 hover:underline">info@apricityrealestate.ae</a>.
               </p>
             </section>
 
@@ -161,8 +161,8 @@ export default function PrivacyPolicyPage() {
                 <p className="text-gray-700 mb-2">..</p>
                 <p className="text-gray-700 mb-2">Dubai, UAE</p>
                 <p className="text-gray-700 mb-2">Phone: <a href="tel:+971558777152" className="text-blue-600 hover:underline">+971-55-877-7152</a></p>
-                <p className="text-gray-700 mb-2">Email: <a href="mailto:athomson@apricityrealestate.ae" className="text-blue-600 hover:underline">athomson@apricityrealestate.ae</a></p>
-                <p className="text-gray-700">General Email: <a href="mailto:athomson@apricityrealestate.ae" className="text-blue-600 hover:underline">athomson@apricityrealestate.ae</a></p>
+                <p className="text-gray-700 mb-2">Email: <a href="mailto:info@apricityrealestate.ae" className="text-blue-600 hover:underline">info@apricityrealestate.ae</a></p>
+                <p className="text-gray-700">General Email: <a href="mailto:info@apricityrealestate.ae" className="text-blue-600 hover:underline">info@apricityrealestate.ae</a></p>
               </div>
             </section>
 

@@ -72,10 +72,10 @@ function ContactUs() {
                 <div>
                   <p className="text-gray-800 font-serif font-normal">Email</p>
                   <a
-                    href="mailto:athomson@apricityrealestate.ae"
+                    href="mailto:info@apricityrealestate.ae"
                     className="text-[#dbbb90] hover:text-[#C2A17B] transition-colors font-serif"
                   >
-                    athomson@apricityrealestate.ae
+                    info@apricityrealestate.ae
                   </a>
                 </div>
               </div>

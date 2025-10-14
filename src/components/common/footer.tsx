@@ -156,10 +156,10 @@ export default function Footer() {
                     <Mail className="w-3 h-3 text-[#dbbb90]" />
                   </div>
                   <a
-                    href="mailto:athomson@apricityrealestate.ae"
+                    href="mailto:info@apricityrealestate.ae"
                     className="text-gray-700 hover:text-[#dbbb90] transition-colors duration-300 font-serif break-all"
                   >
-                    athomson@apricityrealestate.ae
+                    info@apricityrealestate.ae
                   </a>
                 </div>
               </address>

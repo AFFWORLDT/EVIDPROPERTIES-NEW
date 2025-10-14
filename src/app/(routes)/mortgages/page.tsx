@@ -50,7 +50,7 @@ export default function MortgagesPage() {
             "description": "Premium mortgage and home loan services in Dubai, UAE",
             "url": "https://apricityrealestate.ae/mortgages",
             "telephone": "+971-55-877-7152",
-            "email": "athomson@apricityrealestate.ae",
+            "email": "info@apricityrealestate.ae",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Dubai",
