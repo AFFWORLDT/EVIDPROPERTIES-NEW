@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Dialog, DialogContent, DialogTitle } from "@/src/components/ui/dialog";
+import { DirhamSymbol } from "@/src/components/common/dirham-symbol";
 
 export default function DetailPage({ id }: any) {
   const [property, setProperty] = useState<any>(null);
@@ -122,8 +123,8 @@ export default function DetailPage({ id }: any) {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-normal mb-2 sm:mb-4 leading-tight tracking-wide">
             {property?.title}
           </h1>
-          <p className="text-sm sm:text-base md:text-lg font-serif font-normal mb-8 sm:mb-12 tracking-wider uppercase text-primary">
-            {property?.location?.city} {property?.location?.community} {property?.location?.sub_community}
+          <p className="text-sm sm:text-base md:text-lg font-serif font-normal mb-8 sm:mb-12 tracking-wider uppercase text-white">
+            {property?.location?.sub_community} {property?.location?.community} {property?.location?.city}
           </p>
         </div>
       </section>
@@ -209,6 +210,15 @@ export default function DetailPage({ id }: any) {
                 Details
               </h3>
               <div className="text-sm font-serif font-normal text-gray-700 space-y-1">
+                {property?.price && (
+                  <p>
+                    <strong className="font-serif font-normal">Price:</strong>{" "}
+                    <span className="flex items-center gap-1 justify-center md:justify-start">
+                      <DirhamSymbol size={16} />
+                      {property.price.toLocaleString()}
+                    </span>
+                  </p>
+                )}
                 <p>
                   {" "}
                   <strong className="font-serif font-normal">City</strong>:{" "}

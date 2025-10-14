@@ -114,9 +114,8 @@ export default function DetailPage({ id }: any) {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-normal mb-2 sm:mb-4 leading-tight tracking-wide">
             {property?.name}
           </h1>
-          <p className="text-sm sm:text-base md:text-lg font-serif font-normal mb-8 sm:mb-12 tracking-wider uppercase text-primary">
-            {property?.location?.community}, {property?.location?.sub_community}
-            , {property?.location?.city}
+          <p className="text-sm sm:text-base md:text-lg font-serif font-normal mb-8 sm:mb-12 tracking-wider uppercase text-white">
+            {property?.location?.sub_community}, {property?.location?.community}, {property?.location?.city}
           </p>
         </div>
       </section>
