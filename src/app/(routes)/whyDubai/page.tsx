@@ -11,7 +11,7 @@ export default function WhyDubai() {
       </section>
       
       <main className="container mx-auto px-8 py-4 md:py-12 lg:py-16 max-w-5xl">
-        {/* Advantages to buy a Luxury property in Dubai */}
+        {/* Advantages to buying a property in Dubai */}
         <section className="mb-12 md:my-16">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20">
             <h2 className="text-3xl md:text-4xl font-serif font-normal mb-8 text-gray-800">
