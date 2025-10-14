@@ -121,31 +121,23 @@ export default function HeroSection() {
       playsInline
       preload="metadata"
       className="w-full h-full object-cover z-0"
-      style={{ filter: "brightness(1.2) contrast(1.1) saturate(1.1)" }}
     >
-      <source src="/heroo.mp4" type="video/mp4" />
+      <source src="/newheo.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
 
-  {/* Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 z-10" />
-
   {/* Hero Content */}
-  <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-48 sm:pt-56 md:pt-72 lg:pt-96">
-    <div className="text-center">
-      <h1 className="text-4xl sm:text-6xl lg:text-5xl font-normal mb-4 text-[#1A202C] font-serif leading-tight tracking-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(219,187,144,0.5)' }}>
-        Real Estate – Refined for you
-      </h1>
-      
-      <p className="text-sm sm:text-lg lg:text-xl uppercase text-[#dbbb90] leading-tight tracking-widest font-serif font-medium" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+  <div className="relative z-20 w-full h-full flex flex-col items-center justify-end px-4 pb-32 sm:pb-40 md:pb-48 lg:pb-56">
+    <div className="text-center mb-8">
+      <p className="text-sm sm:text-base md:text-lg text-gray-800 font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
         A boutique real estate company curating properties with care and integrity
       </p>
     </div>
   </div>
 
   {/* Search Form */}
-  <div className="relative z-20 text-white w-full mb-8 sm:mb-10 md:mb-12 lg:mb-16 flex justify-center items-center px-2 sm:px-4">
+  <div className="relative z-20 text-white w-full mb-8 sm:mb-10 md:mb-12 lg:mb-16 flex justify-center items-center px-2 sm:px-4 pb-16 sm:pb-20 md:pb-24 lg:pb-32">
     <div className="w-full max-w-5xl mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4 p-3 sm:p-4 md:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-white/20 shadow-2xl">
         

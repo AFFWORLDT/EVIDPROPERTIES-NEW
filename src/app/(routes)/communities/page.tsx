@@ -53,12 +53,17 @@ function Communities() {
     fetchCommunities();
   }, [page]);
 
-  // Filter communities based on search keyword
+  // Filter communities based on search keyword and exclude Deira
   useEffect(() => {
+    // First filter out Deira from all communities
+    const communitiesWithoutDeira = communities.filter((community) => 
+      community.name?.toLowerCase() !== 'deira'
+    );
+
     if (searchKeyword.trim() === "") {
-      setFilteredCommunities(communities);
+      setFilteredCommunities(communitiesWithoutDeira);
     } else {
-      const filtered = communities.filter((community) =>
+      const filtered = communitiesWithoutDeira.filter((community) =>
         community.name?.toLowerCase().includes(searchKeyword.toLowerCase()) ||
         community.city?.toLowerCase().includes(searchKeyword.toLowerCase()) ||
         community.order_description?.toLowerCase().includes(searchKeyword.toLowerCase())
