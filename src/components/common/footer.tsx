@@ -64,13 +64,9 @@ export default function Footer() {
                     <Instagram className="w-5 h-5 text-gray-600 group-hover:text-white" />
                   </Link>
                   <Link 
-                    href="#" 
-                    className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 hover:bg-[#dbbb90] rounded-full flex items-center justify-center transition-all duration-300 group"
-                  >
-                    <Twitter className="w-5 h-5 text-gray-600 group-hover:text-white" />
-                  </Link>
-                  <Link 
-                    href="#" 
+                    href="https://www.linkedin.com/company/apricity-real-estate/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 hover:bg-[#dbbb90] rounded-full flex items-center justify-center transition-all duration-300 group"
                   >
                     <Linkedin className="w-5 h-5 text-gray-600 group-hover:text-white" />
