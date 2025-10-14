@@ -127,18 +127,17 @@ export default function HeroSection() {
     </video>
   </div>
 
-  {/* Hero Content */}
-  <div className="relative z-20 w-full h-full flex flex-col items-center justify-end px-4 pb-32 sm:pb-40 md:pb-48 lg:pb-56">
-    <div className="text-center mb-8">
-      <p className="text-sm sm:text-base md:text-lg text-gray-800 font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
-        A boutique real estate company curating properties with care and integrity
-      </p>
-    </div>
-  </div>
+  {/* Hero Content (spacing to keep search bar at original position) */}
+  <div className="relative z-20 w-full h-full flex flex-col items-center justify-end px-4 pb-32 sm:pb-40 md:pb-48 lg:pb-56"></div>
 
   {/* Search Form */}
   <div className="relative z-20 text-white w-full mb-8 sm:mb-10 md:mb-12 lg:mb-16 flex justify-center items-center px-2 sm:px-4 pb-16 sm:pb-20 md:pb-24 lg:pb-32">
     <div className="w-full max-w-5xl mx-auto">
+      <div className="text-center mb-4 sm:mb-6">
+        <p className="text-sm sm:text-base md:text-lg font-serif font-normal text-[#1A202C]  drop-shadow" style={{ letterSpacing: '0.05em' }}>
+          A boutique real estate company curating properties with care and integrity
+        </p>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4 p-3 sm:p-4 md:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-white/20 shadow-2xl">
         
             {/* Property Type */}
