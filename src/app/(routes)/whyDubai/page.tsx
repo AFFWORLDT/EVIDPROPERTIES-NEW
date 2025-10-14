@@ -14,9 +14,9 @@ export default function WhyDubai() {
         {/* Advantages to buying a property in Dubai */}
         <section className="mb-12 md:my-16">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20">
-            <h2 className="text-3xl md:text-4xl font-serif font-normal mb-8 text-gray-800">
-              <span className="text-[#dbbb90] font-normal">Advantages</span> to buying a  property in Dubai
-            </h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-normal mb-8 text-gray-800">
+                <span className="text-gray-800 font-normal">Advantages</span> to buying a property in Dubai
+              </h2>
             <div className="space-y-8 text-gray-600">
               <div>
                 <h3 className="font-serif font-normal text-lg mb-4 text-[#dbbb90] font-serif font-normal">Lifestyle:</h3>

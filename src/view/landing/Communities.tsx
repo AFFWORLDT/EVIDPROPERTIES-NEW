@@ -90,12 +90,19 @@ export default function Component() {
       try {
         const res = await getAllCommunities(1, 12);
         if (res?.communities?.length) {
-          setCommunities(res.communities);
+          // Filter out Deira from communities
+          const communitiesWithoutDeira = res.communities.filter((community: any) =>
+            community.name?.toLowerCase() !== 'deira'
+          );
+          setCommunities(communitiesWithoutDeira);
         }
       } catch (error) {
         console.log("Error fetching communities:", error);
-        // Fallback to static data if API fails
-        setCommunities(communities);
+        // Fallback to static data if API fails, also filter out Deira
+        const staticCommunitiesWithoutDeira = communities.filter((community: any) =>
+          community.name?.toLowerCase() !== 'deira'
+        );
+        setCommunities(staticCommunitiesWithoutDeira);
       }
     };
     fetchCommunities();
