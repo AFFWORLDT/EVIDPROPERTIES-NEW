@@ -11,7 +11,7 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h1 className="text-5xl md:text-6xl font-bold text-blue-900 mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-serif font-normal text-blue-900 mb-6 leading-tight">
               From Finding Your Perfect
               <br />
               <span className="text-primary">Holiday Home</span> Or
@@ -21,7 +21,7 @@ export default function HeroSection() {
               <span className="text-primary">Short-Term Rental,</span>
             </h1>
 
-            <h2 className="text-2xl font-bold text-blue-900 mb-6">
+            <h2 className="text-2xl font-serif font-normal text-blue-900 mb-6">
               We've Got You Covered!
             </h2>
 
@@ -29,7 +29,7 @@ export default function HeroSection() {
               Exceptional Dubai Holiday Homes and Expert Short-Term Rental Services.
             </p>
 
-            <Button className="bg-primary hover:bg-primary text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200">
+            <Button className="bg-primary hover:bg-primary text-white px-8 py-4 text-lg font-serif font-normal rounded-lg transition-colors duration-200">
               List your Property
             </Button>
           </div>

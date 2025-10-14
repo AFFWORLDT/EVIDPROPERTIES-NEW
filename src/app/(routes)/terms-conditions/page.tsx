@@ -11,7 +11,7 @@ export default function TermsConditionsPage() {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 font-serif">Terms and Conditions</h1>
+          <h1 className="text-4xl font-serif font-normal text-gray-900 mb-8 font-serif">Terms and Conditions</h1>
           
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600 mb-6">
@@ -19,7 +19,7 @@ export default function TermsConditionsPage() {
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">1. Acceptance of Terms</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">1. Acceptance of Terms</h2>
               <p className="text-gray-700 mb-4">
                 Welcome to Apricity Realestate. These Terms and Conditions ("Terms") govern your use of our website <a href="https://apricityrealestate.com" className="text-blue-600 hover:underline">apricityrealestate.com</a> and our services. By accessing or using our website, you agree to be bound by these Terms.
               </p>
@@ -29,7 +29,7 @@ export default function TermsConditionsPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">2. About Apricity Realestate</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">2. About Apricity Realestate</h2>
               <p className="text-gray-700 mb-4">
                 Apricity Realestate is a real estate platform based in Dubai, UAE, providing property listings, real estate services, and related services. We are committed to connecting property buyers, sellers, and renters in the Dubai real estate market.
               </p>
@@ -44,7 +44,7 @@ export default function TermsConditionsPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">3. Services Provided</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">3. Services Provided</h2>
               <p className="text-gray-700 mb-4">Apricity Realestate provides the following services:</p>
               <ul className="list-disc pl-6 mb-4 text-gray-700">
                 <li>Property listings for sale and rent</li>
@@ -59,8 +59,8 @@ export default function TermsConditionsPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">4. User Accounts and Registration</h2>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">4.1 Account Creation</h3>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">4. User Accounts and Registration</h2>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">4.1 Account Creation</h3>
               <p className="text-gray-700 mb-4">
                 To access certain features of our website, you may need to create an account. You agree to:
               </p>
@@ -72,20 +72,20 @@ export default function TermsConditionsPage() {
                 <li>Notify us immediately of any unauthorized use</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">4.2 Account Termination</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">4.2 Account Termination</h3>
               <p className="text-gray-700 mb-4">
                 We reserve the right to suspend or terminate your account at any time for violation of these Terms or for any other reason at our sole discretion.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">5. Property Listings and Information</h2>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">5.1 Accuracy of Information</h3>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">5. Property Listings and Information</h2>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">5.1 Accuracy of Information</h3>
               <p className="text-gray-700 mb-4">
                 While we strive to provide accurate and up-to-date property information, we cannot guarantee the accuracy, completeness, or timeliness of all listings. Property information is provided by third parties and may change without notice.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">5.2 Property Viewing and Transactions</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">5.2 Property Viewing and Transactions</h3>
               <p className="text-gray-700 mb-4">
                 All property viewings and transactions are subject to:
               </p>
@@ -99,7 +99,7 @@ export default function TermsConditionsPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">6. User Conduct and Prohibited Activities</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">6. User Conduct and Prohibited Activities</h2>
               <p className="text-gray-700 mb-4">You agree not to:</p>
               <ul className="list-disc pl-6 mb-4 text-gray-700">
                 <li>Use the website for any unlawful purpose or in violation of any applicable laws</li>
@@ -115,7 +115,7 @@ export default function TermsConditionsPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">7. Intellectual Property Rights</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">7. Intellectual Property Rights</h2>
               <p className="text-gray-700 mb-4">
                 The website and its content, including but not limited to text, graphics, logos, images, and software, are the property of Apricity Realestate or its licensors and are protected by copyright, trademark, and other intellectual property laws.
               </p>
@@ -125,86 +125,86 @@ export default function TermsConditionsPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">8. Payment Terms and Fees</h2>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">8.1 Service Fees</h3>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">8. Payment Terms and Fees</h2>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">8.1 Service Fees</h3>
               <p className="text-gray-700 mb-4">
                 Some services may require payment of fees. All fees are non-refundable unless otherwise specified. Payment terms will be clearly disclosed before any transaction.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">8.2 Currency and Taxes</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">8.2 Currency and Taxes</h3>
               <p className="text-gray-700 mb-4">
                 All fees are quoted in UAE Dirhams (AED) unless otherwise specified. You are responsible for any applicable taxes, duties, or fees imposed by relevant authorities.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">9. Disclaimers and Limitations of Liability</h2>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">9.1 Service Availability</h3>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">9. Disclaimers and Limitations of Liability</h2>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">9.1 Service Availability</h3>
               <p className="text-gray-700 mb-4">
                 We do not guarantee that the website will be available at all times. We may suspend or discontinue the website or any part of it at any time without notice.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">9.2 Limitation of Liability</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">9.2 Limitation of Liability</h3>
               <p className="text-gray-700 mb-4">
                 To the maximum extent permitted by law, Apricity Realestate shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from your use of the website or services.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">9.3 Property Information</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">9.3 Property Information</h3>
               <p className="text-gray-700 mb-4">
                 We are not responsible for the accuracy of property information provided by third parties. Users should verify all property details independently before making any decisions.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">10. Privacy and Data Protection</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">10. Privacy and Data Protection</h2>
               <p className="text-gray-700 mb-4">
                 Your privacy is important to us. Our collection and use of personal information is governed by our <a href="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</a>, which is incorporated into these Terms by reference.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">11. Indemnification</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">11. Indemnification</h2>
               <p className="text-gray-700 mb-4">
                 You agree to indemnify and hold harmless Apricity Realestate, its officers, directors, employees, and agents from any claims, damages, or expenses arising from your use of the website or violation of these Terms.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">12. Governing Law and Dispute Resolution</h2>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">12.1 Governing Law</h3>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">12. Governing Law and Dispute Resolution</h2>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">12.1 Governing Law</h3>
               <p className="text-gray-700 mb-4">
                 These Terms are governed by the laws of the United Arab Emirates. Any disputes arising from these Terms will be subject to the exclusive jurisdiction of the courts of Dubai, UAE.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">12.2 Dispute Resolution</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">12.2 Dispute Resolution</h3>
               <p className="text-gray-700 mb-4">
                 Before pursuing legal action, we encourage you to contact us to resolve any disputes amicably. We are committed to working with you to find a satisfactory resolution.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">13. Force Majeure</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">13. Force Majeure</h2>
               <p className="text-gray-700 mb-4">
                 We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, or government actions.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">14. Severability</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">14. Severability</h2>
               <p className="text-gray-700 mb-4">
                 If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will continue to be valid and enforceable.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">15. Changes to Terms</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">15. Changes to Terms</h2>
               <p className="text-gray-700 mb-4">
                 We reserve the right to modify these Terms at any time. We will notify users of any material changes by posting the updated Terms on our website. Your continued use of the website after such changes constitutes acceptance of the updated Terms.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">16. Contact Information</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">16. Contact Information</h2>
               <p className="text-gray-700 mb-4">
                 If you have any questions about these Terms and Conditions, please contact us:
               </p>
@@ -219,7 +219,7 @@ export default function TermsConditionsPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">17. Entire Agreement</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">17. Entire Agreement</h2>
               <p className="text-gray-700 mb-4">
                 These Terms, together with our Privacy Policy and any other legal notices published on our website, constitute the entire agreement between you and Apricity Realestate regarding your use of our website and services.
               </p>

@@ -111,10 +111,10 @@ export default function DetailPage({ id }: any) {
           </div>
         </div>
         <div className="relative z-30 text-white px-4 sm:px-6 md:px-8 mt-[50vh] sm:mt-[55vh] md:mt-[60vh]">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-2 sm:mb-4 leading-tight tracking-wide">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-normal mb-2 sm:mb-4 leading-tight tracking-wide">
             {property?.name}
           </h1>
-          <p className="text-sm sm:text-base md:text-lg font-light mb-8 sm:mb-12 tracking-wider uppercase text-primary">
+          <p className="text-sm sm:text-base md:text-lg font-serif font-normal mb-8 sm:mb-12 tracking-wider uppercase text-primary">
             {property?.location?.community}, {property?.location?.sub_community}
             , {property?.location?.city}
           </p>
@@ -123,7 +123,7 @@ export default function DetailPage({ id }: any) {
 
       <section className="bg-white py-8 sm:py-12 md:py-16 px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base md:text-lg font-light uppercase text-primary mb-8 sm:mb-12">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base md:text-lg font-serif font-normal uppercase text-primary mb-8 sm:mb-12">
             <a
               className="hover:underline cursor-pointer"
               onClick={() => setIsOpen(true)}
@@ -150,7 +150,7 @@ export default function DetailPage({ id }: any) {
                         />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-[#dbbb90] to-[#C2A17B] flex items-center justify-center">
-                          <span className="text-lg font-bold text-white">
+                          <span className="text-lg font-serif font-normal text-white">
                             {property.agent.name?.charAt(0) || 'A'}
                           </span>
                         </div>
@@ -161,10 +161,10 @@ export default function DetailPage({ id }: any) {
                     </div>
                   </div>
                   <div className="flex flex-col text-center sm:text-left">
-                    <span className="text-xs sm:text-sm font-semibold text-gray-800 uppercase tracking-wide">
+                    <span className="text-xs sm:text-sm font-serif font-normal text-gray-800 uppercase tracking-wide">
                       {property.agent.name}
                     </span>
-                    <span className="text-xs text-[#dbbb90] font-medium uppercase tracking-wider">
+                    <span className="text-xs text-[#dbbb90] font-serif font-normal uppercase tracking-wider">
                       Property Specialist
                     </span>
                   </div>
@@ -199,10 +199,10 @@ export default function DetailPage({ id }: any) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center mb-8 sm:mb-12">
             <div className="border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 md:pr-4">
-              <h3 className="text-sm font-light uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
+              <h3 className="text-sm font-serif font-normal uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 From
               </h3>
-              <p className="text-sm font-light text-gray-700">
+              <p className="text-sm font-serif font-normal text-gray-700">
                 {property?.newParam?.price
                   ? `AED ${property.newParam.price.toLocaleString()}`
                   : property?.price_from
@@ -213,10 +213,10 @@ export default function DetailPage({ id }: any) {
               </p>
             </div>
             <div className="border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 px-0 md:px-4">
-              <h3 className="text-sm font-light uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
+              <h3 className="text-sm font-serif font-normal uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 Completion Date
               </h3>
-              <p className="text-sm font-light text-gray-700">
+              <p className="text-sm font-serif font-normal text-gray-700">
                 {property?.newParam?.handoverTime
                   ? moment(property?.newParam?.handoverTime).format("MMMM YYYY")
                   : property?.completionDate
@@ -227,10 +227,10 @@ export default function DetailPage({ id }: any) {
               </p>
             </div>
             <div className="pt-6 md:pt-0">
-              <h3 className="text-sm font-light uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
+              <h3 className="text-sm font-serif font-normal uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 Construction Stage
               </h3>
-              <p className="text-sm font-light text-gray-700">
+              <p className="text-sm font-serif font-normal text-gray-700">
                 {property?.constructionStage || property?.completionStatus || "Off-plan"}
               </p>
             </div>
@@ -243,7 +243,7 @@ export default function DetailPage({ id }: any) {
               Description
             </h2>
             <div className="px-4 sm:px-0">
-              <p className={`text-sm sm:text-base font-light text-gray-600 leading-relaxed mb-4 ${
+              <p className={`text-sm sm:text-base font-serif font-normal text-gray-600 leading-relaxed mb-4 ${
                 isDescriptionExpanded ? '' : 'line-clamp-4'
               }`}>
                 {property?.description}
@@ -251,7 +251,7 @@ export default function DetailPage({ id }: any) {
               {property?.description && property.description.length > 200 && (
                 <button
                   onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-                  className="text-[#dbbb90] hover:text-[#C2A17B] font-medium text-sm transition-colors duration-300 font-serif"
+                  className="text-[#dbbb90] hover:text-[#C2A17B] font-serif font-normal text-sm transition-colors duration-300 font-serif"
                 >
                   {isDescriptionExpanded ? 'Read Less' : 'Read More'}
                 </button>
@@ -378,7 +378,7 @@ export default function DetailPage({ id }: any) {
               <div className="text-gray-700">
                 <p className="text-sm">
                   This Listing has been verified by{" "}
-                  <span className="font-bold">Dubai Land Department</span>
+                  <span className="font-serif font-normal">Dubai Land Department</span>
                 </p>
               </div>
             </div>

@@ -41,7 +41,7 @@ function HowItWorks() {
               </div>
               <div className="text-center">
                 <p className="text-sm text-gray-500 mb-2">{step.step}</p>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                <h3 className="text-xl font-serif font-normal text-gray-900 mb-3">{step.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             </div>
@@ -50,13 +50,13 @@ function HowItWorks() {
 
         {/* Client Trust Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-4xl font-serif font-normal text-blue-900 mb-4">
             Why Our Clients Trust Us
           </h2>
           <p className="text-xl text-gray-600 mb-8">
             Discover what our customers are saying about their experiences.
           </p>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
+          <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-serif font-normal transition-colors duration-200">
             See all reviews
           </button>
         </div>

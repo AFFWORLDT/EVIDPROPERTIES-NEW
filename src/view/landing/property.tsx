@@ -35,13 +35,13 @@ export default function Property() {
     <div className="min-h-screen bg-[#F2EEE8] text-[#1A202C]">
       <main className="container mx-auto py-8 sm:py-12 px-3 sm:px-4 md:px-6 lg:px-8">
         <section className="text-center mb-8 sm:mb-12">
-          <h2 className="text-black text-sm font-light tracking-widest mb-2 uppercase">
+          <h2 className="text-gray-600 text-sm font-serif font-normal mb-2 uppercase" style={{ letterSpacing: '0.05em' }}>
             FEATURED PROPERTIES
           </h2>
-          <h1 className="text-3xl sm:text-4xl font-mono mb-4 text-[#1A202C] tracking-wide">
+          <h1 className="text-3xl sm:text-4xl font-serif font-normal mb-4 text-gray-800" style={{ letterSpacing: '0.05em' }}>
             Properties for Sale in UAE
           </h1>
-          <p className="max-w-2xl mx-auto text-sm font-light text-gray-700 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-sm text-gray-700 leading-relaxed font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
             Explore our selection of ready made properties in the UAE with guidance from one of our experienced experts
           </p>
         </section>
@@ -86,7 +86,7 @@ export default function Property() {
 
         <div className="text-center">
          <Link href={"/buy"}>
-           <Button className="bg-[#D4B88C] hover:bg-[#C2A77B] text-white px-8 py-6 text-lg font-light tracking-wider rounded-none shadow-md uppercase">
+           <Button className="bg-[#D4B88C] hover:bg-[#C2A77B] text-white px-8 py-6 text-lg font-serif font-normal rounded-none shadow-md uppercase" style={{ letterSpacing: '0.05em' }}>
             VIEW ALL PROPERTIES
           </Button>
          </Link>

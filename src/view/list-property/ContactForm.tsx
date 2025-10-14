@@ -31,7 +31,7 @@ function ContactForm() {
         <div className="max-w-2xl mx-auto">
           {/* Left Content */}
           {/* <div>
-            <h2 className="text-4xl font-bold text-blue-900 mb-6">
+            <h2 className="text-4xl font-serif font-normal text-blue-900 mb-6">
               Unleash your property potential<br />
               List, Sell & Succeed with Us
             </h2>
@@ -39,11 +39,11 @@ function ContactForm() {
             {/* Stats */}
             {/* <div className="flex gap-8 mb-8">
               <div>
-                <div className="text-3xl font-bold text-primar">50K+</div>
+                <div className="text-3xl font-serif font-normal text-primar">50K+</div>
                 <div className="text-gray-600">Home Sold</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-primary">82%</div>
+                <div className="text-3xl font-serif font-normal text-primary">82%</div>
                 <div className="text-gray-600">of listings sold in the past 12 months</div>
               </div>
             </div>
@@ -200,7 +200,7 @@ function ContactForm() {
               {/* Submit Button */}
               <Button 
                 type="submit" 
-                className="w-full bg-primary hover:bg-primary text-white py-3 text-lg font-semibold"
+                className="w-full bg-primary hover:bg-primary text-white py-3 text-lg font-serif font-normal"
               >
                 Submit Details
               </Button>

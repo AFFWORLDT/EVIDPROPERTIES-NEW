@@ -34,7 +34,7 @@ export default function HeroSection() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight text-left">
+          <h1 className="text-5xl md:text-6xl font-serif font-normal text-white mb-6 leading-tight text-left">
             Property Management with a Personal Touch
           </h1>
 
@@ -45,7 +45,7 @@ export default function HeroSection() {
 
           {/* CTA Button */}
           <div className="text-left">
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200">
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-serif font-normal rounded-lg transition-colors duration-200">
               Free rental analysis
             </Button>
           </div>

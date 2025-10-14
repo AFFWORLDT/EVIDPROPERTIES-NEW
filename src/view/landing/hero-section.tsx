@@ -306,7 +306,7 @@ export default function HeroSection() {
             <div className="lg:col-span-1 sm:col-span-2">
               <Button 
                 onClick={handleSearch}
-                className="w-full bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 h-12 sm:h-12 md:h-14 uppercase tracking-wider text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer"
+                className="w-full bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-serif font-normal py-2 px-4 rounded-lg transition-all duration-300 h-12 sm:h-12 md:h-14 uppercase tracking-wider text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer"
               >
                 Search
               </Button>

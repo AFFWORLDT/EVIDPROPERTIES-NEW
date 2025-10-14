@@ -64,7 +64,7 @@ export default function DetailsBlog() {
     <div className="min-h-screen bg-background">
       <section className="pt-32 pb-12 px-4 bg-[#141442]">
         <div className=" mx-auto text-center">
-          <h1 className="text-5xl font-medium mb-6 text-white font-mono">
+          <h1 className="text-5xl font-serif font-normal mb-6 text-white font-mono">
             Blog
           </h1>
         </div>

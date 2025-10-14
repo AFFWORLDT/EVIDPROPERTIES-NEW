@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 font-serif">Privacy Policy</h1>
+          <h1 className="text-4xl font-serif font-normal text-gray-900 mb-8 font-serif">Privacy Policy</h1>
           
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600 mb-6">
@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">1. Introduction</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">1. Introduction</h2>
               <p className="text-gray-700 mb-4">
                 Apricity Realestate ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://apricityrealestate.com" className="text-blue-600 hover:underline">apricityrealestate.com</a> or use our services.
               </p>
@@ -29,9 +29,9 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">2. Information We Collect</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">2. Information We Collect</h2>
               
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">2.1 Personal Information</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">2.1 Personal Information</h3>
               <p className="text-gray-700 mb-4">We may collect the following types of personal information:</p>
               <ul className="list-disc pl-6 mb-4 text-gray-700">
                 <li>Name and contact information (email address, phone number)</li>
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
                 <li>Property search history and preferences</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">2.2 Technical Information</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">2.2 Technical Information</h3>
               <p className="text-gray-700 mb-4">We automatically collect certain technical information:</p>
               <ul className="list-disc pl-6 mb-4 text-gray-700">
                 <li>IP address and location data</li>
@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">3. How We Use Your Information</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">3. How We Use Your Information</h2>
               <p className="text-gray-700 mb-4">We use your information for the following purposes:</p>
               <ul className="list-disc pl-6 mb-4 text-gray-700">
                 <li>Providing real estate services and property listings</li>
@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">4. Information Sharing and Disclosure</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">4. Information Sharing and Disclosure</h2>
               <p className="text-gray-700 mb-4">We may share your information in the following circumstances:</p>
               <ul className="list-disc pl-6 mb-4 text-gray-700">
                 <li><strong>Service Providers:</strong> With trusted third-party service providers who assist in our operations</li>
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">5. Data Security</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">5. Data Security</h2>
               <p className="text-gray-700 mb-4">
                 We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.
               </p>
@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">6. Cookies and Tracking Technologies</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">6. Cookies and Tracking Technologies</h2>
               <p className="text-gray-700 mb-4">
                 We use cookies and similar technologies to enhance your browsing experience, analyze website traffic, and personalize content. You can control cookie settings through your browser preferences.
               </p>
@@ -108,7 +108,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">7. Your Rights</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">7. Your Rights</h2>
               <p className="text-gray-700 mb-4">Under applicable data protection laws, you have the following rights:</p>
               <ul className="list-disc pl-6 mb-4 text-gray-700">
                 <li><strong>Access:</strong> Request access to your personal information</li>
@@ -124,35 +124,35 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">8. Data Retention</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">8. Data Retention</h2>
               <p className="text-gray-700 mb-4">
                 We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When we no longer need your information, we will securely delete or anonymize it.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">9. International Data Transfers</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">9. International Data Transfers</h2>
               <p className="text-gray-700 mb-4">
                 Your information may be transferred to and processed in countries other than your country of residence. We ensure that such transfers comply with applicable data protection laws and implement appropriate safeguards to protect your information.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">10. Children's Privacy</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">10. Children's Privacy</h2>
               <p className="text-gray-700 mb-4">
                 Our services are not directed to children under 18 years of age. We do not knowingly collect personal information from children under 18. If you become aware that a child has provided us with personal information, please contact us immediately.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">11. Changes to This Privacy Policy</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">11. Changes to This Privacy Policy</h2>
               <p className="text-gray-700 mb-4">
                 We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the "Last updated" date. Your continued use of our services after such changes constitutes acceptance of the updated policy.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">12. Contact Information</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">12. Contact Information</h2>
               <p className="text-gray-700 mb-4">
                 If you have any questions about this Privacy Policy or our data practices, please contact us:
               </p>
@@ -167,7 +167,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">13. Governing Law</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">13. Governing Law</h2>
               <p className="text-gray-700 mb-4">
                 This Privacy Policy is governed by the laws of the United Arab Emirates. Any disputes arising from this policy will be subject to the exclusive jurisdiction of the courts of Dubai, UAE.
               </p>

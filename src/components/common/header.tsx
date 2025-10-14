@@ -179,7 +179,7 @@ export default function Header() {
                     <div className="bg-white rounded-lg shadow-xl border border-gray-200">
                       {/* Header */}
                       <div className="p-4 border-b border-gray-100">
-                        <h3 className="text-gray-500 text-sm font-light">Our Services</h3>
+                        <h3 className="text-gray-500 text-sm font-serif font-normal" style={{ letterSpacing: '0.05em' }}>Our Services</h3>
                       </div>
                       
                       {/* Services Grid */}
@@ -203,7 +203,7 @@ export default function Header() {
                                 <div className="flex-shrink-0 transition-colors duration-200 group-hover:text-blue-600">
                                   {service.icon}
                                 </div>
-                                <span className="text-blue-900 font-medium text-sm group-hover:text-blue-700 transition-colors duration-200">
+                                <span className="text-gray-700 font-serif font-normal text-sm group-hover:text-gray-900 transition-colors duration-200">
                                   {service.name}
                                 </span>
                               </Link>
@@ -228,7 +228,7 @@ export default function Header() {
                                 <div className="flex-shrink-0 transition-colors duration-200 group-hover:text-blue-600">
                                   {service.icon}
                                 </div>
-                                <span className="text-blue-900 font-medium text-sm group-hover:text-blue-700 transition-colors duration-200">
+                                <span className="text-gray-700 font-serif font-normal text-sm group-hover:text-gray-900 transition-colors duration-200">
                                   {service.name}
                                 </span>
                               </Link>
@@ -282,7 +282,7 @@ export default function Header() {
                 )}
               >
                 <Globe className="h-4 w-4" />
-                <span className="text-sm font-medium underline">AED</span>
+                <span className="text-sm font-serif font-normal underline" style={{ letterSpacing: '0.05em' }}>AED</span>
                 <ChevronDown className="h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -344,7 +344,7 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <h2 className="text-lg font-semibold">Menu</h2>
+          <h2 className="text-lg font-serif font-normal" style={{ letterSpacing: '0.05em' }}>Menu</h2>
           <button
           onClick={() => setIsOverlayOpen(false)}
             className="text-gray-500 hover:text-gray-700"
@@ -362,7 +362,7 @@ export default function Header() {
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                     className={cn(
                       "flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 transition-colors duration-200 py-2",
-                      pathname === link.href && "text-gray-900 font-medium"
+                      pathname === link.href && "text-gray-900 font-serif font-normal"
                     )}
                   >
                     <span>{link.label}</span>
@@ -392,7 +392,7 @@ export default function Header() {
                           <div className="flex-shrink-0 transition-colors duration-200 group-hover:text-blue-600">
                             {service.icon}
                           </div>
-                          <span className="text-blue-900 font-medium text-sm group-hover:text-blue-700 transition-colors duration-200">
+                          <span className="text-gray-700 font-serif font-normal text-sm group-hover:text-gray-900 transition-colors duration-200">
                             {service.name}
                           </span>
                         </Link>
@@ -409,7 +409,7 @@ export default function Header() {
               href={link.href}
               className={cn(
                   "text-gray-700 hover:text-gray-900 transition-colors duration-200 py-2",
-                  pathname === link.href && "text-gray-900 font-medium"
+                  pathname === link.href && "text-gray-900 font-serif font-normal"
               )}
                 onClick={() => setIsOverlayOpen(false)}
             >
@@ -425,7 +425,7 @@ export default function Header() {
             <Globe className="h-4 w-4 text-gray-500" />
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700">
-                <span className="text-sm font-medium">USD</span>
+                <span className="text-sm font-serif font-normal" style={{ letterSpacing: '0.05em' }}>USD</span>
                 <ChevronDown className="h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>

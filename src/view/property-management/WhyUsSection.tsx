@@ -32,7 +32,7 @@ export default function WhyUsSection() {
 
           {/* Right Content */}
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif font-normal text-blue-900 leading-tight">
               Why Us?
             </h2>
             
@@ -53,7 +53,7 @@ export default function WhyUsSection() {
               ))}
             </div>
 
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200">
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-serif font-normal rounded-lg transition-colors duration-200">
               Learn more →
             </Button>
           </div>

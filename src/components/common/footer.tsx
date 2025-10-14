@@ -45,7 +45,7 @@ export default function Footer() {
               
               {/* Social Media Icons */}
               <div className="mb-6">
-                <h4 className="text-[#dbbb90] font-serif font-medium text-sm uppercase tracking-wider mb-3">
+                <h4 className="text-[#dbbb90] font-serif font-serif font-normal text-sm uppercase tracking-wider mb-3">
                   Follow Us
                 </h4>
                 <div className="flex space-x-2 sm:space-x-3">
@@ -82,7 +82,7 @@ export default function Footer() {
               
               {/* Newsletter */}
               <div className="space-y-3">
-                <h4 className="text-[#dbbb90] font-serif font-medium text-sm uppercase tracking-wider">
+                <h4 className="text-[#dbbb90] font-serif font-serif font-normal text-sm uppercase tracking-wider">
                   Stay Connected
                 </h4>
                 <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
@@ -100,7 +100,7 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div className="lg:col-span-1">
-              <h4 className="text-[#dbbb90] font-serif font-medium text-sm uppercase tracking-wider mb-6">
+              <h4 className="text-[#dbbb90] font-serif font-serif font-normal text-sm uppercase tracking-wider mb-6">
                 Quick Links
               </h4>
               <ul className="space-y-3">
@@ -120,21 +120,17 @@ export default function Footer() {
 
             {/* Services */}
             <div className="lg:col-span-1">
-              <h4 className="text-[#dbbb90] font-serif font-medium text-sm uppercase tracking-wider mb-6">
+              <h4 className="text-[#dbbb90] font-serif font-serif font-normal text-sm uppercase tracking-wider mb-6">
                 Services
               </h4>
               <ul className="space-y-3">
                 <li><Link href="/mortgages" className="text-gray-700 hover:text-[#dbbb90] transition-colors duration-300 text-sm font-serif">Mortgages</Link></li>
-                <li><Link href="/conveyancing" className="text-gray-700 hover:text-[#dbbb90] transition-colors duration-300 text-sm font-serif">Conveyancing</Link></li>
-                <li><Link href="/property-management" className="text-gray-700 hover:text-[#dbbb90] transition-colors duration-300 text-sm font-serif">Property Management</Link></li>
-                <li><Link href="/short-term-rental" className="text-gray-700 hover:text-[#dbbb90] transition-colors duration-300 text-sm font-serif">Short-term Rental</Link></li>
-                <li><Link href="/list-your-property" className="text-gray-700 hover:text-[#dbbb90] transition-colors duration-300 text-sm font-serif">List Your Property</Link></li>
               </ul>
             </div>
 
             {/* Contact */}
             <div className="lg:col-span-1">
-              <h4 className="text-[#dbbb90] font-serif font-medium text-sm uppercase tracking-wider mb-6">
+              <h4 className="text-[#dbbb90] font-serif font-serif font-normal text-sm uppercase tracking-wider mb-6">
                 Contact
               </h4>
               <address className="not-italic space-y-4 text-sm">

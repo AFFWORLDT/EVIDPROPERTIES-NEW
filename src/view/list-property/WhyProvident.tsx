@@ -16,7 +16,7 @@ function WhyApricity() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl font-bold text-blue-900 mb-8">
+            <h2 className="text-4xl font-serif font-normal text-blue-900 mb-8">
               Why list your property with Apricity?
             </h2>
             
@@ -31,7 +31,7 @@ function WhyApricity() {
               ))}
             </div>
 
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 flex items-center">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-serif font-normal transition-colors duration-200 flex items-center">
               List Your Property
               <span className="ml-2">→</span>
             </button>
@@ -67,7 +67,7 @@ function WhyApricity() {
               {/* Sign */}
               <div className="absolute -right-8 bottom-8">
                 <div className="bg-white border-2 border-gray-300 rounded-lg p-3 shadow-lg">
-                  <p className="text-gray-800 font-bold text-sm text-center">
+                  <p className="text-gray-800 font-serif font-normal text-sm text-center">
                     LIST YOUR<br />PROPERTY
                   </p>
                 </div>
@@ -78,7 +78,7 @@ function WhyApricity() {
 
         {/* How does it work section */}
         <div className="mt-20 text-center">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-4xl font-serif font-normal text-blue-900 mb-4">
             How does it work?
           </h2>
           <p className="text-xl text-gray-600">

@@ -47,7 +47,7 @@ export default function MortgageCalculator() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-6">
-            <span className="text-[#dbbb90] text-xs font-serif font-medium tracking-[0.3em] uppercase">
+            <span className="text-[#dbbb90] text-xs font-serif font-serif font-normal tracking-[0.3em] uppercase">
               APRICITY MORTGAGE CALCULATOR
             </span>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>

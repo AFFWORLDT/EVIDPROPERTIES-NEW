@@ -6,21 +6,21 @@ function PartnersSection() {
       name: "ANUBE PROPERTIES",
       logo: (
         <div className="flex flex-col items-center">
-          <span className="text-red-600 font-bold text-lg">ANUBE</span>
-          <span className="text-black font-medium text-sm">PROPERTIES</span>
+          <span className="text-red-600 font-serif font-normal text-lg">ANUBE</span>
+          <span className="text-black font-serif font-normal text-sm">PROPERTIES</span>
         </div>
       )
     },
     {
       name: "DAMAC",
       logo: (
-        <div className="text-black font-bold text-xl italic">DAMAC</div>
+        <div className="text-black font-serif font-normal text-xl italic">DAMAC</div>
       )
     },
     {
       name: "EMAAR",
       logo: (
-        <div className="text-black font-bold text-xl serif">EMAAR</div>
+        <div className="text-black font-serif font-normal text-xl serif">EMAAR</div>
       )
     },
     {
@@ -30,7 +30,7 @@ function PartnersSection() {
           <div className="w-6 h-6 border-2 border-black flex items-center justify-center">
             <div className="w-3 h-3 bg-black"></div>
           </div>
-          <span className="text-black font-bold text-lg">MERAAS</span>
+          <span className="text-black font-serif font-normal text-lg">MERAAS</span>
         </div>
       )
     },
@@ -38,15 +38,15 @@ function PartnersSection() {
       name: "SOBHA REALTY",
       logo: (
         <div className="flex flex-col items-center">
-          <span className="text-black font-bold text-lg serif">SOBHA</span>
-          <span className="text-black font-medium text-sm">REALTY</span>
+          <span className="text-black font-serif font-normal text-lg serif">SOBHA</span>
+          <span className="text-black font-serif font-normal text-sm">REALTY</span>
         </div>
       )
     },
     {
       name: "NAKHEEL",
       logo: (
-        <div className="text-black font-bold text-xl">NAKHEEL</div>
+        <div className="text-black font-serif font-normal text-xl">NAKHEEL</div>
       )
     }
   ]

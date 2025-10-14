@@ -31,7 +31,7 @@ export default function HeroSection() {
               <span className="mx-2 text-[#dbbb90]">/</span>
               <span className="hover:text-[#dbbb90] transition-colors">Services</span>
               <span className="mx-2 text-[#dbbb90]">/</span>
-              <span className="text-[#dbbb90] font-medium">Mortgages</span>
+              <span className="text-[#dbbb90] font-serif font-normal">Mortgages</span>
             </nav>
           </div>
 

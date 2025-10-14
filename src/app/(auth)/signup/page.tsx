@@ -93,7 +93,7 @@ export default function SignupPage() {
               <span className="text-sm">Back to website</span>
             </Link>
             
-            <h1 className="text-3xl font-bold text-blue-900 mb-2">
+            <h1 className="text-3xl font-serif font-normal text-blue-900 mb-2">
               APRICITY REALESTATE
             </h1>
             <p className="text-gray-600 text-sm mb-4">
@@ -154,7 +154,7 @@ export default function SignupPage() {
           <form className="space-y-4" onSubmit={handleSubmit}>
             {/* Owner Name Field */}
             <div className="space-y-2">
-              <Label htmlFor="owner_name" className="text-sm font-medium text-gray-700">
+              <Label htmlFor="owner_name" className="text-sm font-serif font-normal text-gray-700">
                 Owner Name *
               </Label>
               <div className="relative">
@@ -173,7 +173,7 @@ export default function SignupPage() {
 
             {/* Lessor Email Field */}
             <div className="space-y-2">
-              <Label htmlFor="lessor_email" className="text-sm font-medium text-gray-700">
+              <Label htmlFor="lessor_email" className="text-sm font-serif font-normal text-gray-700">
                 Email Address *
               </Label>
               <div className="relative">
@@ -192,7 +192,7 @@ export default function SignupPage() {
 
             {/* Lessor Phone Field */}
             <div className="space-y-2">
-              <Label htmlFor="lessor_phone" className="text-sm font-medium text-gray-700">
+              <Label htmlFor="lessor_phone" className="text-sm font-serif font-normal text-gray-700">
                 Phone Number *
               </Label>
               <div className="relative">
@@ -211,7 +211,7 @@ export default function SignupPage() {
 
             {/* Password Field */}
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+              <Label htmlFor="password" className="text-sm font-serif font-normal text-gray-700">
                 Password *
               </Label>
               <div className="relative">
@@ -264,7 +264,7 @@ export default function SignupPage() {
             {/* Submit Button */}
             <Button 
               type="submit" 
-              className="w-full h-12 bg-primary hover:bg-primary text-white font-medium text-lg mt-6"
+              className="w-full h-12 bg-primary hover:bg-primary text-white font-serif font-normal text-lg mt-6"
               disabled={!formData.agreeToTerms || isLoading}
             >
               {isLoading ? (

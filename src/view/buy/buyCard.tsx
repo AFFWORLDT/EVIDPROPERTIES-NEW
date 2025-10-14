@@ -103,14 +103,14 @@ export function BuyCard({ data, onFavorite }: BuyCardProps) {
           </h3>
         </div>
 
-        <p className="text-sm text-primary uppercase font-light tracking-wider">
+        <p className="text-sm text-primary uppercase font-serif font-normal tracking-wider">
           {locationName || "Location not specified"}
         </p>
-        <p className="text-sm font-bold text-[#1A202C] tracking-wide">
+        <p className="text-sm font-serif font-normal text-[#1A202C] tracking-wide">
           {formattedPrice}
         </p>
 
-        <div className="flex items-end justify-between text-gray-600 text-sm mt-2 font-light mt-auto">
+        <div className="flex items-end justify-between text-gray-600 text-sm mt-2 font-serif font-normal mt-auto">
           <div className="flex items-end gap-8">
             <div className="flex items-center gap-1">
               <Bed className="w-4 h-4" />

@@ -88,7 +88,7 @@ export default function LoginPage() {
               <span className="text-sm">Back to website</span>
             </Link>
             
-            <h1 className="text-3xl font-bold text-blue-900 mb-2">
+            <h1 className="text-3xl font-serif font-normal text-blue-900 mb-2">
               APRICITY REALESTATE
             </h1>
             <p className="text-gray-600 text-sm mb-4">
@@ -149,7 +149,7 @@ export default function LoginPage() {
           <form className="space-y-4" onSubmit={handleSubmit}>
             {/* Username Field */}
             <div className="space-y-2">
-              <Label htmlFor="username" className="text-sm font-medium text-gray-700">
+              <Label htmlFor="username" className="text-sm font-serif font-normal text-gray-700">
                 Username *
               </Label>
               <div className="relative">
@@ -168,7 +168,7 @@ export default function LoginPage() {
 
             {/* Password Field */}
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+              <Label htmlFor="password" className="text-sm font-serif font-normal text-gray-700">
                 Password *
               </Label>
               <div className="relative">
@@ -220,7 +220,7 @@ export default function LoginPage() {
             {/* Submit Button */}
             <Button 
               type="submit" 
-              className="w-full h-12 bg-primary hover:bg-primary text-white font-medium text-lg"
+              className="w-full h-12 bg-primary hover:bg-primary text-white font-serif font-normal text-lg"
               disabled={isLoading}
             >
               {isLoading ? (

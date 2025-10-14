@@ -124,7 +124,7 @@ export default function CommunityDetails({ params }: { params: { communityName: 
                     '<li class="leading-relaxed">'
                   ).replace(
                     /<strong>/g, 
-                    '<strong class="font-semibold text-gray-900">'
+                    '<strong class="font-serif font-normal text-gray-900">'
                   )
                 }} 
               />
@@ -133,12 +133,12 @@ export default function CommunityDetails({ params }: { params: { communityName: 
             {/* Tags */}
             {article.tags && article.tags.length > 0 && (
               <div className="mt-16 pt-12 border-t border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 font-serif">Related Topics</h3>
+                <h3 className="text-2xl font-serif font-normal text-gray-900 mb-6 font-serif">Related Topics</h3>
                 <div className="flex flex-wrap gap-3">
                   {article.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-4 py-2 bg-[#dbbb90]/20 text-gray-700 rounded-full text-sm font-medium hover:bg-[#dbbb90]/30 transition-colors font-serif"
+                      className="px-4 py-2 bg-[#dbbb90]/20 text-gray-700 rounded-full text-sm font-serif font-normal hover:bg-[#dbbb90]/30 transition-colors font-serif"
                     >
                       {tag}
                     </span>
@@ -150,7 +150,7 @@ export default function CommunityDetails({ params }: { params: { communityName: 
             {/* View Properties Button */}
             <div className="mt-12 pt-8 border-t border-gray-200">
               <div className="flex justify-center">
-                <button className="bg-[#D4B88C] text-white px-8 py-3 rounded-none font-medium hover:bg-[#C4A87C] transition-colors">
+                <button className="bg-[#D4B88C] text-white px-8 py-3 rounded-none font-serif font-normal hover:bg-[#C4A87C] transition-colors">
                   View Properties
                 </button>
               </div>

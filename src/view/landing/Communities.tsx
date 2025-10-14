@@ -104,13 +104,13 @@ export default function Component() {
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 text-center px-3 sm:px-4">
-        <p className="text-[#D4B88C] text-sm uppercase tracking-widest mb-2 font-light">
+        <p className="text-[#D4B88C] text-sm uppercase tracking-widest mb-2 font-serif font-normal">
           COMMUNITIES
         </p>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-mono text-gray-800 mb-4 sm:mb-6 tracking-wide px-2">
           Discover Dubai&apos;s Finest
         </h1>
-        <p className="max-w-4xl mx-auto text-gray-600 text-xs sm:text-sm tracking-tight font-light px-4">
+        <p className="max-w-4xl mx-auto text-gray-600 text-xs sm:text-sm tracking-tight font-serif font-normal px-4">
           Explore the diverse tapestry of Dubai&apos;s most sought-after areas
           and communities. From serene waterfront retreats to bustling urban
           hubs, our curated selection showcases the essence of luxury living in
@@ -145,25 +145,11 @@ export default function Component() {
                       className="transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4 md:p-6 flex flex-col justify-end text-white">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-light mb-1 sm:mb-2 tracking-wide">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-normal mb-1 sm:mb-2" style={{ letterSpacing: '0.05em' }}>
                         {community.name}
                       </h3>
                       
-                      {/* Property counts */}
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {community?.total_count > 0 && (
-                          <span className="bg-[#dbbb90]/20 text-[#dbbb90] px-2 py-1 rounded-full text-xs font-medium">
-                            {community.total_count} Properties
-                          </span>
-                        )}
-                        {community?.projects_count > 0 && (
-                          <span className="bg-white/20 text-white px-2 py-1 rounded-full text-xs font-medium">
-                            {community.projects_count} Projects
-                          </span>
-                        )}
-                      </div>
-
-                      <p className="text-xs sm:text-sm mb-2 sm:mb-3 md:mb-4 font-light leading-relaxed">
+                      <p className="text-xs sm:text-sm mb-2 sm:mb-3 md:mb-4 font-serif font-normal leading-relaxed" style={{ letterSpacing: '0.05em' }}>
                         {community.order_description || `${community.city} - Luxury living at its finest`}
                       </p>
                       <div className="w-full border-[0.5px] border-white/30 mb-2 sm:mb-3 md:mb-4" />
@@ -207,7 +193,7 @@ export default function Component() {
         <div className="w-full flex justify-center items-center mt-11 mb-4">
           
         <Link href={"/communities"}>
-           <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-light tracking-wider py-2 px-4 rounded-none transition-colors uppercase">
+           <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-serif font-normal tracking-wider py-2 px-4 rounded-none transition-colors uppercase">
             View All Communities
           </Button>
         </Link>

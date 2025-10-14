@@ -62,7 +62,7 @@ export default function ServicesGrid() {
               
               {/* Service Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-blue-900 mb-4">
+                <h3 className="text-xl font-serif font-normal text-blue-900 mb-4">
                   {service.title}
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">

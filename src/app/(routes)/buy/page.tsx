@@ -483,7 +483,7 @@ function Buy() {
         <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="flex items-center justify-between">
-              <span className="text-xl font-semibold">Search Filters</span>
+              <span className="text-xl font-serif font-normal" style={{ letterSpacing: '0.05em' }}>Search Filters</span>
               <Button
                 variant="ghost"
                 size="sm"
@@ -498,7 +498,7 @@ function Buy() {
           <div className="space-y-6 py-4">
             {/* Search Input - Hidden on large screens since it's shown in desktop form */}
             <div className="space-y-2 md:hidden">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-serif font-normal text-gray-700">
                 Location
               </label>
               <div className="relative">
@@ -517,7 +517,7 @@ function Buy() {
 
             {/* Listing Type Filter - Hidden on large screens since it's shown in desktop form */}
             <div className="space-y-2 md:hidden">
-              <label className="text-sm font-medium text-gray-700">Type</label>
+              <label className="text-sm font-serif font-normal text-gray-700">Type</label>
               <Select
                 value={filters.listing_type}
                 onValueChange={(value) => handleFilterChange("listing_type", value)}
@@ -534,7 +534,7 @@ function Buy() {
 
             {/* Property Type - Hidden on large screens since it's shown in desktop form */}
             <div className="space-y-2 md:hidden">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-serif font-normal text-gray-700">
                 Property Type
               </label>
               <Select
@@ -559,7 +559,7 @@ function Buy() {
 
             {/* Completion Status */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-serif font-normal text-gray-700">
                 Completion Status
               </label>
               <Select
@@ -583,7 +583,7 @@ function Buy() {
 
             {/* Developer Search */}
             <div className="space-y-2 developer-search">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-serif font-normal text-gray-700">
                 Developer
               </label>
               <div className="relative">
@@ -607,7 +607,7 @@ function Buy() {
                       className="px-3 py-2 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
                       onClick={() => handleDeveloperSelect(developer)}
                     >
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="text-sm font-serif font-normal text-gray-900">
                         {developer.name}
                       </div>
                       {developer.location && (
@@ -624,7 +624,7 @@ function Buy() {
             {/* Price Range - Hidden on large screens since it's shown in desktop form */}
             <div className="grid grid-cols-2 gap-4 md:hidden">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label className="text-sm font-serif font-normal text-gray-700">
                   Min Price
                 </label>
                 <Select
@@ -648,7 +648,7 @@ function Buy() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label className="text-sm font-serif font-normal text-gray-700">
                   Max Price
                 </label>
                 <Select
@@ -674,7 +674,7 @@ function Buy() {
 
             {/* Bedrooms - Hidden on large screens since it's shown in desktop form */}
             <div className="space-y-2 md:hidden">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-serif font-normal text-gray-700">
                 Bedrooms
               </label>
               <Select
@@ -697,7 +697,7 @@ function Buy() {
 
             {/* Bathrooms */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-serif font-normal text-gray-700">
                 Bathrooms
               </label>
               <Select
@@ -722,7 +722,7 @@ function Buy() {
 
             {/* Handover Year */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-serif font-normal text-gray-700">
                 Handover Year
               </label>
               <Select
@@ -748,7 +748,7 @@ function Buy() {
             {/* Search Button */}
             <Button
               onClick={handleSearch}
-              className="w-full bg-primary hover:bg-primary/90 text-white font-medium h-14 rounded-md"
+              className="w-full bg-primary hover:bg-primary/90 text-white font-serif font-normal h-14 rounded-md"
             >
               <Search className="w-5 h-5 mr-2" />
               Search Properties
@@ -806,7 +806,7 @@ function Buy() {
             <button
               onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-2 text-sm font-serif font-normal text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               Previous
             </button>
@@ -843,7 +843,7 @@ function Buy() {
             <button
               onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-2 text-sm font-serif font-normal text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               Next
             </button>

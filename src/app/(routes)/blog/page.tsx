@@ -6,7 +6,7 @@ function Blog() {
     <div>
       <section className="pt-32 pb-12 px-4 bg-white">
         <div className=" mx-auto text-center">
-          <h1 className="text-5xl font-medium mb-6 text-black font-mono">
+          <h1 className="text-5xl font-serif font-normal mb-6 text-gray-800" style={{ letterSpacing: '0.05em' }}>
             Blog
           </h1>
         </div>

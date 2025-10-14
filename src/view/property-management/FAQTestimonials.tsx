@@ -58,7 +58,7 @@ export default function FAQTestimonials() {
       <div className="container mx-auto px-4">
         {/* FAQ Section */}
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-blue-900 text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-serif font-normal text-blue-900 text-center mb-12">
             FAQs About Apricity Property Management Service Dubai
           </h2>
           
@@ -69,7 +69,7 @@ export default function FAQTestimonials() {
                   onClick={() => toggleFAQ(index)}
                   className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <span className="text-lg font-semibold text-blue-900">
+                  <span className="text-lg font-serif font-normal text-blue-900">
                     {faq.question}
                   </span>
                   <Plus 
@@ -95,7 +95,7 @@ export default function FAQTestimonials() {
         <div>
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-blue-900">
+              <h2 className="text-4xl md:text-5xl font-serif font-normal text-blue-900">
                 Why Our Clients Trust Us
               </h2>
               <p className="text-gray-600 mt-2">
@@ -112,12 +112,12 @@ export default function FAQTestimonials() {
               <div key={index} className="bg-white rounded-lg shadow-md p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                    <span className="text-gray-600 font-semibold">
+                    <span className="text-gray-600 font-serif font-normal">
                       {testimonial.name.charAt(0)}
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-blue-900">{testimonial.name}</h4>
+                    <h4 className="font-serif font-normal text-blue-900">{testimonial.name}</h4>
                     <p className="text-sm text-gray-500">{testimonial.time}</p>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export default function FAQTestimonials() {
                   ))}
                 </div>
                 
-                <h5 className="font-semibold text-blue-900 mb-2">
+                <h5 className="font-serif font-normal text-blue-900 mb-2">
                   {testimonial.title}
                 </h5>
                 

@@ -11,7 +11,7 @@ export default function CookiePolicyPage() {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 font-serif">Cookie Policy</h1>
+          <h1 className="text-4xl font-serif font-normal text-gray-900 mb-8 font-serif">Cookie Policy</h1>
           
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600 mb-6">
@@ -19,7 +19,7 @@ export default function CookiePolicyPage() {
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">1. What Are Cookies?</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">1. What Are Cookies?</h2>
               <p className="text-gray-700 mb-4">
                 Cookies are small text files that are stored on your device when you visit our website. They help us provide you with a better browsing experience by remembering your preferences and enabling certain website functionality.
               </p>
@@ -29,12 +29,12 @@ export default function CookiePolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">2. How We Use Cookies</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">2. How We Use Cookies</h2>
               <p className="text-gray-700 mb-4">
                 Apricity Realestate uses cookies for the following purposes:
               </p>
               
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">2.1 Essential Cookies</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">2.1 Essential Cookies</h3>
               <p className="text-gray-700 mb-4">
                 These cookies are necessary for the website to function properly and cannot be disabled. They include:
               </p>
@@ -45,7 +45,7 @@ export default function CookiePolicyPage() {
                 <li>Cookies that remember your cookie preferences</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">2.2 Functional Cookies</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">2.2 Functional Cookies</h3>
               <p className="text-gray-700 mb-4">
                 These cookies enhance your experience by remembering your preferences:
               </p>
@@ -56,7 +56,7 @@ export default function CookiePolicyPage() {
                 <li>Form data to prevent data loss</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">2.3 Analytics Cookies</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">2.3 Analytics Cookies</h3>
               <p className="text-gray-700 mb-4">
                 These cookies help us understand how visitors use our website:
               </p>
@@ -67,7 +67,7 @@ export default function CookiePolicyPage() {
                 <li>Website performance monitoring</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">2.4 Marketing Cookies</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">2.4 Marketing Cookies</h3>
               <p className="text-gray-700 mb-4">
                 These cookies are used to deliver relevant advertisements and marketing content:
               </p>
@@ -80,16 +80,16 @@ export default function CookiePolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">3. Types of Cookies We Use</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">3. Types of Cookies We Use</h2>
               
               <div className="overflow-x-auto mb-6">
                 <table className="min-w-full bg-white border border-gray-200 rounded-lg">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cookie Name</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Purpose</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                      <th className="px-6 py-3 text-left text-xs font-serif font-normal text-gray-500 uppercase">Cookie Name</th>
+                      <th className="px-6 py-3 text-left text-xs font-serif font-normal text-gray-500 uppercase">Purpose</th>
+                      <th className="px-6 py-3 text-left text-xs font-serif font-normal text-gray-500 uppercase">Duration</th>
+                      <th className="px-6 py-3 text-left text-xs font-serif font-normal text-gray-500 uppercase">Type</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
@@ -135,12 +135,12 @@ export default function CookiePolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">4. Third-Party Cookies</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">4. Third-Party Cookies</h2>
               <p className="text-gray-700 mb-4">
                 Our website may contain cookies from third-party services that we use to enhance functionality and analyze usage:
               </p>
               
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">4.1 Google Analytics</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">4.1 Google Analytics</h3>
               <p className="text-gray-700 mb-4">
                 We use Google Analytics to understand how visitors interact with our website. Google Analytics uses cookies to collect information about your use of our website, which is transmitted to and stored by Google.
               </p>
@@ -148,26 +148,26 @@ export default function CookiePolicyPage() {
                 For more information about Google Analytics cookies, visit: <a href="https://policies.google.com/privacy" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">4.2 Social Media</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">4.2 Social Media</h3>
               <p className="text-gray-700 mb-4">
                 Our website may include social media features that set cookies from platforms like Facebook, Twitter, LinkedIn, and Instagram when you interact with them.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">4.3 Advertising Partners</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">4.3 Advertising Partners</h3>
               <p className="text-gray-700 mb-4">
                 We may work with advertising partners who set cookies to deliver relevant advertisements and measure their effectiveness.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">5. Managing Your Cookie Preferences</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">5. Managing Your Cookie Preferences</h2>
               
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">5.1 Cookie Consent</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">5.1 Cookie Consent</h3>
               <p className="text-gray-700 mb-4">
                 When you first visit our website, you will see a cookie consent banner. You can choose which types of cookies you want to accept. You can change your preferences at any time by clicking the "Cookie Settings" link in our website footer.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">5.2 Browser Settings</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">5.2 Browser Settings</h3>
               <p className="text-gray-700 mb-4">
                 You can control cookies through your browser settings. Most browsers allow you to:
               </p>
@@ -179,29 +179,29 @@ export default function CookiePolicyPage() {
                 <li>Set up notifications when cookies are set</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">5.3 Browser-Specific Instructions</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-3 font-serif">5.3 Browser-Specific Instructions</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-2">Chrome</h4>
+                  <h4 className="font-serif font-normal text-gray-800 mb-2">Chrome</h4>
                   <p className="text-sm text-gray-700">Settings → Privacy and security → Cookies and other site data</p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-2">Firefox</h4>
+                  <h4 className="font-serif font-normal text-gray-800 mb-2">Firefox</h4>
                   <p className="text-sm text-gray-700">Options → Privacy & Security → Cookies and Site Data</p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-2">Safari</h4>
+                  <h4 className="font-serif font-normal text-gray-800 mb-2">Safari</h4>
                   <p className="text-sm text-gray-700">Preferences → Privacy → Manage Website Data</p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-2">Edge</h4>
+                  <h4 className="font-serif font-normal text-gray-800 mb-2">Edge</h4>
                   <p className="text-sm text-gray-700">Settings → Cookies and site permissions → Cookies and site data</p>
                 </div>
               </div>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">6. Impact of Disabling Cookies</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">6. Impact of Disabling Cookies</h2>
               <p className="text-gray-700 mb-4">
                 If you choose to disable cookies, some features of our website may not function properly:
               </p>
@@ -215,14 +215,14 @@ export default function CookiePolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">7. Updates to This Cookie Policy</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">7. Updates to This Cookie Policy</h2>
               <p className="text-gray-700 mb-4">
                 We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the updated policy on our website and updating the "Last updated" date.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">8. Contact Information</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">8. Contact Information</h2>
               <p className="text-gray-700 mb-4">
                 If you have any questions about our use of cookies or this Cookie Policy, please contact us:
               </p>
@@ -237,7 +237,7 @@ export default function CookiePolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">9. Legal Basis for Cookie Use</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">9. Legal Basis for Cookie Use</h2>
               <p className="text-gray-700 mb-4">
                 Our use of cookies is based on:
               </p>
@@ -250,7 +250,7 @@ export default function CookiePolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">10. Data Retention</h2>
+              <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">10. Data Retention</h2>
               <p className="text-gray-700 mb-4">
                 Cookie data is retained for different periods depending on the type of cookie:
               </p>

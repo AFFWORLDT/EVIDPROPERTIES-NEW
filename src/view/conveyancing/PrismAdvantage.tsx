@@ -36,7 +36,7 @@ export default function PrismAdvantage() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-8">
+          <h2 className="text-4xl font-serif font-normal text-blue-900 mb-8">
             Discover the PRISM Advantage for Dubai Property Conveyancing
           </h2>
         </div>
@@ -48,7 +48,7 @@ export default function PrismAdvantage() {
                 {advantage.icon}
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-serif font-normal text-gray-900 mb-4">
                 {advantage.title}
               </h3>
               

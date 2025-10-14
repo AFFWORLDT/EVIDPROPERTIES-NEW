@@ -35,7 +35,7 @@ export default function ContactForm() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl font-bold text-blue-900 mb-6 font-serif">
+            <h2 className="text-4xl font-serif font-normal text-blue-900 mb-6 font-serif">
               Your Property Transactions Simplified
             </h2>
             
@@ -50,7 +50,7 @@ export default function ContactForm() {
                   <MessageCircle className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">WhatsApp</div>
+                  <div className="font-serif font-normal text-gray-900">WhatsApp</div>
                   <a href="#" className="text-primary hover:text-primary/80 transition-colors duration-200">
                     Click to WhatsApp
                   </a>
@@ -63,7 +63,7 @@ export default function ContactForm() {
                   <Phone className="w-6 h-6 text-gray-600" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Phone</div>
+                  <div className="font-serif font-normal text-gray-900">Phone</div>
                   <div className="text-gray-600">+971 4 892 5831</div>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function ContactForm() {
                   <Mail className="w-6 h-6 text-gray-600" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Email</div>
+                  <div className="font-serif font-normal text-gray-900">Email</div>
                   <a href="mailto:info@apricityrealestate.ae" className="text-primary hover:text-primary/80 transition-colors duration-200">
                     info@apricityrealestate.ae
                   </a>
@@ -87,7 +87,7 @@ export default function ContactForm() {
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-serif font-normal text-gray-700 mb-2">
                   Name
                 </label>
                 <Input
@@ -101,7 +101,7 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-serif font-normal text-gray-700 mb-2">
                   Email
                 </label>
                 <Input
@@ -115,7 +115,7 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-serif font-normal text-gray-700 mb-2">
                   Phone
                 </label>
                 <div className="flex">
@@ -142,7 +142,7 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-serif font-normal text-gray-700 mb-2">
                   Preferred Language
                 </label>
                 <Select value={formData.language} onValueChange={(value) => handleInputChange('language', value)}>
@@ -159,7 +159,7 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-serif font-normal text-gray-700 mb-2">
                   Message
                 </label>
                 <Textarea
@@ -172,7 +172,7 @@ export default function ContactForm() {
 
               <Button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary text-white py-4 text-lg font-semibold rounded-lg transition-colors duration-200"
+                className="w-full bg-primary hover:bg-primary text-white py-4 text-lg font-serif font-normal rounded-lg transition-colors duration-200"
               >
                 Submit Details
               </Button>

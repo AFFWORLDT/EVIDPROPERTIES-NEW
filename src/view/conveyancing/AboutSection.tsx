@@ -11,11 +11,11 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="order-2 lg:order-1">
-            <h2 className="text-4xl font-bold text-blue-900 mb-6">
+            <h2 className="text-4xl font-serif font-normal text-blue-900 mb-6">
               About Conveyance with Apricity
             </h2>
             
-            <h3 className="text-xl font-bold text-gray-800 mb-6">
+            <h3 className="text-xl font-serif font-normal text-gray-800 mb-6">
               Setting New Benchmarks in Industry Standards. Pioneering Excellence in Conveyancing.
             </h3>
             
@@ -30,7 +30,7 @@ export default function AboutSection() {
             </div>
 
             <div className="mt-8">
-              <Button className="bg-primary hover:bg-primary text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200">
+              <Button className="bg-primary hover:bg-primary text-white px-8 py-4 text-lg font-serif font-normal rounded-lg transition-colors duration-200">
                 Enquire now →
               </Button>
             </div>

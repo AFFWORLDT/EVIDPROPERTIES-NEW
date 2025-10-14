@@ -32,19 +32,19 @@ export default function Feature() {
       <main className="container mx-auto py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
         <section className="text-center mb-12 sm:mb-16 md:mb-20">
           <div className="inline-block mb-6">
-            <span className="text-[#dbbb90] text-xs font-serif font-medium tracking-[0.3em] uppercase">
+            <span className="text-[#dbbb90] text-xs font-serif font-serif font-normal tracking-[0.3em] uppercase">
               FEATURED NEW PROJECTS
             </span>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8 text-[#1A202C] leading-tight tracking-wide">
-            <span className="text-[#1A202C] font-normal">Luxury</span> Unveiled
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal mb-8 text-gray-800 leading-tight" style={{ letterSpacing: '0.05em' }}>
+            <span className="text-gray-800 font-normal">Luxury</span> Unveiled
             <br />
-            <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-gray-600 mt-1 sm:mt-2 block">
+            <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-gray-600 mt-1 sm:mt-2 block" style={{ letterSpacing: '0.05em' }}>
               Comfort & Sophistication
             </span>
           </h1>
-          <p className="max-w-3xl mx-auto text-sm sm:text-base font-light text-gray-600 leading-relaxed font-serif px-4">
+          <p className="max-w-3xl mx-auto text-sm sm:text-base text-gray-600 leading-relaxed font-serif font-normal px-4" style={{ letterSpacing: '0.05em' }}>
             Discover a curated selection of Dubai's most exquisite off-plan projects,
             epitomizing luxury, elegance, and unparalleled design. Each development
             represents the pinnacle of architectural excellence and refined living.
@@ -80,7 +80,7 @@ export default function Feature() {
 
         <div className="text-center">
           <Link href={"/offPlans"}>
-            <Button className="group relative bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#dbbb90] text-white px-12 py-6 text-lg font-serif font-medium tracking-wider rounded-none shadow-2xl hover:shadow-3xl uppercase transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-[#dbbb90]/20">
+            <Button className="group relative bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#dbbb90] text-white px-12 py-6 text-lg font-serif font-normal rounded-none shadow-2xl hover:shadow-3xl uppercase transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-[#dbbb90]/20" style={{ letterSpacing: '0.05em' }}>
               <span className="relative z-10">VIEW ALL PROJECTS</span>
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Button>

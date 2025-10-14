@@ -32,7 +32,7 @@ export default function ClientTestimonials() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12">
           <div>
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">
+            <h2 className="text-4xl font-serif font-normal text-blue-900 mb-4">
               Why Our Clients Trust Us
             </h2>
             <p className="text-xl text-gray-600">
@@ -40,7 +40,7 @@ export default function ClientTestimonials() {
             </p>
           </div>
           
-          <Button className="bg-primary hover:bg-primary text-white px-6 py-3 font-semibold rounded-lg transition-colors duration-200 mt-6 lg:mt-0">
+          <Button className="bg-primary hover:bg-primary text-white px-6 py-3 font-serif font-normal rounded-lg transition-colors duration-200 mt-6 lg:mt-0">
             See all reviews
           </Button>
         </div>
@@ -53,7 +53,7 @@ export default function ClientTestimonials() {
                   <div className="w-6 h-6 border-2 border-gray-400 rounded-full"></div>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                  <div className="font-serif font-normal text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-500">{testimonial.time}</div>
                 </div>
               </div>
@@ -67,7 +67,7 @@ export default function ClientTestimonials() {
                 )}
               </div>
               
-              <h3 className="font-bold text-gray-900 mb-3">
+              <h3 className="font-serif font-normal text-gray-900 mb-3">
                 {testimonial.title}
               </h3>
               

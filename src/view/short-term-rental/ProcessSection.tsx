@@ -40,7 +40,7 @@ export default function ProcessSection() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-4xl font-serif font-normal text-blue-900 mb-4">
             Simplified Process for <span className="text-primary">Maximum Return</span>
           </h2>
         </div>
@@ -130,13 +130,13 @@ export default function ProcessSection() {
                     {/* Step content container */}
                     <div className="flex flex-col items-center">
                       {/* Step circle */}
-                      <div className={`w-16 h-16 ${step.color} rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg`}>
+                      <div className={`w-16 h-16 ${step.color} rounded-full flex items-center justify-center text-white font-serif font-normal text-xl mb-4 shadow-lg`}>
                         {step.number}
                       </div>
                       
                       {/* Step content */}
                       <div className="text-center max-w-48">
-                        <h3 className="font-bold text-blue-900 mb-2 text-base">
+                        <h3 className="font-serif font-normal text-blue-900 mb-2 text-base">
                           {step.title}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
@@ -152,7 +152,7 @@ export default function ProcessSection() {
           
           {/* Bottom CTA Button */}
           <div className="text-center mt-12">
-            <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-base font-semibold rounded-md transition-colors duration-200">
+            <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-base font-serif font-normal rounded-md transition-colors duration-200">
               List your Property
             </button>
           </div>

@@ -45,20 +45,20 @@ export default function OffPlanCard({ data }: { data?: PropertyData }) {
           priority
         />
         {data?.newParam?.totalUnits ? (
-          <div className="absolute bottom-4 left-4 bg-white text-sm font-light tracking-wider px-3 py-1 rounded-full shadow-md uppercase">
+          <div className="absolute bottom-4 left-4 bg-white text-sm font-serif font-normal tracking-wider px-3 py-1 rounded-full shadow-md uppercase">
             {data.newParam.totalUnits} UNITS
           </div>
         ) : null}
-        <div className="absolute bottom-4 right-4 bg-white text-sm font-light px-3 py-1 rounded-full shadow-md text-[#1A202C] flex items-center gap-1">
+        <div className="absolute bottom-4 right-4 bg-white text-sm font-serif font-normal px-3 py-1 rounded-full shadow-md text-[#1A202C] flex items-center gap-1">
           FROM <DirhamSymbol size={14} /> {data?.newParam?.price?.toLocaleString() ?? "N/A"}
         </div>
       </div>
       <CardContent className="p-6">
-        <CardTitle className="text-2xl font-mono font-light text-[#1A202C] mb-2 tracking-wide">
+        <CardTitle className="text-2xl font-mono font-serif font-normal text-[#1A202C] mb-2 tracking-wide">
           {data?.name ?? "Unnamed Property"}
         </CardTitle>
         <div className="flex items-end justify-between">
-          <p className="text-sm uppercase tracking-wider text-primary font-light">
+          <p className="text-sm uppercase tracking-wider text-primary font-serif font-normal">
             {`${data?.location?.community ?? ""}${
               data?.location?.community && data?.location?.city ? ", " : ""
             }${data?.location?.city ?? ""}`}

@@ -49,7 +49,7 @@ export default function BenefitsSection() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-8">
+          <h2 className="text-4xl font-serif font-normal text-blue-900 mb-8">
             Why <span className="text-primary">holiday homes</span> in Dubai are a good <span className="text-primary">option?</span>
           </h2>
         </div>
@@ -61,7 +61,7 @@ export default function BenefitsSection() {
                 {benefit.icon}
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-serif font-normal text-gray-900 mb-4">
                 {benefit.title}
               </h3>
               
@@ -73,7 +73,7 @@ export default function BenefitsSection() {
         </div>
 
         <div className="text-center">
-          <Button className="bg-primary hover:bg-primary text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200">
+          <Button className="bg-primary hover:bg-primary text-white px-8 py-4 text-lg font-serif font-normal rounded-lg transition-colors duration-200">
             Book Now
           </Button>
         </div>

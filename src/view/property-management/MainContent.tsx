@@ -11,7 +11,7 @@ export default function MainContent() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif font-normal text-blue-900 leading-tight">
               Do you need Property Management Services?
             </h2>
             
@@ -29,12 +29,12 @@ export default function MainContent() {
               </p>
             </div>
 
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200">
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-serif font-normal rounded-lg transition-colors duration-200">
               Learn more →
             </Button>
 
             <div className="pt-8">
-              <h3 className="text-3xl md:text-4xl font-bold text-blue-900 leading-tight">
+              <h3 className="text-3xl md:text-4xl font-serif font-normal text-blue-900 leading-tight">
                 Explore what we do as your trusted property manager
               </h3>
             </div>

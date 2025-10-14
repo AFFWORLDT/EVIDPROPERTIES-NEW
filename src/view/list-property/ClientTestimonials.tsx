@@ -38,7 +38,7 @@ function ClientTestimonials() {
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                  <p className="font-serif font-normal text-gray-900">{testimonial.name}</p>
                   <p className="text-sm text-gray-500">{testimonial.time}</p>
                 </div>
               </div>
@@ -51,7 +51,7 @@ function ClientTestimonials() {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
+              <h3 className="text-lg font-serif font-normal text-gray-900 mb-3">
                 {testimonial.title}
               </h3>
 

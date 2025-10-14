@@ -45,7 +45,7 @@ export default function ServicesSection() {
       <div className="container mx-auto px-4">
         {/* Top Button */}
         <div className="text-center mb-16">
-          <Button className="bg-primary hover:bg-primary text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200">
+          <Button className="bg-primary hover:bg-primary text-white px-8 py-4 text-lg font-serif font-normal rounded-lg transition-colors duration-200">
             List your Property
           </Button>
         </div>
@@ -53,7 +53,7 @@ export default function ServicesSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl font-bold text-blue-900 mb-8">
+            <h2 className="text-4xl font-serif font-normal text-blue-900 mb-8">
               Our Comprehensive
               <br />
               Services For Homeowners
@@ -65,7 +65,7 @@ export default function ServicesSection() {
               {services.map((service, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span className="text-lg text-gray-700 font-medium">
+                  <span className="text-lg text-gray-700 font-serif font-normal">
                     {service}
                   </span>
                 </div>

@@ -403,7 +403,7 @@ function Rent() {
         <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="flex items-center justify-between">
-              <span className="text-xl font-semibold">Search Filters</span>
+              <span className="text-xl font-serif font-normal" style={{ letterSpacing: '0.05em' }}>Search Filters</span>
               <Button
                 variant="ghost"
                 size="sm"
@@ -418,7 +418,7 @@ function Rent() {
           <div className="space-y-6 py-4">
             {/* Search Input - Hidden on large screens since it's shown in desktop form */}
             <div className="space-y-2 md:hidden">
-              <label className="text-sm font-medium text-gray-700">Location</label>
+              <label className="text-sm font-serif font-normal text-gray-700">Location</label>
               <div className="relative">
                 <Input
                   placeholder="City, building or community"
@@ -435,7 +435,7 @@ function Rent() {
 
             {/* Listing Type Filter - Hidden on large screens since it's shown in desktop form */}
             <div className="space-y-2 md:hidden">
-              <label className="text-sm font-medium text-gray-700">Type</label>
+              <label className="text-sm font-serif font-normal text-gray-700">Type</label>
               <Select value={filters.listing_type} onValueChange={(value) => handleFilterChange("listing_type", value)}>
                 <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
@@ -449,7 +449,7 @@ function Rent() {
 
             {/* Property Type - Hidden on large screens since it's shown in desktop form */}
             <div className="space-y-2 md:hidden">
-              <label className="text-sm font-medium text-gray-700">Property Type</label>
+              <label className="text-sm font-serif font-normal text-gray-700">Property Type</label>
               <Select value={filters.property_type} onValueChange={(value) => handleFilterChange("property_type", value)}>
                 <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
@@ -465,7 +465,7 @@ function Rent() {
 
             {/* Completion Status */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">Completion Status</label>
+              <label className="text-sm font-serif font-normal text-gray-700">Completion Status</label>
               <Select value={filters.completion_status} onValueChange={(value) => handleFilterChange("completion_status", value)}>
                 <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
@@ -482,7 +482,7 @@ function Rent() {
 
             {/* Developer Search */}
             <div className="space-y-2 developer-search">
-              <label className="text-sm font-medium text-gray-700">Developer</label>
+              <label className="text-sm font-serif font-normal text-gray-700">Developer</label>
               <div className="relative">
                 <Input
                   placeholder="Search developers..."
@@ -504,7 +504,7 @@ function Rent() {
                       className="px-3 py-2 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
                       onClick={() => handleDeveloperSelect(developer)}
                     >
-                      <div className="text-sm font-medium text-gray-900">{developer.name}</div>
+                      <div className="text-sm font-serif font-normal text-gray-900">{developer.name}</div>
                       {developer.location && (
                         <div className="text-xs text-gray-500">{developer.location}</div>
                       )}
@@ -517,7 +517,7 @@ function Rent() {
             {/* Price Range - Hidden on large screens since it's shown in desktop form */}
             <div className="grid grid-cols-2 gap-4 md:hidden">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Min Price</label>
+                <label className="text-sm font-serif font-normal text-gray-700">Min Price</label>
                 <Select value={filters.min_price} onValueChange={(value) => handleFilterChange("min_price", value)}>
                   <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 focus:ring-2 focus:ring-primary">
                     <SelectValue />
@@ -534,7 +534,7 @@ function Rent() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Max Price</label>
+                <label className="text-sm font-serif font-normal text-gray-700">Max Price</label>
                 <Select value={filters.max_price} onValueChange={(value) => handleFilterChange("max_price", value)}>
                   <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 focus:ring-2 focus:ring-primary">
                     <SelectValue />
@@ -553,7 +553,7 @@ function Rent() {
 
             {/* Bedrooms - Hidden on large screens since it's shown in desktop form */}
             <div className="space-y-2 md:hidden">
-              <label className="text-sm font-medium text-gray-700">Bedrooms</label>
+              <label className="text-sm font-serif font-normal text-gray-700">Bedrooms</label>
               <Select value={filters.bedrooms} onValueChange={(value) => handleFilterChange("bedrooms", value)}>
                 <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
@@ -571,7 +571,7 @@ function Rent() {
 
             {/* Bathrooms */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">Bathrooms</label>
+              <label className="text-sm font-serif font-normal text-gray-700">Bathrooms</label>
               <Select value={filters.bathrooms} onValueChange={(value) => handleFilterChange("bathrooms", value)}>
                 <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
@@ -589,7 +589,7 @@ function Rent() {
 
             {/* Handover Year */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">Handover Year</label>
+              <label className="text-sm font-serif font-normal text-gray-700">Handover Year</label>
               <Select value={filters.handover_year} onValueChange={(value) => handleFilterChange("handover_year", value)}>
                 <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
@@ -606,7 +606,7 @@ function Rent() {
             {/* Search Button */}
             <Button 
               onClick={handleSearch}
-              className="w-full bg-primary hover:bg-primary/90 text-white font-medium h-14 rounded-md"
+              className="w-full bg-primary hover:bg-primary/90 text-white font-serif font-normal h-14 rounded-md"
             >
               <Search className="w-5 h-5 mr-2" />
               Search Properties
@@ -664,7 +664,7 @@ function Rent() {
             <button
               onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-2 text-sm font-serif font-normal text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               Previous
             </button>
@@ -701,7 +701,7 @@ function Rent() {
             <button
               onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-2 text-sm font-serif font-normal text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               Next
             </button>

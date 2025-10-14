@@ -41,7 +41,7 @@ export default function FAQSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-blue-900 mb-12 text-center">
+          <h2 className="text-4xl font-serif font-normal text-blue-900 mb-12 text-center">
             FAQs About Short-Term Rentals in Dubai
           </h2>
 
@@ -52,7 +52,7 @@ export default function FAQSection() {
                   onClick={() => toggleFAQ(index)}
                   className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <span className="font-medium text-gray-900 pr-4">
+                  <span className="font-serif font-normal text-gray-900 pr-4">
                     {faq.question}
                   </span>
                   {expandedIndex === index ? (

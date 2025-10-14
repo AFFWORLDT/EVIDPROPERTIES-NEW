@@ -81,7 +81,7 @@ function Communities() {
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#C2A17B]/10 rounded-full blur-3xl"></div>
         
         <div className="relative z-10 mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-light mb-8 text-[#1A202C] font-serif leading-tight">
+          <h1 className="text-6xl md:text-7xl font-serif font-normal mb-8 text-gray-800 leading-tight" style={{ letterSpacing: '0.05em' }}>
             <span className="text-[#1A202C] font-normal">UAE</span> Communities
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] mx-auto mb-8"></div>
@@ -89,7 +89,7 @@ function Communities() {
       </section>
       <div className="mx-auto px-4 py-16 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-light text-[#1A202C] mb-6 font-serif">
+          <h2 className="text-4xl md:text-5xl font-serif font-normal text-gray-800 mb-6" style={{ letterSpacing: '0.05em' }}>
             <span className="text-[#1A202C] font-normal">Neighbourhoods</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-serif">
@@ -134,7 +134,7 @@ function Communities() {
         {searchKeyword && (
           <div className="text-center mb-8">
             <div className="inline-flex items-center px-6 py-3 bg-[#dbbb90]/10 rounded-full border border-[#dbbb90]/20">
-              <p className="text-[#dbbb90] font-medium font-serif">
+              <p className="text-[#dbbb90] font-serif font-normal">
                 Found {filteredCommunities.length} community{filteredCommunities.length !== 1 ? 'ies' : 'y'} matching "{searchKeyword}"
               </p>
             </div>
@@ -159,14 +159,14 @@ function Communities() {
           <div className="flex justify-center items-center py-12">
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 border-4 border-[#dbbb90]/30 border-t-[#dbbb90] rounded-full animate-spin mb-4"></div>
-              <p className="text-[#dbbb90] font-medium font-serif">Loading Communities...</p>
+              <p className="text-[#dbbb90] font-serif font-normal">Loading Communities...</p>
             </div>
           </div>
         )}
         {!hasMore && communities.length > 0 && (
           <div className="text-center py-8">
             <div className="inline-flex items-center px-6 py-3 bg-gray-100 rounded-full">
-              <p className="text-gray-600 font-medium font-serif">All communities loaded</p>
+              <p className="text-gray-600 font-serif font-normal">All communities loaded</p>
             </div>
           </div>
         )}
@@ -178,7 +178,7 @@ function Communities() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-medium text-gray-800 mb-2 font-serif">No communities found</h3>
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-2" style={{ letterSpacing: '0.05em' }}>No communities found</h3>
               <p className="text-gray-600 font-serif">No communities match "{searchKeyword}"</p>
               <p className="text-sm text-gray-500 mt-2 font-serif">Try adjusting your search terms</p>
             </div>

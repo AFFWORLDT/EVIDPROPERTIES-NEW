@@ -8,7 +8,7 @@ function ContactUs() {
     <div className="luxury-bg">
       <section className="pt-32 pb-16 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-light mb-8 text-[#1A202C] font-serif leading-tight">
+          <h1 className="text-6xl md:text-7xl font-serif font-normal mb-8 text-gray-800 leading-tight" style={{ letterSpacing: '0.05em' }}>
             <span className="text-[#1A202C] font-normal">Contact</span> Us
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] mx-auto mb-8"></div>
@@ -17,7 +17,7 @@ function ContactUs() {
       <div className="flex flex-col lg:flex-row py-20 items-center justify-center container mx-auto max-w-7xl">
         <div className="w-full lg:w-1/2 p-6 md:p-8 lg:pr-16 space-y-8 text-center lg:text-left">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20">
-            <p className="text-[#1A202C] text-sm font-medium uppercase tracking-widest font-serif mb-4">
+            <p className="text-gray-600 text-sm font-serif font-normal uppercase mb-4" style={{ letterSpacing: '0.05em' }}>
               CONNECT WITH OUR EXPERTS
             </p>
             <h2 className="text-4xl md:text-5xl text-[#1A202C] leading-tight font-serif mb-6">
@@ -30,7 +30,7 @@ function ContactUs() {
             </p>
           </div>
           <div className="bg-gradient-to-br from-[#dbbb90]/10 to-[#C2A17B]/10 rounded-2xl p-6 border border-[#dbbb90]/20">
-            <h3 className="text-xl font-semibold text-gray-800 mb-6 font-serif">Contact Information</h3>
+            <h3 className="text-xl font-serif font-normal text-gray-800 mb-6" style={{ letterSpacing: '0.05em' }}>Contact Information</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 bg-[#dbbb90] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -40,7 +40,7 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[#1A202C] font-medium font-serif">Address</p>
+                  <p className="text-[#1A202C] font-serif font-normal">Address</p>
                   <p className="text-[#1A202C] font-serif">Office 15C, Residence 1072, Al Muteena, Dubai</p>
                   <p className="text-[#1A202C] font-serif">Dubai – UAE</p>
                 </div>
@@ -53,7 +53,7 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-gray-800 font-medium font-serif">Phone</p>
+                  <p className="text-gray-800 font-serif font-normal">Phone</p>
                   <a
                     href="tel:+971558777152"
                     className="text-[#dbbb90] hover:text-[#C2A17B] transition-colors font-serif"
@@ -70,7 +70,7 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-gray-800 font-medium font-serif">Email</p>
+                  <p className="text-gray-800 font-serif font-normal">Email</p>
                   <a
                     href="mailto:athomson@apricityrealestate.ae"
                     className="text-[#dbbb90] hover:text-[#C2A17B] transition-colors font-serif"
@@ -87,7 +87,7 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-gray-800 font-medium font-serif">Business Hours</p>
+                  <p className="text-gray-800 font-serif font-normal">Business Hours</p>
                   <p className="text-gray-600 font-serif">Monday to Friday: 9:00 am to 6:00 pm</p>
                   <p className="text-gray-600 font-serif">Saturday: by appointment only</p>
                   <p className="text-gray-600 font-serif">Sunday: by appointment only</p>

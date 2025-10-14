@@ -49,7 +49,7 @@ export default function CommunitiesCard({ data }: { data: CommunityData }) {
           </h3>
 
           {data?.order_description && (
-            <p className="text-xs mb-4 font-light leading-relaxed opacity-90 font-serif">
+            <p className="text-xs mb-4 font-serif font-normal leading-relaxed opacity-90 font-serif">
               {data.order_description}
             </p>
           )}

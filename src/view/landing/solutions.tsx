@@ -38,7 +38,7 @@ function Solutions() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="mb-12">
-            <h2 className="text-5xl font-bold">
+            <h2 className="text-5xl font-serif font-normal">
               Dubai real estate solutions focused around
               <br />
               excellent customer service.
@@ -57,7 +57,7 @@ function Solutions() {
 
                 {/* Title with Arrow */}
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-black font-bold text-lg">
+                  <h3 className="text-black font-serif font-normal text-lg">
                     {solution.title}
                   </h3>
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -25,10 +25,10 @@ function HeroSection() {
             <div key={i} className="w-32 h-40 bg-gray-700 rounded-lg shadow-2xl">
               <div className="p-4 h-full flex flex-col items-center justify-center">
                 <div className="w-16 h-16 bg-gray-600 rounded-full mb-2 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">S</span>
+                  <span className="text-white font-serif font-normal text-lg">S</span>
                 </div>
                 <div className="text-center">
-                  <p className="text-white text-xs font-bold">APRICITY</p>
+                  <p className="text-white text-xs font-serif font-normal">APRICITY</p>
                   <p className="text-white text-xs">BROKER</p>
                 </div>
               </div>
@@ -53,7 +53,7 @@ function HeroSection() {
 
           {/* Main Heading */}
           <div className="mb-12">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-serif font-normal text-white mb-4 leading-tight">
               Sell or Rent Out Your Property in
               <br />
               <span className="text-orange-500">Dubai</span>
@@ -65,7 +65,7 @@ function HeroSection() {
 
           {/* CTA Button */}
           <div className="mb-12">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-serif font-normal transition-colors duration-200">
               List Your Property
             </button>
           </div>
@@ -78,10 +78,10 @@ function HeroSection() {
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <span className="text-white font-semibold">Google 4.8</span>
+              <span className="text-white font-serif font-normal">Google 4.8</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span className="text-white font-semibold">Trustpilot 4.9/5</span>
+              <span className="text-white font-serif font-normal">Trustpilot 4.9/5</span>
             </div>
           </div>
         </div>

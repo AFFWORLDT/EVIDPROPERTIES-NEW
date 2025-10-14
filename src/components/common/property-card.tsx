@@ -42,19 +42,19 @@ export default function PropertyCard({ data }: { data?: PropertyData }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         
         {data?.newParam?.totalUnits ? (
-          <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-xs font-serif font-medium tracking-wider px-4 py-2 rounded-full shadow-lg uppercase border border-white/20">
+          <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-xs font-serif font-serif font-normal tracking-wider px-4 py-2 rounded-full shadow-lg uppercase border border-white/20">
             {data.newParam.totalUnits} UNITS
           </div>
         ) : null}
-        <div className="absolute bottom-4 right-4 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] text-white text-sm font-serif font-medium px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
+        <div className="absolute bottom-4 right-4 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] text-white text-sm font-serif font-serif font-normal px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
           FROM <DirhamSymbol size={14} variant="white" /> {data?.newParam?.price && data.newParam.price > 0 ? data.newParam.price.toLocaleString() : "TBA"}
         </div>
       </div>
       <CardContent className="p-8 flex flex-col flex-grow">
-        <CardTitle className="text-2xl font-serif font-light text-[#1A202C] mb-3 tracking-wide group-hover:text-[#dbbb90] transition-colors duration-300">
+        <CardTitle className="text-2xl font-serif font-serif font-normal text-[#1A202C] mb-3 tracking-wide group-hover:text-[#dbbb90] transition-colors duration-300">
           {data?.name ?? "Unnamed Property"}
         </CardTitle>
-        <p className="text-sm uppercase tracking-wider text-gray-600 font-serif font-light mt-auto">
+        <p className="text-sm uppercase tracking-wider text-gray-600 font-serif font-serif font-normal mt-auto">
           {`${data?.location?.community ?? ""}${
             data?.location?.community && data?.location?.city ? ", " : ""
           }${data?.location?.city ?? ""}`}

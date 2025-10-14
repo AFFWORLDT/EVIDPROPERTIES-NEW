@@ -66,7 +66,7 @@ export default function TeamPage() {
       <div className="min-h-screen bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#dbbb90] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600 font-light">Loading our luxury team...</p>
+          <p className="text-gray-600 font-serif font-normal">Loading our luxury team...</p>
         </div>
       </div>
     );
@@ -96,7 +96,7 @@ export default function TeamPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-[#1A202C] mb-3 md:mb-4 leading-[0.9] tracking-tight font-serif"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-normal text-[#1A202C] mb-3 md:mb-4 leading-[0.9] tracking-tight font-serif"
             >
               Meet the Team
             </motion.h1>
@@ -106,7 +106,7 @@ export default function TeamPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#1A202C] font-light max-w-5xl mx-auto leading-relaxed px-4 font-serif"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#1A202C] font-serif font-normal max-w-5xl mx-auto leading-relaxed px-4 font-serif"
             >
               Our experienced advisors to help guide you on your real estate journey in the UAE
             </motion.p>
@@ -173,7 +173,7 @@ export default function TeamPage() {
                           />
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-[#1A202C] to-[#1A202C] flex items-center justify-center relative z-0">
-                            <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                            <span className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-white">
                               {agent.name?.charAt(0) || 'A'}
                             </span>
                           </div>
@@ -200,7 +200,7 @@ export default function TeamPage() {
                     <div className="grid grid-cols-2 gap-2 md:gap-4 mb-4 md:mb-6">
                       {agent.experience_years && (
                         <div className="text-center">
-                          <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#dbbb90]">
+                          <div className="text-lg sm:text-xl md:text-2xl font-serif font-normal text-[#dbbb90]">
                             {agent.experience_years}+
                           </div>
                           <div className="text-xs text-gray-600 font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
@@ -210,7 +210,7 @@ export default function TeamPage() {
                       )}
                       {agent.specialities && agent.specialities.length > 0 && (
                         <div className="text-center">
-                          <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#dbbb90]">
+                          <div className="text-lg sm:text-xl md:text-2xl font-serif font-normal text-[#dbbb90]">
                             {agent.specialities.length}
                           </div>
                           <div className="text-xs text-gray-600 font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
@@ -263,7 +263,7 @@ export default function TeamPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-800 mb-6">
               Ready to Start Your <span className="text-[#dbbb90] font-normal">Luxury Journey</span>?
             </h2>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -272,13 +272,13 @@ export default function TeamPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contactUs"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-serif font-normal rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Get In Touch
               </a>
               <a
                 href="/buy"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#dbbb90] text-[#dbbb90] hover:bg-[#dbbb90] hover:text-white font-medium rounded-full transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#dbbb90] text-[#dbbb90] hover:bg-[#dbbb90] hover:text-white font-serif font-normal rounded-full transition-all duration-300"
               >
                 Browse Properties
               </a>
@@ -317,17 +317,17 @@ export default function TeamPage() {
                       />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-[#1A202C] to-[#1A202C] flex items-center justify-center">
-                        <span className="text-xl md:text-2xl font-bold text-white">
+                        <span className="text-xl md:text-2xl font-serif font-normal text-white" style={{ letterSpacing: '0.05em' }}>
                           {selectedAgent.name?.charAt(0) || 'A'}
                         </span>
                       </div>
                     )}
                   </div>
                   <div>
-                    <h2 className="text-lg md:text-2xl font-semibold text-gray-800 leading-tight">
+                    <h2 className="text-lg md:text-2xl font-serif font-normal text-gray-800 leading-tight" style={{ letterSpacing: '0.05em' }}>
                       {selectedAgent.name}
                     </h2>
-                    <p className="text-[#1A202C] font-medium text-sm md:text-base uppercase tracking-wider">
+                    <p className="text-gray-700 font-serif font-normal text-sm md:text-base" style={{ letterSpacing: '0.05em' }}>
                       {selectedAgent.designation || selectedAgent.role_name || selectedAgent.team_name || 'Team Member'}
                     </p>
                   </div>
@@ -342,37 +342,37 @@ export default function TeamPage() {
 
               {selectedAgent.remarks && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">About</h3>
-                  <p className="text-gray-600 leading-relaxed">{selectedAgent.remarks}</p>
+                  <h3 className="text-lg font-serif font-normal text-gray-800 mb-2" style={{ letterSpacing: '0.05em' }}>About</h3>
+                  <p className="text-gray-600 leading-relaxed font-serif font-normal" style={{ letterSpacing: '0.05em' }}>{selectedAgent.remarks}</p>
                 </div>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                 {selectedAgent.experience_years && (
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Experience</h4>
-                    <p className="text-gray-600 text-sm md:text-base">{selectedAgent.experience_years} Years</p>
+                    <h4 className="font-serif font-normal text-gray-800 mb-1 text-sm md:text-base" style={{ letterSpacing: '0.05em' }}>Experience</h4>
+                    <p className="text-gray-600 text-sm md:text-base font-serif font-normal" style={{ letterSpacing: '0.05em' }}>{selectedAgent.experience_years} Years</p>
                   </div>
                 )}
                 {selectedAgent.nationality && (
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Nationality</h4>
-                    <p className="text-gray-600 text-sm md:text-base">
+                    <h4 className="font-serif font-normal text-gray-800 mb-1 text-sm md:text-base" style={{ letterSpacing: '0.05em' }}>Nationality</h4>
+                    <p className="text-gray-600 text-sm md:text-base font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
                       {parseNationality(selectedAgent.nationality)}
                     </p>
                   </div>
                 )}
                 {selectedAgent.kyc_verification && (
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Verification</h4>
-                    <p className="text-green-600 text-sm md:text-base">✓ KYC Verified</p>
+                    <h4 className="font-serif font-normal text-gray-800 mb-1 text-sm md:text-base" style={{ letterSpacing: '0.05em' }}>Verification</h4>
+                    <p className="text-green-600 text-sm md:text-base font-serif font-normal" style={{ letterSpacing: '0.05em' }}>✓ KYC Verified</p>
                   </div>
                 )}
               </div>
 
               {selectedAgent.languages && selectedAgent.languages.length > 0 && (
                 <div className="mb-6">
-                  <h4 className="font-semibold text-[#1A202C] mb-2">Languages</h4>
+                  <h4 className="font-serif font-normal text-gray-800 mb-2" style={{ letterSpacing: '0.05em' }}>Languages</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedAgent.languages.map((lang, index) => {
                       // Map language codes to clean language names
@@ -420,7 +420,8 @@ export default function TeamPage() {
                       return (
                       <span
                         key={index}
-                          className="px-3 py-1 bg-[#1A202C]/10 text-[#1A202C] rounded-full text-sm"
+                          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-serif font-normal"
+                          style={{ letterSpacing: '0.05em' }}
                       >
                           {cleanLang}
                       </span>
@@ -432,12 +433,13 @@ export default function TeamPage() {
 
               {selectedAgent.specialities && selectedAgent.specialities.length > 0 && (
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Specialties</h4>
+                  <h4 className="font-serif font-normal text-gray-800 mb-2" style={{ letterSpacing: '0.05em' }}>Specialties</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedAgent.specialities.map((specialty, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                        className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-serif font-normal"
+                        style={{ letterSpacing: '0.05em' }}
                       >
                         {specialty}
                       </span>
@@ -451,21 +453,24 @@ export default function TeamPage() {
                   href={`https://wa.me/${selectedAgent.phone?.replace(/[^0-9]/g, '')}?text=Hi ${selectedAgent.name}, I'm interested in luxury properties in Dubai`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm md:text-base"
+                  className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm md:text-base font-serif font-normal"
+                  style={{ letterSpacing: '0.05em' }}
                 >
                   <Icon icon="iconoir:whatsapp-solid" className="w-4 h-4 md:w-5 md:h-5" />
                   <span>WhatsApp</span>
                 </a>
                 <a
                   href={`tel:${selectedAgent.phone}`}
-                  className="flex items-center justify-center gap-2 bg-[#dbbb90] hover:bg-[#C2A17B] text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm md:text-base"
+                  className="flex items-center justify-center gap-2 bg-[#dbbb90] hover:bg-[#C2A17B] text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm md:text-base font-serif font-normal"
+                  style={{ letterSpacing: '0.05em' }}
                 >
                   <Icon icon="line-md:phone-call-filled" className="w-4 h-4 md:w-5 md:h-5" />
                   <span>Call</span>
                 </a>
                 <a
                   href={`mailto:${selectedAgent.email}?subject=Luxury Property Inquiry`}
-                  className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm md:text-base"
+                  className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm md:text-base font-serif font-normal"
+                  style={{ letterSpacing: '0.05em' }}
                 >
                   <Icon icon="material-symbols:mail-outline" className="w-4 h-4 md:w-5 md:h-5" />
                   <span>Email</span>

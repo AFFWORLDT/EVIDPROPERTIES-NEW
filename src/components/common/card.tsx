@@ -46,10 +46,10 @@ export function PropertyCard({
           className="rounded-none object-cover"
         />
         <div className="absolute top-4 left-4 flex gap-2">
-          <span className="bg-[#D4B88C] text-white px-3 py-1 rounded-none text-xs font-light tracking-wider uppercase">
+          <span className="bg-[#D4B88C] text-white px-3 py-1 rounded-none text-xs font-serif font-normal tracking-wider uppercase">
             FOR SALE
           </span>
-          <span className="bg-white text-gray-800 px-3 py-1 rounded-none text-xs font-light tracking-wider uppercase">
+          <span className="bg-white text-gray-800 px-3 py-1 rounded-none text-xs font-serif font-normal tracking-wider uppercase">
             AVAILABLE
           </span>
         </div>
@@ -66,21 +66,21 @@ export function PropertyCard({
       <CardContent className="flex flex-col flex-grow px-4 py-3">
         <div className="flex items-center justify-between">
           <h3
-            className="text-lg font-light text-[#1A202C] tracking-wide line-clamp-1"
+            className="text-lg font-serif font-normal text-[#1A202C] tracking-wide line-clamp-1"
             title={title}
           >
             {title}
           </h3>
-          <p className="text-sm text-gray-500 font-light">#{propertyId}</p>
+          <p className="text-sm text-gray-500 font-serif font-normal">#{propertyId}</p>
         </div>
 
-        <p className="text-sm text-primary uppercase font-light tracking-wider">
+        <p className="text-sm text-primary uppercase font-serif font-normal tracking-wider">
           {location}
         </p>
-        <p className="text-xl font-light text-[#1A202C] tracking-wide">
+        <p className="text-xl font-serif font-normal text-[#1A202C] tracking-wide">
           {price}
         </p>
-        <div className="flex items-end gap-11 text-gray-600 text-sm mt-2 font-light mt-auto">
+        <div className="flex items-end gap-11 text-gray-600 text-sm mt-2 font-serif font-normal mt-auto">
           <div className="flex items-center gap-1">
             <Bed className="w-4 h-4" />
             <span>{bedrooms}</span>
