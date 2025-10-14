@@ -71,7 +71,6 @@ export function PropertyCard({
           >
             {title}
           </h3>
-          <p className="text-sm text-gray-500 font-serif font-normal">#{propertyId}</p>
         </div>
 
         <p className="text-sm text-primary uppercase font-serif font-normal tracking-wider">

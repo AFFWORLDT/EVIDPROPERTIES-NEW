@@ -55,7 +55,9 @@ export default function PropertyCard({ data }: { data?: PropertyData }) {
           {data?.name ?? "Unnamed Property"}
         </CardTitle>
         <p className="text-sm uppercase tracking-wider text-gray-600 font-serif font-serif font-normal mt-auto">
-          {`${data?.location?.community ?? ""}${
+          {`${data?.location?.sub_community ?? ""}${
+            data?.location?.sub_community && data?.location?.community ? ", " : ""
+          }${data?.location?.community ?? ""}${
             data?.location?.community && data?.location?.city ? ", " : ""
           }${data?.location?.city ?? ""}`}
         </p>

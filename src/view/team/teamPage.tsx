@@ -264,7 +264,7 @@ export default function TeamPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-800 mb-6">
-              Ready to Start Your <span className="text-[#dbbb90] font-normal">Luxury Journey</span>?
+              Ready to Start Your <span className="text-gray-800 font-normal">Journey</span>?
             </h2>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Connect with our expert team and discover the perfect property that matches your dreams

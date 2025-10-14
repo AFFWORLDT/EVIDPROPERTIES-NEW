@@ -55,8 +55,9 @@ export function BuyCard({ data, onFavorite }: BuyCardProps) {
 
   const imageUrl = data.photos?.[0] || "/placeholder.svg?height=320&width=400"
   const locationName = [
+    data.location?.sub_community,
     data.location?.community,
-    data.location?.sub_community
+    data.location?.city
   ].filter(Boolean).join(", ")
 
   const formattedPrice = data.price

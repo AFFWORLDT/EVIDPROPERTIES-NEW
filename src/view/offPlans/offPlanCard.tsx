@@ -59,7 +59,9 @@ export default function OffPlanCard({ data }: { data?: PropertyData }) {
         </CardTitle>
         <div className="flex items-end justify-between">
           <p className="text-sm uppercase tracking-wider text-primary font-serif font-normal">
-            {`${data?.location?.community ?? ""}${
+            {`${data?.location?.sub_community ?? ""}${
+              data?.location?.sub_community && data?.location?.community ? ", " : ""
+            }${data?.location?.community ?? ""}${
               data?.location?.community && data?.location?.city ? ", " : ""
             }${data?.location?.city ?? ""}`}
           </p>

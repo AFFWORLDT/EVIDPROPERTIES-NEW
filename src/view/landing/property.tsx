@@ -62,7 +62,7 @@ export default function Property() {
               <PropertyCard
                 photos={obj?.photos?.[0] || "/images/placeholder.jpg"}
                 title={`${obj?.location?.community || ""}${obj?.location?.community && obj?.location?.city ? ", " : ""}${obj?.location?.city || ""}`.trim() || "Dubai, UAE"}
-                location={`${obj?.location?.city || ""} ${obj?.location?.community || ""} ${obj?.location?.sub_community || ""}`.trim() || "Dubai, UAE"}
+                location={`${obj?.location?.sub_community || ""}${obj?.location?.sub_community && obj?.location?.community ? ", " : ""}${obj?.location?.community || ""}${obj?.location?.community && obj?.location?.city ? ", " : ""}${obj?.location?.city || ""}`.trim() || "Dubai, UAE"}
                 price={obj?.price ? (
                   <span className="flex items-center gap-1">
                     <DirhamSymbol size={16} />

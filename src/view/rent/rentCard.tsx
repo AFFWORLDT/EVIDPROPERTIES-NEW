@@ -55,7 +55,11 @@ export function RentCard({ data, onFavorite }: RentCardProps) {
   }
 
   const imageUrl = data.photos?.[0] || "/placeholder.svg?height=320&width=400";
-  const locationName = [data.location?.community, data.location?.sub_community]
+  const locationName = [
+    data.location?.sub_community,
+    data.location?.community,
+    data.location?.city
+  ]
     .filter(Boolean)
     .join(", ");
 
