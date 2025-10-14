@@ -15,7 +15,7 @@ export default function WhyDubai() {
         <section className="mb-12 md:my-16">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20">
             <h2 className="text-3xl md:text-4xl font-serif font-normal mb-8 text-gray-800">
-              <span className="text-[#dbbb90] font-normal">Advantages</span> to buy a Luxury property in Dubai
+              <span className="text-[#dbbb90] font-normal">Advantages</span> to buying a  property in Dubai
             </h2>
             <div className="space-y-8 text-gray-600">
               <div>
