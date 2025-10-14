@@ -134,7 +134,7 @@ export default function HeroSection() {
   <div className="relative z-20 text-white w-full mb-8 sm:mb-10 md:mb-12 lg:mb-16 flex justify-center items-center px-2 sm:px-4 pb-16 sm:pb-20 md:pb-24 lg:pb-32">
     <div className="w-full max-w-5xl mx-auto">
       <div className="text-center mb-4 sm:mb-6">
-        <p className="text-sm sm:text-base md:text-lg font-serif font-normal text-[#1A202C]  drop-shadow" style={{ letterSpacing: '0.05em' }}>
+        <p className="text-[22px] sm:text-[24px] font-serif font-normal text-[#1A202C] drop-shadow" style={{ letterSpacing: '0.05em' }}>
           A boutique real estate company curating properties with care and integrity
         </p>
       </div>

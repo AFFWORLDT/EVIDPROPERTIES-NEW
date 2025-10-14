@@ -4,7 +4,7 @@ export default function WhyDubai() {
       <section className="pt-32 pb-16 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-6xl md:text-7xl font-serif font-normal mb-8 text-gray-800 leading-tight" style={{ letterSpacing: '0.05em' }}>
-            <span className="text-[#dbbb90] font-normal">Why</span> Dubai
+            <span className="text-gray-800 font-normal">Why</span> <span className="text-gray-800 font-normal">Dubai</span>
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] mx-auto mb-8"></div>
         </div>
