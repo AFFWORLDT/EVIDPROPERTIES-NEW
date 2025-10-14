@@ -131,7 +131,7 @@ export default function HeroSection() {
   <div className="relative z-20 w-full h-full flex flex-col items-center justify-end px-4 pb-32 sm:pb-40 md:pb-48 lg:pb-56"></div>
 
   {/* Search Form */}
-  <div className="relative z-20 text-white w-full mb-8 sm:mb-10 md:mb-12 lg:mb-16 flex justify-center items-center px-2 sm:px-4 pb-16 sm:pb-20 md:pb-24 lg:pb-32">
+  <div className="absolute sm:relative bottom-0 left-0 right-0 z-20 text-white w-full mb-0 sm:mb-10 md:mb-12 lg:mb-16 flex justify-center items-center px-2 sm:px-4 pb-0 sm:pb-20 md:pb-24 lg:pb-32">
     <div className="w-full max-w-5xl mx-auto">
       <div className="text-center mb-4 sm:mb-6">
         <p className="text-[22px] sm:text-[24px] font-serif font-normal text-[#1A202C] drop-shadow" style={{ letterSpacing: '0.05em' }}>
@@ -146,7 +146,7 @@ export default function HeroSection() {
                 Property Type
               </div>
               <Select value={propertyType} onValueChange={handlePropertyTypeChange}>
-                <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-4 sm:pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors text-sm sm:text-base">
+              <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-6 sm:pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors text-sm sm:text-base">
                   <SelectValue placeholder={isMobile ? "" : "Buy"} className="pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -163,7 +163,7 @@ export default function HeroSection() {
                 Location
               </div>
               <Select>
-                <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-4 sm:pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors text-sm sm:text-base">
+              <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-6 sm:pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors text-sm sm:text-base">
                   <SelectValue placeholder={isMobile ? "" : "Any"} className="pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -184,7 +184,7 @@ export default function HeroSection() {
                 Type
               </div>
               <Select>
-                <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base">
+              <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-6 sm:pt-5 pb-2 text-sm sm:text-base">
                   <SelectValue placeholder={isMobile ? "" : "Any"} className="pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -206,7 +206,7 @@ export default function HeroSection() {
                 Price
               </div>
               <div
-                className="relative w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent cursor-pointer flex items-center px-3 pt-4 sm:pt-5 pb-2 text-sm sm:text-base"
+                className="relative w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent cursor-pointer flex items-center px-3 pt-6 sm:pt-5 pb-2 text-sm sm:text-base"
                 onClick={() => setIsPriceOpen(!isPriceOpen)}
               >
                 <span className="text-white max-sm:text-black max-sm:hidden pt-2">
@@ -274,7 +274,7 @@ export default function HeroSection() {
                 Bedrooms
               </div>
               <Select>
-                <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base">
+              <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-6 sm:pt-5 pb-2 text-sm sm:text-base">
                   <SelectValue placeholder={isMobile ? "" : "Any"} className="pt-2" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -298,7 +298,7 @@ export default function HeroSection() {
               <Input
                 type="text"
                 placeholder=""
-                className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-4 sm:pt-5 pb-2 text-sm sm:text-base"
+                className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-6 sm:pt-5 pb-2 text-sm sm:text-base"
               />
             </div>
 

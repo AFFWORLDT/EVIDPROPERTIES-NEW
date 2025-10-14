@@ -5,12 +5,14 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import moment from "moment";
 import EnquireForm from "@/src/components/common/enquireForm";
+import { useCurrency } from "@/src/lib/currency";
 import { Dialog, DialogContent, DialogTitle } from "@/src/components/ui/dialog";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import LocationSection from "./Location";
 
 export default function DetailPage({ id }: any) {
+  const { currency, formatFromAED } = useCurrency();
   const [property, setProperty] = useState<any>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [heroImageIndex, setHeroImageIndex] = useState(0);
@@ -203,11 +205,11 @@ export default function DetailPage({ id }: any) {
               </h3>
               <p className="text-sm font-serif font-normal text-gray-700">
                 {property?.newParam?.price
-                  ? `AED ${property.newParam.price.toLocaleString()}`
+                  ? formatFromAED(property.newParam.price)
                   : property?.price_from
-                  ? `AED ${property.price_from.toLocaleString()}`
+                  ? formatFromAED(property.price_from)
                   : property?.price
-                  ? `AED ${property.price.toLocaleString()}`
+                  ? formatFromAED(property.price)
                   : "Price on request"}
               </p>
             </div>

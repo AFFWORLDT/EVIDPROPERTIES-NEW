@@ -6,6 +6,7 @@ import { Bath, Bed, Heart, SquareGanttChart } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { DirhamSymbol } from "@/src/components/common/dirham-symbol";
+import { useCurrency } from "@/src/lib/currency";
 
 interface PropertyData {
   id?: string | number;
@@ -38,6 +39,7 @@ interface RentCardProps {
 
 export function RentCard({ data, onFavorite }: RentCardProps) {
   const router = useRouter();
+  const { currency, formatFromAED } = useCurrency();
   const handleFavorite = () => {
     if (data && onFavorite) {
       onFavorite(data);
@@ -66,8 +68,8 @@ export function RentCard({ data, onFavorite }: RentCardProps) {
   const formattedPrice = data.price
     ? (
         <span className="flex items-center gap-1">
-          <DirhamSymbol size={16} />
-          {data.price.toLocaleString()}
+          {currency === 'AED' ? <DirhamSymbol size={16} /> : null}
+          {formatFromAED(data.price)}
         </span>
       )
     : "Price on request";

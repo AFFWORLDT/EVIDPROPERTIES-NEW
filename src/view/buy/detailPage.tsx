@@ -10,8 +10,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Dialog, DialogContent, DialogTitle } from "@/src/components/ui/dialog";
 import { DirhamSymbol } from "@/src/components/common/dirham-symbol";
+import { useCurrency } from "@/src/lib/currency";
 
 export default function DetailPage({ id }: any) {
+  const { currency, formatFromAED } = useCurrency();
   const [property, setProperty] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -214,8 +216,8 @@ export default function DetailPage({ id }: any) {
                   <p>
                     <strong className="font-serif font-normal">Price:</strong>{" "}
                     <span className="flex items-center gap-1 justify-center md:justify-start">
-                      <DirhamSymbol size={16} />
-                      {property.price.toLocaleString()}
+                      {currency === 'AED' ? <DirhamSymbol size={16} /> : null}
+                      {formatFromAED(property.price)}
                     </span>
                   </p>
                 )}

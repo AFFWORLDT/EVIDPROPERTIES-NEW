@@ -36,11 +36,14 @@ import {
   HoverCardTrigger,
 } from "@/src/components/ui/hover-card";
 
+import { useCurrency } from '@/src/lib/currency';
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const pathname = usePathname();
+  const { currency, setCurrency } = useCurrency();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -98,7 +101,7 @@ export default function Header() {
     
   ];
 
-  const headerLink = [
+  const headerLink: { href: string; label: string; hasDropdown?: boolean }[] = [
     { href: "/buy", label: "Buy" },
     { href: "/rent", label: "Rent" },
     { href: "/offPlans", label: "New Projects" },
@@ -282,13 +285,13 @@ export default function Header() {
                 )}
               >
                 <Globe className="h-4 w-4" />
-                <span className="text-sm font-serif font-normal underline" style={{ letterSpacing: '0.05em' }}>AED</span>
+                <span className="text-sm font-serif font-normal underline" style={{ letterSpacing: '0.05em' }}>{currency}</span>
                 <ChevronDown className="h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem>USD</DropdownMenuItem>
-                <DropdownMenuItem>AED</DropdownMenuItem>
-                <DropdownMenuItem>EUR</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setCurrency('AED')}>AED</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setCurrency('USD')}>USD</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setCurrency('EUR')}>EUR</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -425,13 +428,13 @@ export default function Header() {
             <Globe className="h-4 w-4 text-gray-500" />
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700">
-                <span className="text-sm font-serif font-normal" style={{ letterSpacing: '0.05em' }}>USD</span>
+                <span className="text-sm font-serif font-normal" style={{ letterSpacing: '0.05em' }}>{currency}</span>
                 <ChevronDown className="h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem>USD</DropdownMenuItem>
-                <DropdownMenuItem>AED</DropdownMenuItem>
-                <DropdownMenuItem>EUR</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setCurrency('AED')}>AED</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setCurrency('USD')}>USD</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setCurrency('EUR')}>EUR</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>

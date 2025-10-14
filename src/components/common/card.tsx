@@ -10,7 +10,7 @@ interface PropertyCardProps {
   photos: string;
   title: string;
   location: string;
-  price: string;
+  price: string | React.ReactNode;
   bedrooms: number;
   bathrooms: number;
   area: string;

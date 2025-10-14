@@ -7,6 +7,7 @@ import {
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { DirhamSymbol } from "@/src/components/common/dirham-symbol";
+import { useCurrency } from "@/src/lib/currency";
 
 interface PropertyData {
   id?: string | number;
@@ -14,6 +15,7 @@ interface PropertyData {
   location?: {
     city?: string;
     community?: string;
+    sub_community?: string;
   };
   newParam?: {
     price?: number;
@@ -33,6 +35,7 @@ interface PropertyData {
 
 export default function OffPlanCard({ data }: { data?: PropertyData }) {
     const router = useRouter();
+    const { currency, formatFromAED } = useCurrency();
   return (
     <Card className="overflow-hidden border-none p-0 shadow-sm border-2 rounded-none" onClick={() => router.push(`/offPlans/details/${data?.id}`)}>
       <div className="relative w-full h-96 overflow-hidden group">
@@ -50,7 +53,7 @@ export default function OffPlanCard({ data }: { data?: PropertyData }) {
           </div>
         ) : null}
         <div className="absolute bottom-4 right-4 bg-white text-sm font-serif font-normal px-3 py-1 rounded-full shadow-md text-[#1A202C] flex items-center gap-1">
-          FROM <DirhamSymbol size={14} /> {data?.newParam?.price?.toLocaleString() ?? "N/A"}
+          FROM {currency === 'AED' ? (<DirhamSymbol size={14} />) : null} {data?.newParam?.price ? formatFromAED(data.newParam.price) : "N/A"}
         </div>
       </div>
       <CardContent className="p-6">

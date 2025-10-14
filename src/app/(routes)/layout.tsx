@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/common/header';
 import Footer from '../../components/common/footer';
+import { CurrencyProvider } from '@/src/lib/currency';
 
 export default function WebsiteLayout({
   children,
@@ -8,10 +9,12 @@ export default function WebsiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen">
-      <Header />
-      {children}
-      <Footer />
-    </main>
+    <CurrencyProvider>
+      <main className="min-h-screen">
+        <Header />
+        {children}
+        <Footer />
+      </main>
+    </CurrencyProvider>
   );
 }
