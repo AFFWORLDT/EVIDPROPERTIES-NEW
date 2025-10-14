@@ -53,7 +53,7 @@ export default function WhyWorkWithUs() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#1A202C] mb-4">
+          <h2 className="text-4xl font-serif font-normal text-gray-800 mb-4" style={{ letterSpacing: '0.05em' }}>
             How we help
           </h2>
         </div>
@@ -65,11 +65,11 @@ export default function WhyWorkWithUs() {
                 {feature.icon}
               </div>
               
-              <h3 className="text-xl font-bold text-[#1A202C] mb-4">
+              <h3 className="text-xl font-serif font-normal text-gray-800 mb-4" style={{ letterSpacing: '0.05em' }}>
                 {feature.title}
               </h3>
               
-              <p className="text-[#1A202C] leading-relaxed">
+              <p className="text-gray-700 leading-relaxed font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
                 {feature.description}
               </p>
             </div>

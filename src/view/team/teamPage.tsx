@@ -75,7 +75,7 @@ export default function TeamPage() {
   return (
     <div className="min-h-screen luxury-bg">
       {/* Hero Section */}
-      <section className="relative pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-24 lg:pb-32 px-4 md:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-20 md:pt-24 lg:pt-28 pb-8 md:pb-12 lg:pb-16 px-4 md:px-6 lg:px-8 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8]"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/3 via-transparent to-black/3"></div>
@@ -89,14 +89,14 @@ export default function TeamPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-center mb-12 md:mb-20"
+            className="text-center mb-6 md:mb-8"
           >
             {/* Main Title */}
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-[#1A202C] mb-6 md:mb-8 leading-[0.9] tracking-tight font-serif"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-[#1A202C] mb-3 md:mb-4 leading-[0.9] tracking-tight font-serif"
             >
               Meet the Team
             </motion.h1>
@@ -116,14 +116,14 @@ export default function TeamPage() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.2, delay: 0.6 }}
-              className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-8 md:mt-12"
+              className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-4 md:mt-6"
             />
           </motion.div>
         </div>
       </section>
 
       {/* Team Grid */}
-      <section className="py-12 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8">
+      <section className="py-6 md:py-8 lg:py-12 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <motion.div
@@ -131,12 +131,12 @@ export default function TeamPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-6 md:mb-8"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-700 mb-4">
-              Meet Our <span className="text-navy font-normal">Experts</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-normal text-gray-800 mb-4" style={{ letterSpacing: '0.05em' }}>
+              Meet Our <span className="text-gray-800 font-normal">Experts</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
               Dedicated professionals committed to delivering exceptional real estate experiences
             </p>
           </motion.div>
@@ -183,14 +183,14 @@ export default function TeamPage() {
 
                     {/* Agent Info */}
                     <div className="text-center mb-4 md:mb-6">
-                      <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 leading-tight">
+                      <h3 className="text-lg sm:text-xl font-serif font-normal text-gray-800 mb-2 leading-tight" style={{ letterSpacing: '0.05em' }}>
                         {agent.name}
                       </h3>
-                      <p className="text-[#1A202C] font-medium text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">
+                      <p className="text-gray-700 font-serif font-normal text-xs sm:text-sm mb-2 md:mb-3" style={{ letterSpacing: '0.05em' }}>
                         {agent.designation || agent.role_name || agent.team_name || 'Team Member'}
                       </p>
                       {agent.experience_years && (
-                        <p className="text-gray-600 text-xs sm:text-sm">
+                        <p className="text-gray-600 text-xs sm:text-sm font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
                           {agent.experience_years} Years Experience
                         </p>
                       )}
@@ -203,7 +203,7 @@ export default function TeamPage() {
                           <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#dbbb90]">
                             {agent.experience_years}+
                           </div>
-                          <div className="text-xs text-gray-600 uppercase tracking-wider">
+                          <div className="text-xs text-gray-600 font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
                             Years Exp
                           </div>
                         </div>
@@ -213,7 +213,7 @@ export default function TeamPage() {
                           <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#dbbb90]">
                             {agent.specialities.length}
                           </div>
-                          <div className="text-xs text-gray-600 uppercase tracking-wider">
+                          <div className="text-xs text-gray-600 font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
                             Specialties
                           </div>
                         </div>

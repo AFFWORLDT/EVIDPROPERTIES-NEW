@@ -74,15 +74,15 @@ export default function FAQSection() {
               </span>
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8 text-[#1A202C] leading-tight tracking-wide">
-              <span className="text-[#dbbb90] font-normal">Expert</span> Answers to
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal mb-8 text-gray-800 leading-tight" style={{ letterSpacing: '0.05em' }}>
+              <span className="text-gray-800 font-normal">Expert</span> Answers to
               <br />
-              <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-600 mt-2 block">
+              <span className="text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-600 mt-2 block" style={{ letterSpacing: '0.05em' }}>
                 Your Mortgage Questions
               </span>
             </h2>
-            <p className="max-w-3xl mx-auto text-base font-light text-gray-600 leading-relaxed font-serif">
-              Get comprehensive answers to all your mortgage questions from <span className="text-[#dbbb90] font-medium">Apricity Real Estate's</span> 
+            <p className="max-w-3xl mx-auto text-base text-gray-600 leading-relaxed font-serif font-normal" style={{ letterSpacing: '0.05em' }}>
+              Get comprehensive answers to all your mortgage questions from <span className="text-[#dbbb90] font-normal">Apricity Real Estate's</span> 
               expert team. We're here to guide you through every step of your mortgage journey.
             </p>
           </div>
@@ -94,7 +94,7 @@ export default function FAQSection() {
                   onClick={() => toggleFAQ(index)}
                   className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gradient-to-r hover:from-[#dbbb90]/5 hover:to-transparent transition-all duration-300"
                 >
-                  <span className="font-serif font-medium text-[#1A202C] pr-6 text-lg leading-relaxed">
+                  <span className="font-serif font-normal text-gray-800 pr-6 text-lg leading-relaxed" style={{ letterSpacing: '0.05em' }}>
                     {faq.question}
                   </span>
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#dbbb90]/10 flex items-center justify-center group-hover:bg-[#dbbb90]/20 transition-colors duration-300">
@@ -109,7 +109,7 @@ export default function FAQSection() {
                 {expandedIndex === index && (
                   <div className="px-8 pb-6">
                     <div className="border-t border-[#dbbb90]/20 pt-6">
-                      <p className="text-gray-700 leading-relaxed font-serif text-base">
+                      <p className="text-gray-700 leading-relaxed font-serif text-base font-normal" style={{ letterSpacing: '0.05em' }}>
                         {faq.answer}
                       </p>
                     </div>
@@ -122,18 +122,18 @@ export default function FAQSection() {
           {/* CTA Section */}
           <div className="text-center mt-16">
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl">
-              <h3 className="text-2xl font-serif font-light text-[#1A202C] mb-4">
+              <h3 className="text-2xl font-serif font-normal text-gray-800 mb-4" style={{ letterSpacing: '0.05em' }}>
                 Still Have Questions?
               </h3>
-              <p className="text-gray-600 font-serif mb-6">
-                Our <span className="text-[#dbbb90] font-medium">Apricity Real Estate</span> mortgage experts are here to help.
+              <p className="text-gray-600 font-serif font-normal mb-6" style={{ letterSpacing: '0.05em' }}>
+                Our <span className="text-[#dbbb90] font-normal">Apricity Real Estate</span> mortgage experts are here to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="group relative bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#dbbb90] text-white px-8 py-4 text-lg font-serif font-medium tracking-wider rounded-xl shadow-xl hover:shadow-2xl uppercase transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-[#dbbb90]/20">
+                <button className="group relative bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#dbbb90] text-white px-8 py-4 text-lg font-serif font-normal rounded-xl shadow-xl hover:shadow-2xl uppercase transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-[#dbbb90]/20" style={{ letterSpacing: '0.05em' }}>
                   <span className="relative z-10">Get Expert Consultation</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </button>
-                <button className="bg-white/50 hover:bg-white/70 text-[#1A202C] border border-[#dbbb90]/30 hover:border-[#dbbb90] px-8 py-4 text-lg font-serif font-medium tracking-wider rounded-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 backdrop-blur-sm">
+                <button className="bg-white/50 hover:bg-white/70 text-gray-800 border border-[#dbbb90]/30 hover:border-[#dbbb90] px-8 py-4 text-lg font-serif font-normal rounded-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 backdrop-blur-sm" style={{ letterSpacing: '0.05em' }}>
                   <span>Call +971-55-877-7152</span>
                 </button>
               </div>
