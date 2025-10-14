@@ -53,7 +53,7 @@ export default function MortgageCalculator() {
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mt-3"></div>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8 text-[#1A202C] leading-tight tracking-wide">
-            <span className="text-[#1A202C] font-normal">Calculate</span> Your Dream
+            <span className="text-[#1A202C] font-normal">Calculate</span> Your 
             <br />
             <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#1A202C] mt-2 block">
               Mortgage Payments Instantly

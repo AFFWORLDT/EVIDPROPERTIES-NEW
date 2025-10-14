@@ -186,14 +186,9 @@ export default function TeamPage() {
                       <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 leading-tight">
                         {agent.name}
                       </h3>
-                      {agent.team_name && agent.team_name !== 'No team assigned' && (
-                        <p className="text-[#1A202C] font-medium text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">
-                          {agent.name === 'Aaron Thomson' ? 'Founder/CEO' : 
-                           agent.name === 'Lewis Anderson' ? 'Senior Client Manager' : 
-                           agent.name === 'Admin' ? 'Head of Administration' : 
-                           agent.team_name}
-                        </p>
-                      )}
+                      <p className="text-[#1A202C] font-medium text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">
+                        {agent.designation || agent.role_name || agent.team_name || 'Team Member'}
+                      </p>
                       {agent.experience_years && (
                         <p className="text-gray-600 text-xs sm:text-sm">
                           {agent.experience_years} Years Experience
@@ -332,14 +327,9 @@ export default function TeamPage() {
                     <h2 className="text-lg md:text-2xl font-semibold text-gray-800 leading-tight">
                       {selectedAgent.name}
                     </h2>
-                    {selectedAgent.team_name && selectedAgent.team_name !== 'No team assigned' && (
-                      <p className="text-[#1A202C] font-medium text-sm md:text-base uppercase tracking-wider">
-                        {selectedAgent.name === 'Aaron Thomson' ? 'Founder/CEO' : 
-                         selectedAgent.name === 'Lewis Anderson' ? 'Senior Client Manager' : 
-                         selectedAgent.name === 'Admin' ? 'Head of Administration' : 
-                         selectedAgent.team_name}
-                      </p>
-                    )}
+                    <p className="text-[#1A202C] font-medium text-sm md:text-base uppercase tracking-wider">
+                      {selectedAgent.designation || selectedAgent.role_name || selectedAgent.team_name || 'Team Member'}
+                    </p>
                   </div>
                 </div>
                 <button
@@ -385,16 +375,48 @@ export default function TeamPage() {
                   <h4 className="font-semibold text-[#1A202C] mb-2">Languages</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedAgent.languages.map((lang, index) => {
-                      // Remove language code prefixes like "GB ", "en:GB ", "ar:sa/", "en/", "de/" etc.
-                      const cleanLang = lang
-                        .replace(/^[A-Z]{2}\s/, '') // Remove "GB " format (country code with space)
-                        .replace(/^[a-z]{2}:[A-Z]{2}\s/, '') // Remove "en:GB " format (language:country with space)
-                        .replace(/^[a-z]{2}:[a-z]{2}\s/, '') // Remove "en:gb " format (language:country with space)
-                        .replace(/^[a-z]{2}:[a-z]{2}\//, '') // Remove "ar:sa/" format (with slash)
-                        .replace(/^[a-z]{2}\//, '') // Remove "en/" format
-                        .replace(/^[a-z]{2}_[a-z]{2}\//, '') // Remove "en_us/" format
-                        .replace(/^[a-z]{2}:/, '') // Remove "en:" format (colon only)
-                        .trim(); // Remove any extra whitespace
+                      // Map language codes to clean language names
+                      const languageMap: { [key: string]: string } = {
+                        'en': 'English',
+                        'ar': 'Arabic', 
+                        'de': 'German',
+                        'fr': 'French',
+                        'es': 'Spanish',
+                        'it': 'Italian',
+                        'pt': 'Portuguese',
+                        'ru': 'Russian',
+                        'zh': 'Chinese',
+                        'ja': 'Japanese',
+                        'ko': 'Korean',
+                        'hi': 'Hindi',
+                        'ur': 'Urdu',
+                        'fa': 'Persian',
+                        'tr': 'Turkish'
+                      };
+
+                      // Extract language code and convert to clean name
+                      let cleanLang = lang.toLowerCase();
+                      
+                      // Try to extract language code from various formats
+                      let langCode = '';
+                      if (cleanLang.startsWith('en')) langCode = 'en';
+                      else if (cleanLang.startsWith('ar')) langCode = 'ar';
+                      else if (cleanLang.startsWith('de')) langCode = 'de';
+                      else if (cleanLang.startsWith('fr')) langCode = 'fr';
+                      else if (cleanLang.startsWith('es')) langCode = 'es';
+                      else if (cleanLang.startsWith('it')) langCode = 'it';
+                      else if (cleanLang.startsWith('pt')) langCode = 'pt';
+                      else if (cleanLang.startsWith('ru')) langCode = 'ru';
+                      else if (cleanLang.startsWith('zh')) langCode = 'zh';
+                      else if (cleanLang.startsWith('ja')) langCode = 'ja';
+                      else if (cleanLang.startsWith('ko')) langCode = 'ko';
+                      else if (cleanLang.startsWith('hi')) langCode = 'hi';
+                      else if (cleanLang.startsWith('ur')) langCode = 'ur';
+                      else if (cleanLang.startsWith('fa')) langCode = 'fa';
+                      else if (cleanLang.startsWith('tr')) langCode = 'tr';
+                      
+                      // Return clean language name or fallback to original
+                      cleanLang = languageMap[langCode] || lang;
                       return (
                       <span
                         key={index}

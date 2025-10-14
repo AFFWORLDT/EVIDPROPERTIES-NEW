@@ -42,6 +42,7 @@ export interface Agent {
   whatsapp_notification: boolean;
   joining_date?: string;
   job_type?: string;
+  designation?: string;
   qr_code?: string;
   documents?: any;
 }

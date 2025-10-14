@@ -28,16 +28,16 @@ function ContactForm() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-2xl mx-auto">
           {/* Left Content */}
-          <div>
+          {/* <div>
             <h2 className="text-4xl font-bold text-blue-900 mb-6">
               Unleash your property potential<br />
               List, Sell & Succeed with Us
             </h2>
             
             {/* Stats */}
-            <div className="flex gap-8 mb-8">
+            {/* <div className="flex gap-8 mb-8">
               <div>
                 <div className="text-3xl font-bold text-primar">50K+</div>
                 <div className="text-gray-600">Home Sold</div>
@@ -53,7 +53,7 @@ function ContactForm() {
               With a dedicated team of over 200 area specialists, we specialize in maximizing your returns. 
               Don't miss out on our expertise. Contact Apricity today!
             </p>
-          </div>
+          </div> */}
 
           {/* Right Content - Form */}
           <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
