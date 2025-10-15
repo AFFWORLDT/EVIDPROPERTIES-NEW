@@ -19,6 +19,7 @@ import {
   Bitcoin,
   TrendingUp,
   Building2,
+  MapPin,
 } from "lucide-react";
 import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
@@ -42,6 +43,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isLocationsOpen, setIsLocationsOpen] = useState(false);
   const pathname = usePathname();
   const { currency, setCurrency } = useCurrency();
   useEffect(() => {
@@ -65,6 +67,7 @@ export default function Header() {
     { href: "/offPlans", label: "New Projects" },
     { href: "/team", label: "Teams" },
     { href: "/communities", label: "Areas" },
+    { href: "/locations", label: "Locations" },
     // { href: "/service", label: "Services" },
     // { href: "/blog", label: "Blogs" },
     { href: "/contactUs", label: "More" },
@@ -101,12 +104,31 @@ export default function Header() {
     
   ];
 
+  const locations = [
+    { name: "Dubai Hills Estate", href: "/locations/dubai-hills" },
+    { name: "Tilal Al Ghaf", href: "/locations/tilal-al-ghaf" },
+    { name: "Palm Jumeirah", href: "/locations/palm-jumeirah" },
+    { name: "Jumeirah Golf Estates", href: "/locations/jumeirah-golf-estates" },
+    { name: "Emirates Hills", href: "/locations/emirates-hills" },
+    { name: "Al Barari", href: "/locations/al-barari" },
+    { name: "Dubai Marina", href: "/locations/dubai-marina" },
+    { name: "Jumeirah Islands", href: "/locations/jumeirah-islands" },
+    { name: "The Lakes", href: "/locations/the-lakes" },
+    { name: "The Meadows", href: "/locations/the-meadows" },
+    { name: "The Springs", href: "/locations/the-springs" },
+    { name: "Victory Heights", href: "/locations/victory-heights" },
+    { name: "Arabian Ranches", href: "/locations/arabian-ranches" },
+    { name: "Business Bay", href: "/locations/business-bay" },
+    { name: "DIFC", href: "/locations/difc" },
+  ];
+
   const headerLink: { href: string; label: string; hasDropdown?: boolean }[] = [
     { href: "/buy", label: "Buy" },
     { href: "/rent", label: "Rent" },
     { href: "/offPlans", label: "New Projects" },
     { href: "/team", label: "Teams" },
     { href: "/communities", label: "Areas" },
+    { href: "/locations", label: "Locations", hasDropdown: true },
     // { href: "/service", label: "Services", hasDropdown: true },
     // { href: "/blog", label: "Blogs" },
     { href: "/contactUs", label: "More" },
@@ -159,6 +181,58 @@ export default function Header() {
         <div className="hidden lg:flex items-center space-x-8">
           {headerLink.map((link, i) => {
             if (link.hasDropdown) {
+              // Locations dropdown
+              if (link.href === "/locations") {
+                return (
+                  <HoverCard key={i} openDelay={200} closeDelay={100}>
+                    <HoverCardTrigger asChild>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          "relative pb-1 transition-all duration-300 font-sans text-[17px]",
+                          isScrolled && pathname === "/" ? "text-black" : "text-gray-800",
+                          "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
+                          "after:bg-primary after:transition-all after:duration-300 hover:after:w-full",
+                          pathname === link.href && "after:w-full"
+                        )}
+                        style={{
+                          letterSpacing: "1.5px",
+                        }}
+                      >
+                        {link.label}
+                      </Link>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-[600px] p-0" sideOffset={10}>
+                      <div className="bg-white rounded-lg shadow-xl border border-gray-200">
+                        {/* Header */}
+                        <div className="p-4 border-b border-gray-100">
+                          <h3 className="text-gray-500 text-sm font-serif font-normal" style={{ letterSpacing: '0.05em' }}>Dubai Locations</h3>
+                        </div>
+                        
+                        {/* Locations Grid */}
+                        <div className="p-4">
+                          <div className="grid grid-cols-3 gap-2">
+                            {locations.map((location, index) => (
+                              <Link
+                                key={index}
+                                href={location.href}
+                                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
+                              >
+                                <MapPin className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-200" />
+                                <span className="text-gray-700 font-serif font-normal text-sm group-hover:text-gray-900 transition-colors duration-200">
+                                  {location.name}
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
+                );
+              }
+              
+              // Services dropdown (if enabled)
               return (
                 <HoverCard key={i} openDelay={200} closeDelay={100}>
                   <HoverCardTrigger asChild>
@@ -342,7 +416,7 @@ export default function Header() {
       {/* Mobile Overlay */}
       <div
         data-mobile-overlay
-        className={`fixed top-0 bottom-0 right-0 w-full sm:w-4/5 md:w-1/2 lg:w-1/3 bg-white text-gray-900 z-[100] transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 bottom-0 right-0 w-full sm:w-4/5 md:w-1/2 lg:w-1/3 bg-white text-gray-900 z-[100] transform transition-transform duration-300 ease-in-out overflow-y-auto ${
           isOverlayOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -397,6 +471,48 @@ export default function Header() {
                           </div>
                           <span className="text-gray-700 font-serif font-normal text-sm group-hover:text-gray-900 transition-colors duration-200">
                             {service.name}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+            
+            if (link.href === "/locations") {
+              return (
+                <div key={i} className="space-y-2">
+                  <button
+                    onClick={() => setIsLocationsOpen(!isLocationsOpen)}
+                    className={cn(
+                      "flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 transition-colors duration-200 py-2",
+                      pathname === link.href && "text-gray-900 font-serif font-normal"
+                    )}
+                  >
+                    <span>{link.label}</span>
+                    <ChevronDown className={cn(
+                      "h-4 w-4 transition-transform duration-200",
+                      isLocationsOpen && "rotate-180"
+                    )} />
+                  </button>
+                  
+                  {/* Locations Dropdown (mobile) */}
+                  <div className={cn(
+                    "transition-all duration-300",
+                    isLocationsOpen ? "max-h-[70vh] opacity-100 overflow-y-auto" : "max-h-0 opacity-0 overflow-hidden"
+                  )}>
+                    <div className="pl-4 space-y-2 border-l-2 border-gray-200">
+                      {locations.map((location, locationIndex) => (
+                        <Link
+                          key={locationIndex}
+                          href={location.href}
+                          onClick={() => setIsOverlayOpen(false)}
+                          className="flex items-center space-x-3 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
+                        >
+                          <MapPin className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-200" />
+                          <span className="text-gray-700 font-serif font-normal text-sm group-hover:text-gray-900 transition-colors duration-200">
+                            {location.name}
                           </span>
                         </Link>
                       ))}
