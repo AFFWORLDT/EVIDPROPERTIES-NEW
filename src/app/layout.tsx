@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   description: "Premium real estate solutions in Dubai",
   viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   icons: {
-    icon: "/favion.jpeg",
-    shortcut: "/favion.jpeg",
-    apple: "/favion.jpeg",
+    icon: "/icon-logo.jpeg",
+    shortcut: "/icon-logo.jpeg",
+    apple: "/icon-logo.jpeg",
   },
 };
 
