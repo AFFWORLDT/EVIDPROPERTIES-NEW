@@ -138,7 +138,7 @@ export default function HeroSection() {
           A boutique real estate company curating properties with care and integrity
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4 p-3 sm:p-4 md:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-white/20 shadow-2xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 p-3 sm:p-4 md:p-6 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-white/20 shadow-2xl">
         
             {/* Property Type */}
             <div className="lg:col-span-1 relative">
@@ -164,7 +164,7 @@ export default function HeroSection() {
               </div>
               <Input
                 type="text"
-                placeholder=""
+                placeholder="Enter location"
                 className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-lg placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-6 sm:pt-5 pb-2 text-sm sm:text-base"
               />
             </div>
@@ -294,7 +294,7 @@ export default function HeroSection() {
             </div> */}
 
             {/* Search Button */}
-            <div className="lg:col-span-1 sm:col-span-2">
+            <div className="lg:col-span-1 sm:col-span-2 lg:col-span-1">
               <Button 
                 onClick={handleSearch}
                 className="w-full bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-serif font-normal py-2 px-4 rounded-lg transition-all duration-300 h-12 sm:h-12 md:h-14 uppercase tracking-wider text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer"
