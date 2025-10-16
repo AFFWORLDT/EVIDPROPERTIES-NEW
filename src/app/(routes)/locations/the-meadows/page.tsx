@@ -28,7 +28,7 @@ export default function TheMeadowsPage() {
           {/* Hero Image */}
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/the-meadows-hero.jpeg"
+              src="/images/the-meadows-hero.jpg"
               alt="The Meadows"
               fill
               className="object-cover"

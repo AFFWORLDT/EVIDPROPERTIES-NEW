@@ -28,7 +28,7 @@ export default function EmiratesHillsPage() {
           {/* Hero Image */}
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/emirates-hills-hero.jpeg"
+              src="/images/emirates-hills-hero.jpg"
               alt="Emirates Hills"
               fill
               className="object-cover"

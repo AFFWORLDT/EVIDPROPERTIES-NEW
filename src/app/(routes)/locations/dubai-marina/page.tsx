@@ -28,7 +28,7 @@ export default function DubaiMarinaPage() {
           {/* Hero Image */}
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/dubai-marina-hero.webp"
+              src="/images/dubai-marina-hero.jpeg"
               alt="Dubai Marina"
               fill
               className="object-cover"

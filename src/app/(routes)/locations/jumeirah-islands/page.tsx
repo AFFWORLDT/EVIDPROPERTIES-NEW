@@ -28,7 +28,7 @@ export default function JumeirahIslandsPage() {
           {/* Hero Image */}
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/jumeirah-islands-hero.jpeg"
+              src="/images/jumeirah-islands-hero.jpg"
               alt="Jumeirah Islands"
               fill
               className="object-cover"

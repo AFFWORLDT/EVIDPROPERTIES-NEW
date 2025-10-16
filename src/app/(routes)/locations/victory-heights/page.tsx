@@ -28,7 +28,7 @@ export default function VictoryHeightsPage() {
           {/* Hero Image */}
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/victory-heights-hero.webp"
+              src="/images/victory-heights-hero.jpg"
               alt="Victory Heights"
               fill
               className="object-cover"

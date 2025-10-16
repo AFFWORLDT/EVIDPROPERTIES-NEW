@@ -28,7 +28,7 @@ export default function BusinessBayPage() {
           {/* Hero Image */}
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/business-bay-hero.jpeg"
+              src="/images/business-bay-hero.webp"
               alt="Business Bay"
               fill
               className="object-cover"

@@ -28,7 +28,7 @@ export default function DubaiHillsPage() {
           {/* Hero Image */}
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/Dubai-Hills-Estate.jpg"
+              src="/images/Dubai-Hills-Estate.jpeg"
               alt="Dubai Hills Estate"
               fill
               className="object-cover"

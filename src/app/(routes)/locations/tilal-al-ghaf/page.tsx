@@ -28,7 +28,7 @@ export default function TilalAlGhafPage() {
           {/* Hero Image */}
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/tilal-al-ghaf-hero.avif"
+              src="/images/tilal-al-ghaf-hero.webp"
               alt="Tilal Al Ghaf"
               fill
               className="object-cover"
