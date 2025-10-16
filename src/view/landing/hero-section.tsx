@@ -162,20 +162,11 @@ export default function HeroSection() {
               <div className="absolute top-2 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
                 Location
               </div>
-              <Select>
-              <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pt-6 sm:pt-5 pb-2 hover:border-[#dbbb90]/50 transition-colors text-sm sm:text-base">
-                  <SelectValue placeholder={isMobile ? "" : "Any"} className="pt-2" />
-                </SelectTrigger>
-                <SelectContent className="bg-white text-gray-900">
-                  <SelectItem value="any" className="max-sm:hidden">Any</SelectItem>
-                  <SelectItem value="dubai-marina">Dubai Marina</SelectItem>
-                  <SelectItem value="downtown-dubai">Downtown Dubai</SelectItem>
-                  <SelectItem value="palm-jumeirah">Palm Jumeirah</SelectItem>
-                  <SelectItem value="business-bay">Business Bay</SelectItem>
-                  <SelectItem value="jlt">JLT</SelectItem>
-                  {/* <SelectItem value="deira">Deira</SelectItem> */}
-                </SelectContent>
-              </Select>
+              <Input
+                type="text"
+                placeholder=""
+                className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-lg placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-6 sm:pt-5 pb-2 text-sm sm:text-base"
+              />
             </div>
 
             {/* Type */}
