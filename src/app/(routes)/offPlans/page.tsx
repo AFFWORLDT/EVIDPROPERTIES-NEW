@@ -22,7 +22,7 @@ import { Loader, X, Search } from "lucide-react";
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { api } from "@/src/lib/axios";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 // Constants
 const COMPLETION_STATUS_OPTIONS = [
@@ -85,6 +85,7 @@ const HANDOVER_YEAR_OPTIONS = [
 
 function OffPlansPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [property, setProperty] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
@@ -108,6 +109,23 @@ function OffPlansPage() {
     bathrooms: "any",
     handover_year: "any",
   });
+
+  // Initialize filters from URL parameters
+  useEffect(() => {
+    const urlFilters = {
+      type: "off_plan",
+      title: searchParams.get('title') || "",
+      property_type: searchParams.get('property_type') || "any",
+      min_price: searchParams.get('min_price') || "any",
+      max_price: searchParams.get('max_price') || "any",
+      completion_status: "all",
+      developer_id: "any",
+      bedrooms: "any",
+      bathrooms: "any",
+      handover_year: "any",
+    };
+    setFilters(urlFilters);
+  }, [searchParams]);
 
   const fetchproperty = useCallback(async (page = 1) => {
     setLoading(true);

@@ -22,7 +22,7 @@ import { Loader, Filter, X, Search } from "lucide-react";
 import PropertyCardSkeleton from "@/src/components/common/property-card-skeleton";
 import React, { useCallback, useMemo } from "react";
 import { api } from "@/src/lib/axios";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 // Constants
@@ -86,6 +86,7 @@ const HANDOVER_YEAR_OPTIONS = [
 
 function Buy() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [property, setProperty] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [showFilters, setShowFilters] = React.useState(false);
@@ -109,6 +110,23 @@ function Buy() {
     bathrooms: "any",
     handover_year: "any",
   });
+
+  // Initialize filters from URL parameters
+  React.useEffect(() => {
+    const urlFilters = {
+      listing_type: "SELL",
+      title: searchParams.get('title') || "",
+      property_type: searchParams.get('property_type') || "any",
+      min_price: searchParams.get('min_price') || "any",
+      max_price: searchParams.get('max_price') || "any",
+      completion_status: "all",
+      developer_id: "any",
+      bedrooms: "any",
+      bathrooms: "any",
+      handover_year: "any",
+    };
+    setFilters(urlFilters);
+  }, [searchParams]);
 
   const fetchproperty = useCallback(async (page = 1) => {
     setLoading(true);

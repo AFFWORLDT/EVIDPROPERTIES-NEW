@@ -16,6 +16,8 @@ export default function HeroSection() {
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
   const [isPriceOpen, setIsPriceOpen] = useState(false);
   const [propertyType, setPropertyType] = useState("buy");
+  const [location, setLocation] = useState("");
+  const [propertyTypeFilter, setPropertyTypeFilter] = useState("any");
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -38,17 +40,32 @@ export default function HeroSection() {
   };
 
   const handleSearch = () => {
-    // Navigate to the appropriate page based on property type
-    if (propertyType === "buy") {
-      router.push("/buy");
-    } else if (propertyType === "rent") {
-      router.push("/rent");
-    } else if (propertyType === "offplan") {
-      router.push("/offPlans");
-    } else {
-      // Default to buy page if no selection
-      router.push("/buy");
+    // Build search parameters
+    const searchParams = new URLSearchParams();
+    
+    // Add location if provided
+    if (location.trim()) {
+      searchParams.set('title', location.trim());
     }
+    
+    // Add property type filter if not "any"
+    if (propertyTypeFilter && propertyTypeFilter !== "any") {
+      searchParams.set('property_type', propertyTypeFilter.toUpperCase());
+    }
+    
+    // Add price range if provided
+    if (priceRange.min && priceRange.min !== "any") {
+      searchParams.set('min_price', priceRange.min);
+    }
+    if (priceRange.max && priceRange.max !== "any") {
+      searchParams.set('max_price', priceRange.max);
+    }
+    
+    // Navigate to the appropriate page with search parameters
+    const queryString = searchParams.toString();
+    const url = queryString ? `/${propertyType}?${queryString}` : `/${propertyType}`;
+    
+    router.push(url);
   };
 
   const getPriceDisplayValue = () => {
@@ -165,6 +182,8 @@ export default function HeroSection() {
               <Input
                 type="text"
                 placeholder="Enter location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
                 className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-lg placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-6 sm:pt-5 pb-2 text-sm sm:text-base"
               />
             </div>
@@ -174,7 +193,7 @@ export default function HeroSection() {
               <div className="absolute top-2 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
                 Type
               </div>
-              <Select>
+              <Select value={propertyTypeFilter} onValueChange={setPropertyTypeFilter}>
               <SelectTrigger className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-none  focus:ring-offset-0 focus:ring-transparent pt-6 sm:pt-5 pb-2 text-sm sm:text-base">
                   <SelectValue placeholder={isMobile ? "" : "Any"} className="pt-2" />
                 </SelectTrigger>
