@@ -168,7 +168,7 @@ export default function Header() {
           <Link href={"/"} className="group">
             <Image
               src="/logo.png"
-              alt="Apricity Realestate Logo"
+              alt="Apricity Real Estate Logo"
               width={150}
               height={50}
               className="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 h-8 w-auto sm:h-10 md:h-12 lg:h-14"

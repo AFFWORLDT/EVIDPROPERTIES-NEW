@@ -21,7 +21,7 @@ const trajanPro = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Apricity Realestate",
+  title: "Apricity Real Estate",
   description: "Premium real estate solutions in Dubai",
   viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   icons: {

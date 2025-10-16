@@ -31,7 +31,7 @@ export default function Footer() {
               <Link href="/" className="group block mb-6">
                 <Image
                   src="/logo.png"
-                  alt="Apricity Realestate Logo"
+                  alt="Apricity Real Estate Logo"
                   width={200}
                   height={70}
                   className="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-90 h-12 w-auto sm:h-14 md:h-16 lg:h-20 xl:h-24 filter drop-shadow-sm"
@@ -177,14 +177,14 @@ export default function Footer() {
                 <Link href="/" className="group">
                   <Image
                     src="/logo.png"
-                    alt="Apricity Realestate Logo"
+                    alt="Apricity Real Estate Logo"
                     width={150}
                     height={50}
                     className="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-90 h-6 sm:h-8 w-auto filter drop-shadow-sm"
                   />
                 </Link>
                 <p className="text-gray-500 text-xs sm:text-sm font-serif text-center sm:text-left">
-                  &copy; 2025 Apricity Realestate. All Rights Reserved.
+                  &copy; 2025 Apricity Real Estate. All Rights Reserved.
                 </p>
               </div>
 

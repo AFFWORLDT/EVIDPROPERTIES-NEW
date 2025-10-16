@@ -89,7 +89,7 @@ export default function LoginPage() {
             </Link>
             
             <h1 className="text-3xl font-serif font-normal text-blue-900 mb-2">
-              APRICITY REALESTATE
+              Apricity Real Estate
             </h1>
             <p className="text-gray-600 text-sm mb-4">
               Login to your account

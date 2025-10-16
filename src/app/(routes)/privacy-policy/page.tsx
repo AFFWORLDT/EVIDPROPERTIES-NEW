@@ -2,8 +2,8 @@ import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Apricity Realestate',
-  description: 'Privacy Policy for Apricity Realestate - Learn how we collect, use, and protect your personal information.',
+  title: 'Privacy Policy - Apricity Real Estate',
+  description: 'Privacy Policy for Apricity Real Estate - Learn how we collect, use, and protect your personal information.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-serif font-normal text-gray-900 mb-4 font-serif">1. Introduction</h2>
               <p className="text-gray-700 mb-4">
-                Apricity Realestate ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://apricityrealestate.com" className="text-blue-600 hover:underline">apricityrealestate.com</a> or use our services.
+                Apricity Real Estate ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://apricityrealestate.com" className="text-blue-600 hover:underline">apricityrealestate.com</a> or use our services.
               </p>
               <p className="text-gray-700 mb-4">
                 This policy applies to all users of our website and services, including visitors, registered users, and property owners.
@@ -157,7 +157,7 @@ export default function PrivacyPolicyPage() {
                 If you have any questions about this Privacy Policy or our data practices, please contact us:
               </p>
               <div className="bg-gray-50 p-6 rounded-lg">
-                <p className="text-gray-700 mb-2"><strong>Apricity Realestate</strong></p>
+                <p className="text-gray-700 mb-2"><strong>Apricity Real Estate</strong></p>
                 <p className="text-gray-700 mb-2">..</p>
                 <p className="text-gray-700 mb-2">Dubai, UAE</p>
                 <p className="text-gray-700 mb-2">Phone: <a href="tel:+971558777152" className="text-blue-600 hover:underline">+971-55-877-7152</a></p>
