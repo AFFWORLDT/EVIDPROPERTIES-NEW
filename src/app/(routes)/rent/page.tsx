@@ -20,7 +20,7 @@ import { RentCard } from "@/src/view/rent/rentCard";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Loader, Filter, X, Search } from "lucide-react";
 import PropertyCardSkeleton from "@/src/components/common/property-card-skeleton";
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo, Suspense } from "react";
 import { api } from "@/src/lib/axios";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -53,7 +53,7 @@ const HANDOVER_YEAR_OPTIONS = [
   "any", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035"
 ];
 
-function Rent() {
+function RentContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [property, setProperty] = React.useState([]);
@@ -732,6 +732,14 @@ function Rent() {
         </div>
       )}
     </div>
+  );
+}
+
+function Rent() {
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><Loader className="h-8 w-8 animate-spin" /></div>}>
+      <RentContent />
+    </Suspense>
   );
 }
 
