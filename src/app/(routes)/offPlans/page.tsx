@@ -146,7 +146,44 @@ function OffPlansContent() {
 
     try {
       const res = await getAllProperties(queryParams.toString());
-      setProperty(res?.projects || []);
+
+      const items = res?.projects || [];
+
+      // Relevance sort: prioritize items matching the search title
+      const searchTerm = (filters.title || "").trim().toLowerCase();
+      const fieldsToCheck = [
+        "title",
+        "name",
+        "project_name",
+        "building_name",
+        "community",
+        "location",
+        "address",
+        "developer_name",
+      ];
+
+      const scoreItem = (item: any): number => {
+        if (!searchTerm) return 0;
+        let best = 0;
+        for (const key of fieldsToCheck) {
+          const value = (item?.[key] ?? "").toString().toLowerCase();
+          if (!value) continue;
+          if (value === searchTerm) {
+            best = Math.max(best, 100);
+          } else if (value.startsWith(searchTerm)) {
+            best = Math.max(best, 80);
+          } else if (value.includes(searchTerm)) {
+            best = Math.max(best, 50);
+          }
+        }
+        return best;
+      };
+
+      const sorted = searchTerm
+        ? [...items].sort((a, b) => scoreItem(b) - scoreItem(a))
+        : items;
+
+      setProperty(sorted);
       setTotalPages(Math.ceil((res?.total || 0) / 24));
       setTotalProperties(res?.total || 0);
     } catch (error) {

@@ -62,8 +62,10 @@ export default function HeroSection() {
     }
     
     // Navigate to the appropriate page with search parameters
+    // Map "offplan" selection to the actual route segment "/offPlans"
+    const targetSegment = propertyType === "offplan" ? "offPlans" : propertyType;
     const queryString = searchParams.toString();
-    const url = queryString ? `/${propertyType}?${queryString}` : `/${propertyType}`;
+    const url = queryString ? `/${targetSegment}?${queryString}` : `/${targetSegment}`;
     
     router.push(url);
   };
