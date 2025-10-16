@@ -187,7 +187,7 @@ export default function ArabianRanchesPage() {
       </section>
 
       {/* Property Types Section */}
-      <section className="py-16 px-4">
+      {/* <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-serif font-normal mb-6 text-gray-800" style={{ letterSpacing: '0.05em' }}>
@@ -254,7 +254,7 @@ export default function ArabianRanchesPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Location & Connectivity */}
       <section className="py-16 px-4 bg-white/50">
@@ -318,3 +318,4 @@ export default function ArabianRanchesPage() {
     </div>
   );
 }
+
