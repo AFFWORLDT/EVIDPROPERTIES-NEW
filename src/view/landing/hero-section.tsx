@@ -260,7 +260,7 @@ export default function HeroSection() {
             </div>
 
             {/* Bedrooms */}
-            <div className="lg:col-span-1 relative">
+            {/* <div className="lg:col-span-1 relative">
               <div className="absolute top-2 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
                 Bedrooms
               </div>
@@ -279,10 +279,10 @@ export default function HeroSection() {
                   <SelectItem value="6+">6+</SelectItem>
                 </SelectContent>
               </Select>
-            </div>
+            </div> */}
 
             {/* Ref Number */}
-            <div className="lg:col-span-1 relative">
+            {/* <div className="lg:col-span-1 relative">
               <div className="absolute top-2 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
                 Ref Number
               </div>
@@ -291,7 +291,7 @@ export default function HeroSection() {
                 placeholder=""
                 className="w-full h-12 sm:h-12 md:h-14 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-none  placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-6 sm:pt-5 pb-2 text-sm sm:text-base"
               />
-            </div>
+            </div> */}
 
             {/* Search Button */}
             <div className="lg:col-span-1 sm:col-span-2">
