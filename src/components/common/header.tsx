@@ -67,7 +67,6 @@ export default function Header() {
     { href: "/offPlans", label: "New Projects" },
     { href: "/team", label: "Teams" },
     { href: "/communities", label: "Areas" },
-    { href: "/locations", label: "Locations" },
     // { href: "/service", label: "Services" },
     // { href: "/blog", label: "Blogs" },
     { href: "/contactUs", label: "More" },
@@ -128,7 +127,6 @@ export default function Header() {
     { href: "/offPlans", label: "New Projects" },
     { href: "/team", label: "Teams" },
     { href: "/communities", label: "Areas" },
-    { href: "/locations", label: "Locations", hasDropdown: true },
     // { href: "/service", label: "Services", hasDropdown: true },
     // { href: "/blog", label: "Blogs" },
     { href: "/contactUs", label: "More" },
@@ -181,56 +179,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center space-x-8">
           {headerLink.map((link, i) => {
             if (link.hasDropdown) {
-              // Locations dropdown
-              if (link.href === "/locations") {
-                return (
-                  <HoverCard key={i} openDelay={200} closeDelay={100}>
-                    <HoverCardTrigger asChild>
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          "relative pb-1 transition-all duration-300 font-sans text-[17px]",
-                          isScrolled && pathname === "/" ? "text-black" : "text-gray-800",
-                          "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
-                          "after:bg-primary after:transition-all after:duration-300 hover:after:w-full",
-                          pathname === link.href && "after:w-full"
-                        )}
-                        style={{
-                          letterSpacing: "1.5px",
-                        }}
-                      >
-                        {link.label}
-                      </Link>
-                    </HoverCardTrigger>
-                    <HoverCardContent className="w-[600px] p-0" sideOffset={10}>
-                      <div className="bg-white rounded-lg shadow-xl border border-gray-200">
-                        {/* Header */}
-                        <div className="p-4 border-b border-gray-100">
-                          <h3 className="text-gray-500 text-sm font-serif font-normal" style={{ letterSpacing: '0.05em' }}>Dubai Locations</h3>
-                        </div>
-                        
-                        {/* Locations Grid */}
-                        <div className="p-4">
-                          <div className="grid grid-cols-3 gap-2">
-                            {locations.map((location, index) => (
-                              <Link
-                                key={index}
-                                href={location.href}
-                                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
-                              >
-                                <MapPin className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-200" />
-                                <span className="text-gray-700 font-serif font-normal text-sm group-hover:text-gray-900 transition-colors duration-200">
-                                  {location.name}
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </HoverCardContent>
-                  </HoverCard>
-                );
-              }
+              // No dropdowns enabled currently
               
               // Services dropdown (if enabled)
               return (

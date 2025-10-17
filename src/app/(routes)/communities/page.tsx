@@ -16,6 +16,7 @@ const LOCATIONS = [
   { name: "The Springs", href: "/locations/the-springs", image: "/images/the-springs-hero.webp" },
   { name: "Victory Heights", href: "/locations/victory-heights", image: "/images/victory-heights-hero.jpg" },
   { name: "Arabian Ranches", href: "/locations/arabian-ranches", image: "/images/arabian-ranches-hero.webp" },
+  { name: "Business Bay", href: "/locations/business-bay", image: "/images/business-bay-hero.webp" },
   { name: "DIFC", href: "/locations/difc", image: "/images/difc-hero.jpeg" },
 ];
 
