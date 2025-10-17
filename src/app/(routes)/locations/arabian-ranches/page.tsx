@@ -28,7 +28,7 @@ export default function ArabianRanchesPage() {
           {/* Hero Image */}
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/arabian-ranches-hero.jpeg"
+              src="/images/arabian-ranches-hero.webp"
               alt="Arabian Ranches"
               fill
               className="object-cover"
