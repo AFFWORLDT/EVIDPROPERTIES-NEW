@@ -23,18 +23,16 @@ interface CommunityData {
   order_updated_at?: string | null;
 }
 
-export default function CommunitiesCard({ data }: { data: CommunityData }) {
+export default function CommunitiesCard({ data, href, image }: { data: CommunityData; href?: string; image?: string }) {
   const router = useRouter();
   return (
     <Card
       className="relative w-[95%] h-[380px] rounded-2xl overflow-hidden shadow-xl group border border-white/20 cursor-pointer luxury-hover"
-      onClick={() => router.push("/buy")}
+      onClick={() => router.push(href || "/buy")}
     >
       <CardContent className="p-0 h-full">
         <Image
-          src={
-            data?.order_photo || data?.photos?.[0] || "/images/placeholder.jpg"
-          }
+          src={image || data?.order_photo || data?.photos?.[0] || "/images/placeholder.jpg"}
           alt={`Image of ${data?.name}`}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -55,7 +53,7 @@ export default function CommunitiesCard({ data }: { data: CommunityData }) {
           )}
 
           <Link
-            href="/buy"
+            href={href || "/buy"}
             className={cn(
               "relative pb-1 transition-all duration-300 text-[#dbbb90] uppercase text-base font-serif",
               "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",

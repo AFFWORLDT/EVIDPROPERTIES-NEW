@@ -1,77 +1,25 @@
 "use client";
-import { getAllCommunities } from "@/src/api/communities";
 import CommunitiesCard from "@/src/view/communities/communitiesCard";
-import { Loader } from "lucide-react";
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React from "react";
 
-const PAGE_SIZE = 100;
+const LOCATIONS = [
+  { name: "Dubai Hills Estate", href: "/locations/dubai-hills", image: "/images/Dubai-Hills-Estate.jpeg" },
+  { name: "Tilal Al Ghaf", href: "/locations/tilal-al-ghaf", image: "/images/tilal-al-ghaf-hero.webp" },
+  { name: "Palm Jumeirah", href: "/locations/palm-jumeirah", image: "/images/palm-jumeirah-hero.jpeg" },
+  { name: "Jumeirah Golf Estates", href: "/locations/jumeirah-golf-estates", image: "/images/jumeirah-golf-estates-hero.jpeg" },
+  { name: "Emirates Hills", href: "/locations/emirates-hills", image: "/images/emirates-hills-hero.jpg" },
+  { name: "Al Barari", href: "/locations/al-barari", image: "/images/al-barari-hero.jpeg" },
+  { name: "Dubai Marina", href: "/locations/dubai-marina", image: "/images/dubai-marina-hero.jpeg" },
+  { name: "Jumeirah Islands", href: "/locations/jumeirah-islands", image: "/images/jumeirah-islands-hero.jpg" },
+  { name: "The Lakes", href: "/locations/the-lakes", image: "/images/the-lakes-hero.jpeg" },
+  { name: "The Meadows", href: "/locations/the-meadows", image: "/images/the-meadows-hero.jpg" },
+  { name: "The Springs", href: "/locations/the-springs", image: "/images/the-springs-hero.webp" },
+  { name: "Victory Heights", href: "/locations/victory-heights", image: "/images/victory-heights-hero.jpg" },
+  { name: "Arabian Ranches", href: "/locations/arabian-ranches", image: "/images/arabian-ranches-hero.webp" },
+  { name: "DIFC", href: "/locations/difc", image: "/images/difc-hero.jpeg" },
+];
 
 function Communities() {
-  const [communities, setCommunities] = useState<any[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
-  const [total, setTotal] = useState(0);
-  const [searchKeyword, setSearchKeyword] = useState("");
-  const [filteredCommunities, setFilteredCommunities] = useState<any[]>([]);
-  const observer = useRef<IntersectionObserver | null>(null);
-  const lastCommunityRef = useCallback(
-    (node: HTMLDivElement | null) => {
-      if (loading) return;
-      if (observer.current) observer.current.disconnect();
-      observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && hasMore) {
-          setPage((prev) => prev + 1);
-        }
-      });
-      if (node) observer.current.observe(node);
-    },
-    [loading, hasMore]
-  );
-
-  useEffect(() => {
-    const fetchCommunities = async () => {
-      setLoading(true);
-      try {
-        const res = await getAllCommunities(page, PAGE_SIZE);
-        if (res?.communities?.length) {
-          setCommunities((prev) => {
-            const newCommunities = [...prev, ...res.communities];
-            setHasMore(newCommunities.length < res.total);
-            return newCommunities;
-          });
-          setTotal(res.total);
-        } else {
-          setHasMore(false);
-        }
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchCommunities();
-  }, [page]);
-
-  // Filter communities based on search keyword and exclude Deira
-  useEffect(() => {
-    // First filter out Deira from all communities
-    const communitiesWithoutDeira = communities.filter((community) => 
-      community.name?.toLowerCase() !== 'deira'
-    );
-
-    if (searchKeyword.trim() === "") {
-      setFilteredCommunities(communitiesWithoutDeira);
-    } else {
-      const filtered = communitiesWithoutDeira.filter((community) =>
-        community.name?.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-        community.city?.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-        community.order_description?.toLowerCase().includes(searchKeyword.toLowerCase())
-      );
-      setFilteredCommunities(filtered);
-    }
-  }, [communities, searchKeyword]);
-
   return (
     <div>
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] relative overflow-hidden">
@@ -93,97 +41,39 @@ function Communities() {
             <span className="text-[#1A202C] font-normal">Neighbourhoods</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-serif">
-            Dubai is a city of diverse neighborhoods, each offering a unique
-            character &amp; lifestyle. Beyond the stunning architecture, your
-            bespoke community awaits. Explore the soul of Dubai&rsquo;s
-            communities, ensuring your new property seamlessly integrates with
-            your personal demographics &amp; desired lifestyle.
+            Explore Dubai’s premium communities and neighborhoods curated by Apricity Real Estate.
           </p>
         </div>
-        
-        {/* Enhanced Search Input */}
-        <div className="flex justify-center mb-16">
-          <div className="relative w-full max-w-2xl">
-            <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-[#dbbb90]/20 shadow-xl p-2">
-              <input
-                type="text"
-                placeholder="Search communities by name, city, or description..."
-                value={searchKeyword}
-                onChange={(e) => setSearchKeyword(e.target.value)}
-                className="w-full px-6 py-4 pl-14 text-gray-800 bg-transparent border-0 rounded-xl focus:outline-none placeholder:text-gray-500 font-serif text-lg"
-              />
-              <svg
-                className="absolute left-6 top-1/2 transform -translate-y-1/2 w-6 h-6 text-[#dbbb90]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        
-        {/* Search Results Counter */}
-        {searchKeyword && (
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center px-6 py-3 bg-[#dbbb90]/10 rounded-full border border-[#dbbb90]/20">
-              <p className="text-[#dbbb90] font-serif font-normal">
-                Found {filteredCommunities.length} community{filteredCommunities.length !== 1 ? 'ies' : 'y'} matching "{searchKeyword}"
-              </p>
-            </div>
-          </div>
-        )}
       </div>
       
       <div className="bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 container mx-auto max-w-7xl">
-          {filteredCommunities.map((community, i) => {
-            if (i === filteredCommunities.length - 1) {
-              return (
-                <div ref={lastCommunityRef} key={i}>
-                  <CommunitiesCard data={community} />
-                </div>
-              );
-            }
-            return <CommunitiesCard key={i} data={community} />;
-          })}
+          {LOCATIONS.map((loc) => (
+            <CommunitiesCard
+              key={loc.href}
+              data={{
+                name: loc.name,
+                city: "Dubai",
+                photos: [loc.image],
+                latitude: 0,
+                longitude: 0,
+                sell_properties_count: 0,
+                rent_properties_count: 0,
+                projects_count: 0,
+                pool_projects_count: 0,
+                total_count: 0,
+                assigned_agents: [],
+                assigned_order: null,
+                order_photo: null,
+                order_description: null,
+                order_created_at: null,
+                order_updated_at: null,
+              }}
+              href={loc.href}
+              image={loc.image}
+            />
+          ))}
         </div>
-        {loading && (
-          <div className="flex justify-center items-center py-12">
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 border-4 border-[#dbbb90]/30 border-t-[#dbbb90] rounded-full animate-spin mb-4"></div>
-              <p className="text-[#dbbb90] font-serif font-normal">Loading Communities...</p>
-            </div>
-          </div>
-        )}
-        {!hasMore && communities.length > 0 && (
-          <div className="text-center py-8">
-            <div className="inline-flex items-center px-6 py-3 bg-gray-100 rounded-full">
-              <p className="text-gray-600 font-serif font-normal">All communities loaded</p>
-            </div>
-          </div>
-        )}
-        {searchKeyword && filteredCommunities.length === 0 && (
-          <div className="text-center py-12">
-            <div className="max-w-md mx-auto">
-              <div className="w-16 h-16 bg-[#dbbb90]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-[#dbbb90]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-normal text-gray-800 mb-2" style={{ letterSpacing: '0.05em' }}>No communities found</h3>
-              <p className="text-gray-600 font-serif">No communities match "{searchKeyword}"</p>
-              <p className="text-sm text-gray-500 mt-2 font-serif">Try adjusting your search terms</p>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
