@@ -370,7 +370,16 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <h2 className="text-lg font-serif font-normal" style={{ letterSpacing: '0.05em' }}>Menu</h2>
+          <Link href={"/"} className="group" onClick={() => setIsOverlayOpen(false)}>
+            <Image
+              src="/logo.png"
+              alt="Apricity Real Estate Logo"
+              width={120}
+              height={40}
+              className="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 h-8 w-auto"
+              priority
+            />
+          </Link>
           <button
           onClick={() => setIsOverlayOpen(false)}
             className="text-gray-500 hover:text-gray-700"
