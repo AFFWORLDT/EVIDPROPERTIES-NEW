@@ -8,6 +8,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { useCurrency } from "@/src/lib/currency";
+import { DirhamSymbol } from "@/src/components/common/dirham-symbol";
 import { Dialog, DialogContent, DialogTitle } from "@/src/components/ui/dialog";
 
 export default function DetailPage({ id }: any) {
@@ -18,6 +20,7 @@ export default function DetailPage({ id }: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const { currency, formatFromAED } = useCurrency();
 
   const fetchPropertyDetails = async () => {
     setLoading(true);
@@ -209,6 +212,15 @@ export default function DetailPage({ id }: any) {
                 Details
               </h3>
               <div className="text-sm font-serif font-normal text-gray-700">
+                {property?.price && (
+                  <p className="mb-1">
+                    <strong className="font-serif font-normal">Price:</strong>{" "}
+                    <span className="inline-flex items-center gap-1 justify-center">
+                      {currency === 'AED' ? <DirhamSymbol size={16} /> : null}
+                      {formatFromAED(property.price)}
+                    </span>
+                  </p>
+                )}
                 <p>
                   {" "}
                   <strong className="font-serif font-normal">City</strong>:{" "}
@@ -245,9 +257,15 @@ export default function DetailPage({ id }: any) {
                 Areas
               </h3>
               <p className="text-sm font-serif font-normal text-gray-700">
-                <strong className="font-serif font-normal"> Home Size (Sqft):</strong>{" "}
-                {property?.size}²
+                <strong className="font-serif font-normal"> Home Size (sqft):</strong>{" "}
+                {property?.size ? Number(property.size).toLocaleString() : "N/A"}
               </p>
+              {(property?.plotSize || property?.plot_size || property?.plot_area || property?.plotArea) && (
+                <p className="text-sm font-serif font-normal text-gray-700 mt-1">
+                  <strong className="font-serif font-normal"> Plot Size (sqft):</strong>{" "}
+                  {Number((property?.plotSize || property?.plot_size || property?.plot_area || property?.plotArea) as any).toLocaleString()}
+                </p>
+              )}
             </div>
             <div>
               <h3 className="text-sm font-serif font-normal uppercase text-primary mb-2 border-b border-primary inline-block pb-1">

@@ -213,9 +213,9 @@ export default function DetailPage({ id }: any) {
               </h3>
               <div className="text-sm font-serif font-normal text-gray-700 space-y-1">
                 {property?.price && (
-                  <p>
+                  <p className="text-center">
                     <strong className="font-serif font-normal">Price:</strong>{" "}
-                    <span className="flex items-center gap-1 justify-center md:justify-start">
+                    <span className="inline-flex items-center gap-1 justify-center">
                       {currency === 'AED' ? <DirhamSymbol size={16} /> : null}
                       {formatFromAED(property.price)}
                     </span>
@@ -257,9 +257,15 @@ export default function DetailPage({ id }: any) {
                 Areas
               </h3>
               <p className="text-sm font-serif font-normal text-gray-700">
-                <strong className="font-serif font-normal"> Home Size (Sqft):</strong>{" "}
-                {property?.size}²
+                <strong className="font-serif font-normal"> Home Size (sqft):</strong>{" "}
+                {property?.size ? Number(property.size).toLocaleString() : "N/A"}
               </p>
+              {(property?.plotSize || property?.plot_size || property?.plot_area || property?.plotArea) && (
+                <p className="text-sm font-serif font-normal text-gray-700 mt-1">
+                  <strong className="font-serif font-normal"> Plot Size (sqft):</strong>{" "}
+                  {Number((property?.plotSize || property?.plot_size || property?.plot_area || property?.plotArea) as any).toLocaleString()}
+                </p>
+              )}
             </div>
             <div className="pt-6 md:pt-0">
               <h3 className="text-sm font-serif font-normal uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
