@@ -213,40 +213,35 @@ export default function DetailPage({ id }: any) {
               </h3>
               <div className="text-sm font-serif font-normal text-gray-700 space-y-1">
                 {property?.price && (
-                  <p className="text-center">
-                    <strong className="font-serif font-normal">Price:</strong>{" "}
-                    <span className="inline-flex items-center gap-1 justify-center">
+                  <p className="flex items-center justify-center gap-1 whitespace-nowrap">
+                    <strong className="font-serif font-normal">Price:</strong>
+                    <span className="inline-flex items-center gap-1">
                       {currency === 'AED' ? <DirhamSymbol size={16} /> : null}
                       {formatFromAED(property.price)}
                     </span>
                   </p>
                 )}
-                <p>
+                <p className="text-center">
                   {" "}
                   <strong className="font-serif font-normal">City</strong>:{" "}
                   {property?.location?.city}{" "}
                 </p>
-                <p>
+                <p className="text-center">
                   {" "}
                   <strong className="font-serif font-normal">Apartment Type:</strong>{" "}
-                  {property?.property_type}
+                  {property?.property_type ? 
+                    property.property_type.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase()) 
+                    : property?.property_type}
                 </p>{" "}
-                <p>
-                  {" "}
-                  <strong className="font-serif font-normal">
-                    Construction Stage:
-                  </strong>{" "}
-                  {property?.completionStatus}
-                </p>
-                <p>
+                <p className="text-center">
                   <strong className="font-serif font-normal">Bedrooms:</strong>{" "}
                   {property?.bedRooms}{" "}
                 </p>
-                <p>
+                <p className="text-center">
                   <strong className="font-serif font-normal">Bathrooms:</strong>{" "}
                   {property?.bathrooms}
                 </p>{" "}
-                <p>
+                <p className="text-center">
                   <strong className="font-serif font-normal">Furnished:</strong>{" "}
                   {property?.isFurnished}
                 </p>
@@ -256,12 +251,12 @@ export default function DetailPage({ id }: any) {
               <h3 className="text-sm font-serif font-normal uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 Areas
               </h3>
-              <p className="text-sm font-serif font-normal text-gray-700">
+              <p className="text-sm font-serif font-normal text-gray-700 text-center">
                 <strong className="font-serif font-normal"> Home Size (sqft):</strong>{" "}
                 {property?.size ? Number(property.size).toLocaleString() : "N/A"}
               </p>
               {(property?.plotSize || property?.plot_size || property?.plot_area || property?.plotArea) && (
-                <p className="text-sm font-serif font-normal text-gray-700 mt-1">
+                <p className="text-sm font-serif font-normal text-gray-700 mt-1 text-center">
                   <strong className="font-serif font-normal"> Plot Size (sqft):</strong>{" "}
                   {Number((property?.plotSize || property?.plot_size || property?.plot_area || property?.plotArea) as any).toLocaleString()}
                 </p>

@@ -203,7 +203,7 @@ export default function DetailPage({ id }: any) {
               <h3 className="text-sm font-serif font-normal uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 From
               </h3>
-              <p className="text-sm font-serif font-normal text-gray-700">
+              <p className="text-sm font-serif font-normal text-gray-700 text-center">
                 {property?.newParam?.price
                   ? formatFromAED(property.newParam.price)
                   : property?.price_from
@@ -217,7 +217,7 @@ export default function DetailPage({ id }: any) {
               <h3 className="text-sm font-serif font-normal uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 Completion Date
               </h3>
-              <p className="text-sm font-serif font-normal text-gray-700">
+              <p className="text-sm font-serif font-normal text-gray-700 text-center">
                 {property?.newParam?.handoverTime
                   ? moment(property?.newParam?.handoverTime).format("MMMM YYYY")
                   : property?.completionDate
@@ -231,7 +231,7 @@ export default function DetailPage({ id }: any) {
               <h3 className="text-sm font-serif font-normal uppercase text-primary mb-3 md:mb-2 border-b border-primary inline-block pb-1">
                 Construction Stage
               </h3>
-              <p className="text-sm font-serif font-normal text-gray-700">
+              <p className="text-sm font-serif font-normal text-gray-700 text-center">
                 {property?.constructionStage || property?.completionStatus || "Off-plan"}
               </p>
             </div>
