@@ -228,7 +228,7 @@ export default function DetailPage({ id }: any) {
                 </p>
                 <p className="text-center">
                   {" "}
-                  <strong className="font-serif font-normal">Apartment Type:</strong>{" "}
+                  <strong className="font-serif font-normal">Property Type:</strong>{" "}
                   {property?.property_type ? 
                     property.property_type.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase()) 
                     : property?.property_type}
