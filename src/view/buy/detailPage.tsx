@@ -221,6 +221,7 @@ export default function DetailPage({ id }: any) {
                     </span>
                   </p>
                 )}
+                
                 <p className="text-center">
                   {" "}
                   <strong className="font-serif font-normal">City</strong>:{" "}
@@ -244,6 +245,10 @@ export default function DetailPage({ id }: any) {
                 <p className="text-center">
                   <strong className="font-serif font-normal">Furnished:</strong>{" "}
                   {property?.isFurnished}
+                </p>
+                <p className="text-center">
+                  <strong className="font-serif font-normal">Ref No:</strong>{" "}
+                  {property?.id ?? (property as any)?.propertyId ?? (property as any)?.ownPortal_agent_Id ?? "N/A"}
                 </p>
               </div>
             </div>

@@ -65,15 +65,6 @@ export function RentCard({ data, onFavorite }: RentCardProps) {
     .filter(Boolean)
     .join(", ");
 
-  const formattedPrice = data.price
-    ? (
-        <span className="flex items-center gap-1">
-          {currency === 'AED' ? <DirhamSymbol size={16} /> : null}
-          {formatFromAED(data.price)}
-        </span>
-      )
-    : "Price on request";
-
   return (
     <Card
       className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border cursor-pointer h-full flex flex-col"
@@ -115,8 +106,12 @@ export function RentCard({ data, onFavorite }: RentCardProps) {
         <p className="text-sm text-primary uppercase font-serif font-normal tracking-wider">
           {locationName || "Location not specified"}
         </p>
-        <p className="text-sm font-serif font-normal text-[#1A202C] tracking-wide">
-          {formattedPrice}/{data?.priceType}
+        <p className="text-sm font-serif font-normal text-[#1A202C] tracking-wide flex items-center gap-1">
+          {currency === 'AED' ? <DirhamSymbol size={16} /> : null}
+          {data.price ? formatFromAED(data.price) : "Price on request"}
+          {data?.priceType ? (
+            <span className="whitespace-nowrap"> / {String(data.priceType).toLowerCase()}</span>
+          ) : null}
         </p>
 
         <div className="flex items-end justify-between text-gray-600 text-sm mt-2 font-serif font-normal mt-auto">

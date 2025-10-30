@@ -222,6 +222,10 @@ export default function DetailPage({ id }: any) {
                   </p>
                 )}
                 <p className="text-center">
+                  <strong className="font-serif font-normal">Ref No:</strong>{" "}
+                  {property?.id ?? (property as any)?.propertyId ?? (property as any)?.ownPortal_agent_Id ?? "N/A"}
+                </p>
+                <p className="text-center">
                   {" "}
                   <strong className="font-serif font-normal">City</strong>:{" "}
                   {property?.location?.city}{" "}
