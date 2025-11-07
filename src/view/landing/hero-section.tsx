@@ -141,7 +141,7 @@ export default function HeroSection() {
       preload="metadata"
       className="w-full h-full object-cover z-0"
     >
-      <source src="/APRICITY - VILLA I7 Landscape.mp4" type="video/mp4" />
+      <source src="/newheo.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
