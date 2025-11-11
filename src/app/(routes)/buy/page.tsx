@@ -126,12 +126,17 @@ function BuyContent() {
       handover_year: "any",
     };
     setFilters(urlFilters);
+    // Reset to page 1 when URL params change
+    setCurrentPage(1);
   }, [searchParams]);
 
-  const fetchproperty = useCallback(async (page = 1) => {
+  const fetchproperty = useCallback(async (page = 1, filtersToUse?: typeof filters) => {
+    // Always use provided filters if available, otherwise use current state
+    // This ensures we use the latest filters when called from useEffect
+    const activeFilters = filtersToUse !== undefined ? filtersToUse : filters;
     setLoading(true);
     
-    const searchTerm = (filters.title || "").trim();
+    const searchTerm = (activeFilters.title || "").trim();
     // If searching, fetch a large batch to filter properly, otherwise use normal pagination
     // For search, we'll fetch all results and paginate client-side
     const pageSize = searchTerm ? "500" : "24";
@@ -147,7 +152,7 @@ function BuyContent() {
     
     // Add filter parameters (EXCLUDE title - we'll filter client-side)
     // This ensures we get all results and can filter properly
-    Object.entries(filters).forEach(([key, value]) => {
+    Object.entries(activeFilters).forEach(([key, value]) => {
       if (key === "title") {
         // Skip title - we'll filter client-side
         return;
@@ -335,25 +340,11 @@ function BuyContent() {
     setShowFilters((prev) => !prev);
   }, []);
 
+  // Trigger fetch when filters or page changes
   React.useEffect(() => {
-    fetchproperty(currentPage);
-  }, [fetchproperty, currentPage]);
-
-  React.useEffect(() => {
-    setCurrentPage(1);
-  }, [filters]);
-
-  // Trigger search when URL params change (e.g., from hero section search)
-  React.useEffect(() => {
-    const hasSearchParams = searchParams.get('title') || 
-                           searchParams.get('property_type') || 
-                           searchParams.get('min_price') || 
-                           searchParams.get('max_price');
-    
-    if (hasSearchParams) {
-      fetchproperty(1);
-    }
-  }, [searchParams, fetchproperty]);
+    // Always pass current filters to ensure we use the latest values
+    fetchproperty(currentPage, filters);
+  }, [filters, currentPage, fetchproperty]);
 
   React.useEffect(() => {
     searchDevelopers(developerSearch);

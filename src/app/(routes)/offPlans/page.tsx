@@ -19,7 +19,7 @@ import { cn } from "@/src/lib/utils";
 import OffPlanCard from "@/src/view/offPlans/offPlanCard";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Loader, X, Search } from "lucide-react";
-import { useEffect, useState, useCallback, useMemo, Suspense } from "react";
+import { useEffect, useState, useCallback, useMemo, Suspense, useRef } from "react";
 import { api } from "@/src/lib/axios";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -87,7 +87,7 @@ function OffPlansContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [property, setProperty] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [showFilters, setShowFilters] = useState(false);
   const [developers, setDevelopers] = useState([]);
   const [developerSearch, setDeveloperSearch] = useState("");
@@ -110,36 +110,30 @@ function OffPlansContent() {
     handover_year: "any",
   });
 
-  // Initialize filters from URL parameters
-  useEffect(() => {
-    const urlFilters = {
-      type: "off_plan",
-      title: searchParams.get('title') || "",
-      property_type: searchParams.get('property_type') || "any",
-      min_price: searchParams.get('min_price') || "any",
-      max_price: searchParams.get('max_price') || "any",
-      completion_status: "all",
-      developer_id: "any",
-      bedrooms: "any",
-      bathrooms: "any",
-      handover_year: "any",
-    };
-    setFilters(urlFilters);
-  }, [searchParams]);
-
-  const fetchproperty = useCallback(async (page = 1) => {
+  const fetchproperty = useCallback(async (page = 1, filtersToUse?: typeof filters) => {
+    // Always use provided filters if available, otherwise use current state
+    const activeFilters = filtersToUse !== undefined ? filtersToUse : filters;
     setLoading(true);
+
+    const searchTerm = (activeFilters.title || "").trim();
+    // If searching, fetch a large batch to filter properly, otherwise use normal pagination
+    const pageSize = searchTerm ? "500" : "24";
+    const fetchPage = searchTerm ? 1 : page; // Always fetch page 1 when searching
 
     const queryParams = new URLSearchParams({
       sort_by: "total_count",
       sort_order: "desc",
-      page: page.toString(),
-      size: "24",
+      page: fetchPage.toString(),
+      size: pageSize,
     });
 
-    // Add filter parameters
-    Object.entries(filters).forEach(([key, value]) => {
-      if (value && value !== "any" && value !== "all") {
+    // Add filter parameters (EXCLUDE title - we'll filter client-side)
+    Object.entries(activeFilters).forEach(([key, value]) => {
+      if (key === "title") {
+        // Skip title - we'll filter client-side
+        return;
+      }
+      if (value && value !== "any" && value !== "all" && value !== "") {
         queryParams.append(key, value);
       }
     });
@@ -148,10 +142,8 @@ function OffPlansContent() {
       const res = await getAllProperties(queryParams.toString());
 
       const items = res?.projects || [];
+      const searchTermLower = searchTerm.toLowerCase();
 
-      // Relevance sort: prioritize items matching the search title
-      const searchTerm = (filters.title || "").trim().toLowerCase();
-      
       // Helper function to get all searchable text from an item
       const getSearchableText = (item: any): string => {
         const texts: string[] = [];
@@ -175,35 +167,69 @@ function OffPlansContent() {
         return texts.join(" ");
       };
 
+      // Helper to check if search term matches (handles partial word matches)
+      const matchesSearch = (searchableText: string, term: string): boolean => {
+        if (!term || !searchableText) return false;
+        
+        // Split search term into words for better matching
+        const searchWords = term.split(/\s+/).filter(w => w.length > 0);
+        
+        // Check if all words in search term appear in the searchable text
+        return searchWords.every(word => searchableText.includes(word));
+      };
+
       const scoreItem = (item: any): number => {
-        if (!searchTerm) return 0;
+        if (!searchTermLower) return 0;
         const searchableText = getSearchableText(item);
         if (!searchableText) return 0;
         
-        if (searchableText === searchTerm) return 100;
-        if (searchableText.includes(` ${searchTerm} `) || searchableText.startsWith(searchTerm) || searchableText.endsWith(` ${searchTerm}`)) return 80;
-        if (searchableText.includes(searchTerm)) return 50;
+        // Exact match
+        if (searchableText === searchTermLower) return 100;
+        
+        // Check if all words match
+        const searchWords = searchTermLower.split(/\s+/).filter(w => w.length > 0);
+        const allWordsMatch = searchWords.every(word => searchableText.includes(word));
+        
+        if (allWordsMatch) {
+          // Check for phrase match (words together)
+          if (searchableText.includes(searchTermLower)) {
+            return 90; // Phrase match
+          }
+          return 70; // All words match but not as phrase
+        }
+        
+        // Partial match
+        if (searchableText.includes(searchTermLower)) return 50;
         return 0;
       };
 
       // Filter and sort: only show properties matching the search term
       let filteredAndSorted = items;
       
-      if (searchTerm) {
-        // First filter to only include matching items
+      if (searchTermLower) {
+        // Filter to only include matching items
         filteredAndSorted = items.filter((item: any) => {
           const searchableText = getSearchableText(item);
-          return searchableText.includes(searchTerm);
+          return matchesSearch(searchableText, searchTermLower);
         });
         
-        // Then sort by relevance
-        filteredAndSorted = filteredAndSorted.sort((a, b) => scoreItem(b) - scoreItem(a));
+        // Sort by relevance
+        if (filteredAndSorted.length > 0) {
+          filteredAndSorted = filteredAndSorted.sort((a, b) => scoreItem(b) - scoreItem(a));
+        }
       }
 
-      setProperty(filteredAndSorted);
+      // Apply pagination to filtered results
+      const itemsPerPage = 24;
+      const startIndex = (page - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const paginatedResults = filteredAndSorted.slice(startIndex, endIndex);
+      
+      setProperty(paginatedResults);
+      
       // Update pagination based on filtered results
       const filteredTotal = filteredAndSorted.length;
-      setTotalPages(Math.ceil(filteredTotal / 24));
+      setTotalPages(Math.max(1, Math.ceil(filteredTotal / itemsPerPage)));
       setTotalProperties(filteredTotal);
     } catch (error) {
       console.error("Error fetching properties:", error);
@@ -211,6 +237,27 @@ function OffPlansContent() {
       setLoading(false);
     }
   }, [filters]);
+  
+  // Initialize filters from URL parameters
+  useEffect(() => {
+    const urlFilters = {
+      type: "off_plan",
+      title: searchParams.get('title') || "",
+      property_type: searchParams.get('property_type') || "any",
+      min_price: searchParams.get('min_price') || "any",
+      max_price: searchParams.get('max_price') || "any",
+      completion_status: "all",
+      developer_id: "any",
+      bedrooms: "any",
+      bathrooms: "any",
+      handover_year: "any",
+    };
+    setFilters(urlFilters);
+    // Reset to page 1 when URL params change
+    setCurrentPage(1);
+    // Immediately fetch with the new filters
+    fetchproperty(1, urlFilters);
+  }, [searchParams, fetchproperty]);
 
   // Debounced developer search
   const searchDevelopers = useCallback((searchTerm: string) => {
@@ -289,25 +336,11 @@ function OffPlansContent() {
     setShowFilters((prev) => !prev);
   }, []);
 
+  // Trigger fetch when filters or page changes
   useEffect(() => {
-    fetchproperty(currentPage);
-  }, [fetchproperty, currentPage]);
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [filters]);
-
-  // Trigger search when URL params change (e.g., from hero section search)
-  useEffect(() => {
-    const hasSearchParams = searchParams.get('title') || 
-                           searchParams.get('property_type') || 
-                           searchParams.get('min_price') || 
-                           searchParams.get('max_price');
-    
-    if (hasSearchParams) {
-      fetchproperty(1);
-    }
-  }, [searchParams, fetchproperty]);
+    // Always pass current filters to ensure we use the latest values
+    fetchproperty(currentPage, filters);
+  }, [filters, currentPage, fetchproperty]);
 
   useEffect(() => {
     searchDevelopers(developerSearch);
