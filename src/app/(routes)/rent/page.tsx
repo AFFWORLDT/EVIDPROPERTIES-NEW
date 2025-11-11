@@ -122,41 +122,60 @@ function RentContent() {
 
       // Relevance sort: prioritize items matching the search title
       const searchTerm = (filters.title || "").trim().toLowerCase();
-      const fieldsToCheck = [
-        "title",
-        "name",
-        "project_name",
-        "building_name",
-        "community",
-        "location",
-        "address",
-        "developer_name",
-      ];
+      
+      // Helper function to get all searchable text from an item
+      const getSearchableText = (item: any): string => {
+        const texts: string[] = [];
+        
+        // Top-level fields
+        if (item?.title) texts.push(item.title.toString().toLowerCase());
+        if (item?.name) texts.push(item.name.toString().toLowerCase());
+        if (item?.project_name) texts.push(item.project_name.toString().toLowerCase());
+        if (item?.building_name) texts.push(item.building_name.toString().toLowerCase());
+        if (item?.address) texts.push(item.address.toString().toLowerCase());
+        if (item?.developer_name) texts.push(item.developer_name.toString().toLowerCase());
+        if (item?.community) texts.push(item.community.toString().toLowerCase());
+        
+        // Nested location fields
+        if (item?.location) {
+          if (item.location.city) texts.push(item.location.city.toString().toLowerCase());
+          if (item.location.community) texts.push(item.location.community.toString().toLowerCase());
+          if (item.location.sub_community) texts.push(item.location.sub_community.toString().toLowerCase());
+        }
+        
+        return texts.join(" ");
+      };
 
       const scoreItem = (item: any): number => {
         if (!searchTerm) return 0;
-        let best = 0;
-        for (const key of fieldsToCheck) {
-          const value = (item?.[key] ?? "").toString().toLowerCase();
-          if (!value) continue;
-          if (value === searchTerm) {
-            best = Math.max(best, 100);
-          } else if (value.startsWith(searchTerm)) {
-            best = Math.max(best, 80);
-          } else if (value.includes(searchTerm)) {
-            best = Math.max(best, 50);
-          }
-        }
-        return best;
+        const searchableText = getSearchableText(item);
+        if (!searchableText) return 0;
+        
+        if (searchableText === searchTerm) return 100;
+        if (searchableText.includes(` ${searchTerm} `) || searchableText.startsWith(searchTerm) || searchableText.endsWith(` ${searchTerm}`)) return 80;
+        if (searchableText.includes(searchTerm)) return 50;
+        return 0;
       };
 
-      const sorted = searchTerm
-        ? [...items].sort((a, b) => scoreItem(b) - scoreItem(a))
-        : items;
+      // Filter and sort: only show properties matching the search term
+      let filteredAndSorted = items;
+      
+      if (searchTerm) {
+        // First filter to only include matching items
+        filteredAndSorted = items.filter((item: any) => {
+          const searchableText = getSearchableText(item);
+          return searchableText.includes(searchTerm);
+        });
+        
+        // Then sort by relevance
+        filteredAndSorted = filteredAndSorted.sort((a, b) => scoreItem(b) - scoreItem(a));
+      }
 
-      setProperty(sorted);
-      setTotalPages(Math.ceil((res?.total || 0) / 24));
-      setTotalProperties(res?.total || 0);
+      setProperty(filteredAndSorted);
+      // Update pagination based on filtered results
+      const filteredTotal = filteredAndSorted.length;
+      setTotalPages(Math.ceil(filteredTotal / 24));
+      setTotalProperties(filteredTotal);
     } catch (error) {
       console.error("Error fetching properties:", error);
     } finally {
@@ -201,9 +220,28 @@ function RentContent() {
   }, [router]);
 
   const handleSearch = useCallback(() => {
-    fetchproperty();
+    // Update URL with current filters
+    const params = new URLSearchParams();
+    
+    if (filters.title && filters.title.trim()) {
+      params.set('title', filters.title.trim());
+    }
+    if (filters.property_type && filters.property_type !== "any") {
+      params.set('property_type', filters.property_type);
+    }
+    if (filters.min_price && filters.min_price !== "any") {
+      params.set('min_price', filters.min_price);
+    }
+    if (filters.max_price && filters.max_price !== "any") {
+      params.set('max_price', filters.max_price);
+    }
+    
+    const queryString = params.toString();
+    const newUrl = queryString ? `/rent?${queryString}` : '/rent';
+    router.push(newUrl);
+    
     if (showFilters) setShowFilters(false);
-  }, [fetchproperty, showFilters]);
+  }, [filters, router, showFilters]);
 
   const handleDeveloperSelect = useCallback((developer: any) => {
     handleFilterChange("developer_id", developer.id);
@@ -222,6 +260,18 @@ function RentContent() {
   React.useEffect(() => {
     setCurrentPage(1);
   }, [filters]);
+
+  // Trigger search when URL params change (e.g., from hero section search)
+  React.useEffect(() => {
+    const hasSearchParams = searchParams.get('title') || 
+                           searchParams.get('property_type') || 
+                           searchParams.get('min_price') || 
+                           searchParams.get('max_price');
+    
+    if (hasSearchParams) {
+      fetchproperty(1);
+    }
+  }, [searchParams, fetchproperty]);
 
   React.useEffect(() => {
     searchDevelopers(developerSearch);
@@ -252,12 +302,17 @@ function RentContent() {
     <div className="block md:hidden py-20">
       <div className="flex items-center gap-3 p-4 backdrop-blur-md">
         <div className="flex-1">
-          <Input
-            placeholder="Location or Project"
-            value={filters.title}
-            onChange={(e) => handleFilterChange("title", e.target.value)}
-                          className="w-full text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif h-12"
-          />
+            <Input
+              placeholder="Location or Project"
+              value={filters.title}
+              onChange={(e) => handleFilterChange("title", e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleSearch();
+                }
+              }}
+              className="w-full text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif h-12"
+            />
         </div>
         <Button
           onClick={toggleFilters}
@@ -361,6 +416,11 @@ function RentContent() {
                 placeholder="City, building or community"
                 value={filters.title}
                 onChange={(e) => handleFilterChange("title", e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    handleSearch();
+                  }
+                }}
                 className="w-full text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif h-14"
               />
             </div>
@@ -479,6 +539,11 @@ function RentContent() {
                   placeholder="City, building or community"
                   value={filters.title}
                   onChange={(e) => handleFilterChange("title", e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      handleSearch();
+                    }
+                  }}
                   className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 placeholder:text-gray-600 focus-visible:ring-2 focus-visible:ring-primary"
                 />
                 <Icon 

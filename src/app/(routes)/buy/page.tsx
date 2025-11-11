@@ -131,17 +131,28 @@ function BuyContent() {
   const fetchproperty = useCallback(async (page = 1) => {
     setLoading(true);
     
+    const searchTerm = (filters.title || "").trim();
+    // If searching, fetch a large batch to filter properly, otherwise use normal pagination
+    // For search, we'll fetch all results and paginate client-side
+    const pageSize = searchTerm ? "500" : "24";
+    const fetchPage = searchTerm ? 1 : page; // Always fetch page 1 when searching
+    
     const queryParams = new URLSearchParams({
       sort_by: "total_count",
       sort_order: "desc",
-      page: page.toString(),
-      size: "24",
+      page: fetchPage.toString(),
+      size: pageSize,
       status:"ACTIVE"
     });
     
-    // Add filter parameters
+    // Add filter parameters (EXCLUDE title - we'll filter client-side)
+    // This ensures we get all results and can filter properly
     Object.entries(filters).forEach(([key, value]) => {
-      if (value && value !== "any" && value !== "all") {
+      if (key === "title") {
+        // Skip title - we'll filter client-side
+        return;
+      }
+      if (value && value !== "any" && value !== "all" && value !== "") {
         queryParams.append(key, value);
       }
     });
@@ -150,44 +161,95 @@ function BuyContent() {
       const res = await getAllBuyProperties(queryParams.toString());
 
       const items = res?.properties || [];
-
-      // Relevance sort: prioritize items matching the search title
       const searchTerm = (filters.title || "").trim().toLowerCase();
-      const fieldsToCheck = [
-        "title",
-        "name",
-        "project_name",
-        "building_name",
-        "community",
-        "location",
-        "address",
-        "developer_name",
-      ];
+
+      // Helper function to get all searchable text from an item
+      const getSearchableText = (item: any): string => {
+        const texts: string[] = [];
+        
+        // Top-level fields
+        if (item?.title) texts.push(item.title.toString().toLowerCase());
+        if (item?.name) texts.push(item.name.toString().toLowerCase());
+        if (item?.project_name) texts.push(item.project_name.toString().toLowerCase());
+        if (item?.building_name) texts.push(item.building_name.toString().toLowerCase());
+        if (item?.address) texts.push(item.address.toString().toLowerCase());
+        if (item?.developer_name) texts.push(item.developer_name.toString().toLowerCase());
+        if (item?.community) texts.push(item.community.toString().toLowerCase());
+        
+        // Nested location fields
+        if (item?.location) {
+          if (item.location.city) texts.push(item.location.city.toString().toLowerCase());
+          if (item.location.community) texts.push(item.location.community.toString().toLowerCase());
+          if (item.location.sub_community) texts.push(item.location.sub_community.toString().toLowerCase());
+        }
+        
+        return texts.join(" ");
+      };
+
+      // Helper to check if search term matches (handles partial word matches)
+      const matchesSearch = (searchableText: string, term: string): boolean => {
+        if (!term || !searchableText) return false;
+        
+        // Split search term into words for better matching
+        const searchWords = term.split(/\s+/).filter(w => w.length > 0);
+        
+        // Check if all words in search term appear in the searchable text
+        return searchWords.every(word => searchableText.includes(word));
+      };
 
       const scoreItem = (item: any): number => {
         if (!searchTerm) return 0;
-        let best = 0;
-        for (const key of fieldsToCheck) {
-          const value = (item?.[key] ?? "").toString().toLowerCase();
-          if (!value) continue;
-          if (value === searchTerm) {
-            best = Math.max(best, 100);
-          } else if (value.startsWith(searchTerm)) {
-            best = Math.max(best, 80);
-          } else if (value.includes(searchTerm)) {
-            best = Math.max(best, 50);
+        const searchableText = getSearchableText(item);
+        if (!searchableText) return 0;
+        
+        // Exact match
+        if (searchableText === searchTerm) return 100;
+        
+        // Check if all words match
+        const searchWords = searchTerm.split(/\s+/).filter(w => w.length > 0);
+        const allWordsMatch = searchWords.every(word => searchableText.includes(word));
+        
+        if (allWordsMatch) {
+          // Check for phrase match (words together)
+          if (searchableText.includes(searchTerm)) {
+            return 90; // Phrase match
           }
+          return 70; // All words match but not as phrase
         }
-        return best;
+        
+        // Partial match
+        if (searchableText.includes(searchTerm)) return 50;
+        return 0;
       };
 
-      const sorted = searchTerm
-        ? [...items].sort((a, b) => scoreItem(b) - scoreItem(a))
-        : items;
+      // Filter and sort: only show properties matching the search term
+      let filteredAndSorted = items;
+      
+      if (searchTerm) {
+        // Filter to only include matching items
+        filteredAndSorted = items.filter((item: any) => {
+          const searchableText = getSearchableText(item);
+          return matchesSearch(searchableText, searchTerm);
+        });
+        
+        // Sort by relevance
+        if (filteredAndSorted.length > 0) {
+          filteredAndSorted = filteredAndSorted.sort((a, b) => scoreItem(b) - scoreItem(a));
+        }
+      }
 
-      setProperty(sorted);
-      setTotalPages(Math.ceil((res?.total || 0) / 24));
-      setTotalProperties(res?.total || 0);
+      // Apply pagination to filtered results
+      const itemsPerPage = 24;
+      const startIndex = (page - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const paginatedResults = filteredAndSorted.slice(startIndex, endIndex);
+      
+      setProperty(paginatedResults);
+      
+      // Update pagination based on filtered results
+      const filteredTotal = filteredAndSorted.length;
+      setTotalPages(Math.max(1, Math.ceil(filteredTotal / itemsPerPage)));
+      setTotalProperties(filteredTotal);
     } catch (error) {
       console.error("Error fetching properties:", error);
     } finally {
@@ -237,9 +299,28 @@ function BuyContent() {
   );
 
   const handleSearch = useCallback(() => {
-    fetchproperty();
+    // Update URL with current filters
+    const params = new URLSearchParams();
+    
+    if (filters.title && filters.title.trim()) {
+      params.set('title', filters.title.trim());
+    }
+    if (filters.property_type && filters.property_type !== "any") {
+      params.set('property_type', filters.property_type);
+    }
+    if (filters.min_price && filters.min_price !== "any") {
+      params.set('min_price', filters.min_price);
+    }
+    if (filters.max_price && filters.max_price !== "any") {
+      params.set('max_price', filters.max_price);
+    }
+    
+    const queryString = params.toString();
+    const newUrl = queryString ? `/buy?${queryString}` : '/buy';
+    router.push(newUrl);
+    
     if (showFilters) setShowFilters(false);
-  }, [fetchproperty, showFilters]);
+  }, [filters, router, showFilters]);
 
   const handleDeveloperSelect = useCallback(
     (developer: any) => {
@@ -261,6 +342,18 @@ function BuyContent() {
   React.useEffect(() => {
     setCurrentPage(1);
   }, [filters]);
+
+  // Trigger search when URL params change (e.g., from hero section search)
+  React.useEffect(() => {
+    const hasSearchParams = searchParams.get('title') || 
+                           searchParams.get('property_type') || 
+                           searchParams.get('min_price') || 
+                           searchParams.get('max_price');
+    
+    if (hasSearchParams) {
+      fetchproperty(1);
+    }
+  }, [searchParams, fetchproperty]);
 
   React.useEffect(() => {
     searchDevelopers(developerSearch);
@@ -296,6 +389,11 @@ function BuyContent() {
               placeholder="Location or Project"
               value={filters.title}
               onChange={(e) => handleFilterChange("title", e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleSearch();
+                }
+              }}
               className="w-full text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif h-12"
             />
           </div>
@@ -418,6 +516,11 @@ function BuyContent() {
                 placeholder="City, building or community"
                 value={filters.title}
                 onChange={(e) => handleFilterChange("title", e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    handleSearch();
+                  }
+                }}
                 className="w-full text-black bg-white border border-gray-300 placeholder:text-gray-500 h-14"
               />
             </div>
@@ -561,6 +664,11 @@ function BuyContent() {
                   placeholder="City, building or community"
                   value={filters.title}
                   onChange={(e) => handleFilterChange("title", e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      handleSearch();
+                    }
+                  }}
                   className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 placeholder:text-gray-600 focus-visible:ring-2 focus-visible:ring-primary"
                 />
                 <Icon
