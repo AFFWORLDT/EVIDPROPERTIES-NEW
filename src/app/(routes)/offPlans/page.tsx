@@ -95,6 +95,7 @@ function OffPlansContent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalProperties, setTotalProperties] = useState(0);
+  const isInitialized = useRef(false);
 
   // Filter states
   const [filters, setFilters] = useState({
@@ -215,7 +216,7 @@ function OffPlansContent() {
         
         // Sort by relevance
         if (filteredAndSorted.length > 0) {
-          filteredAndSorted = filteredAndSorted.sort((a, b) => scoreItem(b) - scoreItem(a));
+          filteredAndSorted = filteredAndSorted.sort((a: any, b: any) => scoreItem(b) - scoreItem(a));
         }
       }
 
@@ -236,7 +237,7 @@ function OffPlansContent() {
     } finally {
       setLoading(false);
     }
-  }, [filters]);
+  }, []);
   
   // Initialize filters from URL parameters
   useEffect(() => {
@@ -252,12 +253,27 @@ function OffPlansContent() {
       bathrooms: "any",
       handover_year: "any",
     };
-    setFilters(urlFilters);
-    // Reset to page 1 when URL params change
-    setCurrentPage(1);
-    // Immediately fetch with the new filters
-    fetchproperty(1, urlFilters);
-  }, [searchParams, fetchproperty]);
+    
+    // Only update if filters actually changed to prevent infinite loops
+    const urlFiltersString = JSON.stringify(urlFilters);
+    const currentFiltersString = JSON.stringify(filters);
+    
+    if (urlFiltersString !== currentFiltersString) {
+      // Mark as initialized before updating filters to prevent double fetch
+      if (!isInitialized.current) {
+        isInitialized.current = true;
+      }
+      setFilters(urlFilters);
+      // Reset to page 1 when URL params change
+      setCurrentPage(1);
+      // Immediately fetch with the new filters
+      fetchproperty(1, urlFilters);
+    } else if (!isInitialized.current) {
+      // Mark as initialized even if filters didn't change (initial mount)
+      isInitialized.current = true;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   // Debounced developer search
   const searchDevelopers = useCallback((searchTerm: string) => {
@@ -336,11 +352,14 @@ function OffPlansContent() {
     setShowFilters((prev) => !prev);
   }, []);
 
-  // Trigger fetch when filters or page changes
+  // Trigger fetch when filters or page changes (but skip initial mount if URL params already handled it)
   useEffect(() => {
+    // Skip if not initialized yet (URL params effect will handle it)
+    if (!isInitialized.current) return;
     // Always pass current filters to ensure we use the latest values
     fetchproperty(currentPage, filters);
-  }, [filters, currentPage, fetchproperty]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters, currentPage]);
 
   useEffect(() => {
     searchDevelopers(developerSearch);
