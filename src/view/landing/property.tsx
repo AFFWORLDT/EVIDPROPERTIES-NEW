@@ -13,7 +13,7 @@ export default function Property() {
 
   const fetchproperty = async () => {
     setLoading(true);
-    const query = "sort_by=total_count&sort_order=desc&page=1&size=3";
+    const query = "sort_by=total_count&sort_order=desc&page=1&size=3&listing_type=SELL&status=ACTIVE";
     try {
       const res = await getAllBuyProperties(query);
       setProperty(res?.properties || []);
